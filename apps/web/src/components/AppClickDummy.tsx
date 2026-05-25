@@ -574,12 +574,13 @@ export function AppClickDummy() {
           <div className="section-kicker">Die App zum Anklicken</div>
           <h2>Hier wird aus dem Museumsbesuch ein unvergessliches Erlebnis.</h2>
         </div>
-        <ol className="app-dummy-heading__steps" aria-label="Ablauf im App-Ausschnitt">
-          <li>Route wählen</li>
-          <li>Rollen verteilen</li>
-          <li>Wissen mitnehmen</li>
-        </ol>
       </div>
+
+      <ol className="app-dummy-heading__steps" aria-label="Ablauf im App-Ausschnitt">
+        <li>Route wählen</li>
+        <li>Rollen verteilen</li>
+        <li>Wissen mitnehmen</li>
+      </ol>
 
       <div className="app-dummy-layout">
         <div className="dummy-phone" aria-label="Spielbarer App-Ausschnitt">

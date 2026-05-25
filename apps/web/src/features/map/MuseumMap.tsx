@@ -14,15 +14,25 @@ interface MuseumMapProps {
   onSelectPoint: (point: MapPoint) => void;
 }
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 function createMarker(point: MapPoint, selected: boolean) {
   const color = typeColor(point.type);
   const size = point.type === "hof" ? 25 : 34;
+  const label = escapeHtml(point.title);
   return new DivIcon({
     className: "",
     html: `
-      <button class="map-marker map-marker--${point.type} ${selected ? "map-marker--selected" : ""}" style="--marker-color:${color}">
-        <span></span>
-      </button>
+      <span class="map-marker map-marker--${point.type} ${selected ? "map-marker--selected" : ""}" style="--marker-color:${color}">
+        <span class="map-marker__dot" aria-hidden="true"></span>
+        <span class="sr-only">${label}</span>
+      </span>
     `,
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
@@ -51,6 +61,7 @@ export function MuseumMap({ mode, mapVariant, points, selectedPointId, onSelectP
       zoomSnap={0.25}
       className={`museum-map museum-map--${mapVariant}`}
       attributionControl={false}
+      scrollWheelZoom={false}
     >
       <FitImageBounds />
       <ImageOverlay url={mapImageUrl} bounds={mapBounds} />
@@ -65,6 +76,8 @@ export function MuseumMap({ mode, mapVariant, points, selectedPointId, onSelectP
           key={point.id}
           position={pointToLatLng(point)}
           icon={createMarker(point, selectedPointId === point.id)}
+          title={point.title}
+          alt={point.title}
           eventHandlers={{
             click: () => onSelectPoint(point),
           }}

@@ -42,13 +42,17 @@ export function AvatarLab() {
   return (
     <section className="avatar-lab" aria-labelledby="avatar-title">
       <div>
-        <div className="section-kicker">KI-Avatar-Modul</div>
+        <div className="section-kicker">Späteres Modul</div>
         <h2 id="avatar-title">Aus Foto wird historische Erinnerung</h2>
         <p>
-          Besucher:innen laden ein Foto hoch oder wählen einen Hof-Fotopunkt. Daraus entsteht
-          ein historischer Avatar im Ambiente der Bauernhöfe. Gegenstände wie Sense, Mistgabel,
-          Tiere oder Milchkanne können digital ergänzt werden.
+          Dieses Modul gehört nicht in den ersten Schulklassen-Beschluss. Es zeigt nur,
+          wie später aus Fotopunkten, Einwilligung und geprüften Bildstilen ein Erinnerungsprodukt
+          entstehen könnte.
         </p>
+        <div className="avatar-privacy-note">
+          <strong>Datenschutz zuerst:</strong>
+          <span>Foto-Upload, Einwilligung, Speicherfrist und Kassenprozess werden separat entschieden.</span>
+        </div>
       </div>
 
       <div className="avatar-grid">

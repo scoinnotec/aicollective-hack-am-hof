@@ -204,11 +204,6 @@ export interface ModuleIdea {
 
 export const pitchGoalCards = [
   {
-    id: "decision",
-    title: "Konkretes Ziel",
-    text: "Am Ende soll eine Pilotentscheidung stehen: erste Schulroute, Guide-Studio-Workshop und ein bis zwei buchbare Besucherpakete.",
-  },
-  {
     id: "value",
     title: "Wert für Museum und Partner",
     text: "Aus vorhandenem Wissen entstehen wiederverwendbare Module für Vermittlung, Events, Gruppen, Kulinarik und Betrieb.",
@@ -217,6 +212,11 @@ export const pitchGoalCards = [
     id: "reach",
     title: "Reichweite durch Besucherfotos",
     text: "Historische Ambiente-Fotos machen Gäste zu Botschafter:innen in ihren Communities und Reiseländern.",
+  },
+  {
+    id: "decision",
+    title: "Konkretes Ziel",
+    text: "Am Ende soll eine Pilotentscheidung stehen: erste Schulroute, Guide-Studio-Workshop und ein bis zwei buchbare Besucherpakete.",
   },
 ];
 
@@ -1586,27 +1586,27 @@ export const mapPoints: MapPoint[] = [
 
 export const pitchRoadmap: RoadmapItem[] = [
   {
-    phase: "0",
+    phase: "I",
     title: "Vorführbarer erster Stand",
     description: "Website, App-Erlebnis, Karte, Zielgruppen und Unterlagen stehen lokal bereit.",
   },
   {
-    phase: "1",
+    phase: "II",
     title: "Schulklassen-Pilot",
     description: "Eine reale Route mit QR-Codes, Lehreransicht und Feedbackauswertung.",
   },
   {
-    phase: "2",
+    phase: "III",
     title: "Besucher-Module",
     description: "Fotospots, Kulinarik, Kräuterpfad, Familien-, Pensionisten- und Eventformate.",
   },
   {
-    phase: "3",
+    phase: "IV",
     title: "Interner Betrieb",
     description: "Wartung, Aufgaben, Fotodokumentation und Standortdatenbank.",
   },
   {
-    phase: "4",
+    phase: "V",
     title: "Plattform",
     description: "Übertragbar auf weitere Museen, Erlebnisorte, Events und Firmenführungen.",
   },
@@ -1614,28 +1614,28 @@ export const pitchRoadmap: RoadmapItem[] = [
 
 export const processSteps: ProcessStep[] = [
   {
-    number: "01",
+    number: "1",
     title: "Wissen heben",
     description:
       "Guides, Verein und Zeitzeug:innen kennen Details, die nirgends stehen.",
     need: "Audio, Fotos, Dokumente, Anekdoten.",
   },
   {
-    number: "02",
+    number: "2",
     title: "Wissen ordnen",
     description:
       "Alles bekommt einen Ort: Hof, Raum, Objekt, Weg oder Event.",
     need: "Quelle, Zeitraum, Freigabe, Zielgruppe.",
   },
   {
-    number: "03",
+    number: "3",
     title: "Erlebnisse bauen",
     description:
       "Aus geprüftem Material entstehen Missionen, Routen und Aufgaben.",
     need: "Rollen, Karte, Layer, Freigaben.",
   },
   {
-    number: "04",
+    number: "4",
     title: "Vor Ort nutzen",
     description:
       "Besucher:innen sehen passende Inhalte. Teams pflegen vor Ort.",

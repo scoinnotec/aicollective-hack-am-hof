@@ -142,7 +142,7 @@ const contextBlocks: Array<{
 
 const boardPitchAgenda = [
   {
-    time: "0-10 min",
+    time: "1-10 min",
     title: "Ort und Problem",
     text: "Warum das Höfemuseum kein Inhaltsproblem hat, sondern ein Übersetzungs-, Buchungs- und Sichtbarkeitsproblem für neue Zielgruppen.",
   },
@@ -228,6 +228,113 @@ const pilotBoundaries = [
   "Ja/Nein zum begrenzten Schulklassen-Pilot",
   "kein Beschluss über eine fertige Gesamtplattform",
   "Kostenkorridor und Verantwortlichkeiten erst für diesen Pilot schärfen",
+];
+
+const pitchNavItems = [
+  { id: "top", label: "Ziel" },
+  { id: "decision", label: "Beschluss" },
+  { id: "app-dummy", label: "Demo" },
+  { id: "prototype", label: "Mission" },
+  { id: "demo", label: "Karte" },
+  { id: "studio", label: "Wissen" },
+  { id: "costs", label: "Kosten" },
+];
+
+const pilotSuccessMetrics = [
+  { label: "Nutzung", value: "mind. 2 Schulklassen testen die Route" },
+  { label: "Verstehen", value: "Guides erkennen Lernziel und Stationen wieder" },
+  { label: "Betrieb", value: "Start, Rollen und Abschluss funktionieren ohne Zusatzpersonal" },
+  { label: "Feedback", value: "Lehrkräfte und Kinder bewerten Ablauf, Tempo und Inhalte" },
+];
+
+const pilotRisks = [
+  { label: "Datenschutz", value: "keine Schülerkonten, Foto/Avatar nur optional und getrennt freigeben" },
+  { label: "Scope", value: "nur eine Route, keine Buchungsplattform, keine Voll-App" },
+  { label: "Betrieb", value: "QR-/Code-Start muss auch bei schwachem Empfang erklärbar bleiben" },
+  { label: "Content", value: "jede Geschichte braucht Quelle, Freigabe und Altersstufe" },
+];
+
+const decisionMedia = [
+  {
+    image: "pitch-images/schulklassenmission.png",
+    title: "Echte Hofrunde",
+    text: "Der Pilot startet mit einer realen Route für Schulklassen.",
+  },
+  {
+    image: "pitch-images/contentmodell-guide-studio.png",
+    title: "Guide-Wissen sichern",
+    text: "Quellen, Geschichten und Freigaben werden einmal strukturiert.",
+  },
+  {
+    image: "pitch-images/hack-am-hof.jpeg.jpg",
+    title: "Partner einbinden",
+    text: "Museum, Tourismus und Community entscheiden über den nächsten Schritt.",
+  },
+];
+
+const contextVisuals = [
+  {
+    image: "pitch-images/hack-am-hof.jpeg.jpg",
+    title: "Hack am Hof",
+    text: "Aus vielen Ideen entsteht ein gemeinsamer Baukasten.",
+  },
+  {
+    image: "pitch-images/tirol-verstehen.png",
+    title: "Ort verstehen",
+    text: "Das Museum hat Inhalte, Geschichten und starke Bilder.",
+  },
+  {
+    image: "pitch-images/bauernhaus-inspiration.png",
+    title: "Ausbau denken",
+    text: "Der Pilot zeigt, was später skalierbar werden kann.",
+  },
+];
+
+const processVisuals = [
+  {
+    image: "pitch-images/contentmodell-guide-studio.png",
+    title: "Wissen sammeln",
+    text: "Guides, Verein und Museum liefern Quellen, Fotos und Geschichten.",
+  },
+  {
+    image: "pitch-images/werkstatt-am-hof.png",
+    title: "In Aufgaben übersetzen",
+    text: "Aus Material werden Stationen, Rollen und klare Freigaben.",
+  },
+];
+
+const ideaDecisionMetrics = [
+  { label: "Zielgruppe", value: "Wer profitiert zuerst?" },
+  { label: "Umsetzung", value: "Was ist mit wenig Risiko testbar?" },
+  { label: "Betrieb", value: "Was kann das Museum real leisten?" },
+  { label: "Ausbauwert", value: "Was stärkt spätere Pakete?" },
+];
+
+const ideaDecisionRows = [
+  {
+    title: "Jetzt als Pilot vorantreiben",
+    tag: "Beschlussfähig",
+    ideas: ["Spiel am Hof / Hofrunde", "Werkstattvormittage", "Schulpartnerschaft"],
+    text: "Diese Ideen passen direkt zur Schulroute, zum Bildungsauftrag und zu einem kontrollierten Test im Museum.",
+  },
+  {
+    title: "Mitdenken, aber nicht überladen",
+    tag: "Nahe Erweiterung",
+    ideas: ["Tierpatenschaft", "Newsletter & Spenden", "Dorfgeschichten-Podcast"],
+    text: "Diese Formate nutzen denselben Wissens- und Beziehungsschatz, brauchen aber nicht im ersten App-Pilot zu stecken.",
+  },
+  {
+    title: "Als buchbare Pakete nach dem Pilot prüfen",
+    tag: "Einnahmen",
+    ideas: ["Hochzeiten & Feiern", "Firmen-Teamtag", "Krimi-Dinner", "Almsommer-Erlebnistage"],
+    text: "Hoher Angebotswert, aber stärker abhängig von Betrieb, Gastro, Personal, Terminen und klaren Verantwortlichkeiten.",
+  },
+  {
+    title: "Im Ideenparkplatz behalten",
+    tag: "Zielabhängig",
+    ideas: ["Hofjäger", "AR-Brillen-Tour", "Digitale Schnitzeljagd", "Traditirol Selfie-Zeitreise"],
+    text: "Ein Pokémon-Go ähnlicher Modus ist möglich, wenn das Museum bewusst ein aktiveres Spielziel verfolgt.",
+  },
 ];
 
 type ScopeLabel = "Pilot jetzt" | "Nächster Ausbau" | "Spätere Plattform" | "Ideenpool";
@@ -509,7 +616,12 @@ function PhonePrototype() {
           </article>
         </div>
 
-        <div className="mission-variant-grid">
+        <div
+          className="mission-variant-grid"
+          role="region"
+          aria-label="Missionsvarianten"
+          tabIndex={0}
+        >
           {missionVariants.map((variant) => (
             <article key={variant.title}>
               <img src={publicAsset(missionVariantVisuals[variant.title] ?? "pitch-images/hofspur-im-sommer.png")} alt="" />
@@ -550,7 +662,7 @@ function PhonePrototype() {
               </select>
             </label>
             <button type="button" onClick={() => setMissionSeed((value) => value + 1)}>
-              Neue Route anzeigen
+              Route generieren
               <Sparkles size={16} />
             </button>
           </div>
@@ -576,7 +688,7 @@ function PhonePrototype() {
                 </div>
               </div>
               <div className="generated-mission-learning">
-                <strong>Wissen</strong>
+                <strong>Lernziel</strong>
                 <p>{generatedMission.knowledge}</p>
               </div>
               <div className="generated-mission-learning">
@@ -614,6 +726,18 @@ function ContextStory() {
         </p>
       </div>
 
+      <div className="context-visual-row" aria-label="Projektbilder zur Ausgangslage">
+        {contextVisuals.map((item) => (
+          <figure key={item.title}>
+            <img src={publicAsset(item.image)} alt="" loading="lazy" />
+            <figcaption>
+              <strong>{item.title}</strong>
+              <span>{item.text}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
       <div className="context-grid">
         {contextBlocks.map((block) => (
           <article key={block.id}>
@@ -643,12 +767,14 @@ function ContextStory() {
 }
 
 function DecisionAndRoadmapSection() {
+  const ideenhofReference = buildathonReferences.find((reference) => reference.id === "T01");
+
   return (
     <section id="decision" className="decision-section">
       <div className="section-heading">
         <div>
           <div className="section-kicker">Entscheidungsvorschlag</div>
-          <h2>Am Ende soll eine kleine, klare Pilotentscheidung stehen.</h2>
+          <h2>Am Ende soll es eine klare Entscheidung geben, ob ein Pilotprojekt umgesetzt wird.</h2>
         </div>
         <p>
           Nicht über eine fertige App entscheiden, sondern über den nächsten belastbaren Schritt:
@@ -667,6 +793,18 @@ function DecisionAndRoadmapSection() {
             </article>
           );
         })}
+      </div>
+
+      <div className="decision-media-row" aria-label="Pilotmaterial">
+        {decisionMedia.map((item, index) => (
+          <figure key={item.title} className={index === 0 ? "decision-media-card decision-media-card--large" : "decision-media-card"}>
+            <img src={publicAsset(item.image)} alt="" loading="lazy" />
+            <figcaption>
+              <strong>{item.title}</strong>
+              <span>{item.text}</span>
+            </figcaption>
+          </figure>
+        ))}
       </div>
 
       <div className="pilot-decision-box">
@@ -695,6 +833,38 @@ function DecisionAndRoadmapSection() {
             </article>
           ))}
         </div>
+      </div>
+
+      <div className="decision-section-break">
+        <div className="section-kicker">Pilot absichern</div>
+        <h3>Erfolg, Risiko und Ablauf werden vor dem Start getrennt geprüft.</h3>
+      </div>
+
+      <div className="pilot-proof-grid">
+        <article>
+          <div className="section-kicker">Erfolgskriterien</div>
+          <h3>Woran der Pilot gemessen wird.</h3>
+          <div>
+            {pilotSuccessMetrics.map((metric) => (
+              <section key={metric.label}>
+                <span>{metric.label}</span>
+                <p>{metric.value}</p>
+              </section>
+            ))}
+          </div>
+        </article>
+        <article>
+          <div className="section-kicker">Risiken kontrollieren</div>
+          <h3>Was vor dem Start sauber begrenzt wird.</h3>
+          <div>
+            {pilotRisks.map((risk) => (
+              <section key={risk.label}>
+                <span>{risk.label}</span>
+                <p>{risk.value}</p>
+              </section>
+            ))}
+          </div>
+        </article>
       </div>
 
       <div className="decision-workflow">
@@ -767,6 +937,60 @@ function DecisionAndRoadmapSection() {
         </article>
       </div>
 
+      <div className="idea-decision-panel">
+        <div className="idea-decision-panel__intro">
+          <div>
+            <div className="section-kicker">Ideenbewertung</div>
+            <h3>Gute Ideen werden sichtbar, aber nicht alle gleichzeitig gebaut.</h3>
+            <p>
+              Der Buildathlon-Prototyp Ideenhof zeigt eine passende Logik: Ideen sammeln,
+              bewerten, sortieren und daraus kontrollierte nächste Schritte ableiten.
+            </p>
+          </div>
+          {ideenhofReference ? (
+            <a href={ideenhofReference.source} target="_blank" rel="noreferrer">
+              Buildathlon-Projekt ansehen
+              <ExternalLink size={14} />
+            </a>
+          ) : null}
+        </div>
+
+        <div className="idea-decision-panel__metrics" aria-label="Bewertungskriterien">
+          {ideaDecisionMetrics.map((metric) => (
+            <article key={metric.label}>
+              <span>{metric.label}</span>
+              <p>{metric.value}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="idea-score-list">
+          {ideaDecisionRows.map((idea) => (
+            <article key={idea.title}>
+              <div className="idea-score-list__copy">
+                <span>{idea.tag}</span>
+                <strong>{idea.title}</strong>
+                <p>{idea.text}</p>
+              </div>
+              <div className="idea-score-list__ideas" aria-label={`Ideen für ${idea.title}`}>
+                {idea.ideas.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="idea-decision-panel__footer">
+          <strong>Beschlusslogik:</strong>
+          <span>
+            Der Vorstand gibt nicht eine Ideensammlung frei, sondern die bestbewertete nächste
+            Teststufe. Alles andere bleibt dokumentiert und kann nach dem Pilot neu priorisiert
+            werden.
+          </span>
+        </div>
+      </div>
+
       <div className="pitch-track decision-track">
         <div>
           <div className="section-kicker">Einfach erklärbar</div>
@@ -775,7 +999,7 @@ function DecisionAndRoadmapSection() {
         <ol className="pitch-steps">
           {pitchSteps.map((step, index) => (
             <li key={step}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span>{index + 1}</span>
               <p>{step}</p>
             </li>
           ))}
@@ -889,17 +1113,17 @@ function FutureFormatGroups({
 
   return (
     <div className="future-format-groups">
-      {groups.map((group) => {
+      {groups.map((group, index) => {
         const formats = group.ids
           .map((id) => futureFormats.find((format) => format.id === id))
           .filter((format): format is FutureFormat => Boolean(format));
 
         return (
-          <section className="future-group" key={group.title}>
-            <div className="future-group__heading">
+          <details className="future-group" key={group.title} open={index < 2}>
+            <summary className="future-group__heading">
               <h3>{group.title}</h3>
               <p>{group.text}</p>
-            </div>
+            </summary>
             <div className="future-grid future-grid--interactive">
               {formats.map((format) => (
                 <FutureFormatCard
@@ -910,7 +1134,7 @@ function FutureFormatGroups({
                 />
               ))}
             </div>
-          </section>
+          </details>
         );
       })}
     </div>
@@ -931,15 +1155,32 @@ function ProjectEstimateSection() {
         </p>
       </div>
 
-      <div className="estimate-grid">
-        {projectEstimates.map((item) => (
-          <article key={item.phase}>
-            <span>{item.phase}</span>
-            <h3>{item.cost}</h3>
-            <strong>{item.effort}</strong>
-            <p>{item.text}</p>
-          </article>
-        ))}
+      <div
+        className="estimate-grid"
+        role="region"
+        aria-label="Kosten- und Aufwandskorridore"
+        tabIndex={0}
+      >
+        <table>
+          <thead>
+            <tr>
+              <th>Baustein</th>
+              <th>Kosten</th>
+              <th>Dauer</th>
+              <th>Entscheidungsrelevanz</th>
+            </tr>
+          </thead>
+          <tbody>
+            {projectEstimates.map((item, index) => (
+              <tr key={item.phase} className={index < 2 ? "is-pilot-cost" : undefined}>
+                <th scope="row">{item.phase}</th>
+                <td>{item.cost}</td>
+                <td>{item.effort}</td>
+                <td>{item.text}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
       <div className="tech-notes">
@@ -1087,6 +1328,33 @@ function moduleIdeaIcon(id: string) {
   if (id === "history") return Landmark;
   return Database;
 }
+
+const moduleIdeaPhaseGroups = [
+  {
+    phase: "Pilot",
+    title: "Grundlage und erste Schulroute",
+    text: "Zuerst braucht es gesichertes Wissen und eine echte Hofrunde für Schulklassen.",
+    ideaIds: ["content", "school"],
+  },
+  {
+    phase: "Phase 1",
+    title: "Erste buchbare Erweiterungen",
+    text: "Formate, die auf derselben Route, denselben Fotos oder denselben Hofgeschichten aufbauen.",
+    ideaIds: ["avatar", "celebration", "culinary"],
+  },
+  {
+    phase: "Phase 2",
+    title: "Zielgruppen- und Wissenslayer",
+    text: "Zusätzliche Modi für Besuchergruppen, die später denselben Datenkern nutzen.",
+    ideaIds: ["family", "pensioners", "chroniclers", "history", "herbs"],
+  },
+  {
+    phase: "Phase 3",
+    title: "Betrieb und Plattformnutzen",
+    text: "Interne Nutzung und Premium-Formate, sobald Inhalte, Rechte und Prozesse tragfähig sind.",
+    ideaIds: ["maintenance", "inspiration"],
+  },
+];
 
 const modulePitchDetails: Record<string, {
   visualClass: string;
@@ -1247,8 +1515,8 @@ function ModuleIdeas() {
           <h2>Von der ersten Schulroute zur Museumsplattform.</h2>
         </div>
         <p>
-          Jede Idee bleibt als Kachel einfach verständlich. Beim Klick öffnet sich ein
-          ausführliches Pitch-Popup mit Bild, Kampagne, Nutzen und nächstem Schritt.
+          Die Ideen werden nach Umsetzungsphasen sortiert. Erst kommt der Pilot,
+          danach folgen buchbare Erweiterungen, Zielgruppenlayer und Plattformnutzen.
         </p>
       </div>
 
@@ -1261,26 +1529,41 @@ function ModuleIdeas() {
       </div>
 
       <div className="idea-layout">
-        <div className="idea-grid">
-          {moduleIdeas.map((idea) => {
-            const Icon = moduleIdeaIcon(idea.id);
-            const scope = moduleScopeById[idea.id] ?? { label: "Ideenpool" as ScopeLabel, note: "später prüfen" };
-            return (
-              <button
-                key={idea.id}
-                className={selectedIdea?.id === idea.id ? "idea-card idea-card--active" : "idea-card"}
-                type="button"
-                onClick={() => setSelectedIdeaId(idea.id)}
-              >
-                <Icon size={24} />
-                <em className={`scope-badge scope-badge--${scopeStyleByLabel[scope.label]}`}>{scope.label}</em>
-                <span>{idea.title}</span>
-                <p>{idea.description}</p>
-                <small>{scope.note}</small>
-                <strong>Pitch-Popup öffnen</strong>
-              </button>
-            );
-          })}
+        <div className="idea-phase-list">
+          {moduleIdeaPhaseGroups.map((group) => (
+            <section key={group.phase} className="idea-phase-group">
+              <div className="idea-phase-group__head">
+                <span>{group.phase}</span>
+                <div>
+                  <h3>{group.title}</h3>
+                  <p>{group.text}</p>
+                </div>
+              </div>
+              <div className="idea-grid">
+                {group.ideaIds.map((ideaId) => {
+                  const idea = moduleIdeas.find((item) => item.id === ideaId);
+                  if (!idea) return null;
+                  const Icon = moduleIdeaIcon(idea.id);
+                  const scope = moduleScopeById[idea.id] ?? { label: "Ideenpool" as ScopeLabel, note: "später prüfen" };
+                  return (
+                    <button
+                      key={idea.id}
+                      className={selectedIdea?.id === idea.id ? "idea-card idea-card--active" : "idea-card"}
+                      type="button"
+                      onClick={() => setSelectedIdeaId(idea.id)}
+                    >
+                      <Icon size={24} />
+                      <em className={`scope-badge scope-badge--${scopeStyleByLabel[scope.label]}`}>{scope.label}</em>
+                      <span>{idea.title}</span>
+                      <p>{idea.description}</p>
+                      <small>{scope.note}</small>
+                      <strong>Pitch-Popup öffnen</strong>
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          ))}
         </div>
       </div>
 
@@ -1808,6 +2091,9 @@ function PointPitchModal({ point, onClose }: { point: MapPoint; onClose: () => v
 export function App() {
   const [mode, setMode] = useState<AudienceMode>("school");
   const [mapVariant, setMapVariant] = useState<MapVariant>("original");
+  const [mapListView, setMapListView] = useState<"stations" | "hoefe">("stations");
+  const [activeSectionId, setActiveSectionId] = useState("top");
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [selectedPoint, setSelectedPoint] = useState<MapPoint | null>(null);
   const [pointModal, setPointModal] = useState<MapPoint | null>(null);
   const [selectedFutureId, setSelectedFutureId] = useState("bus-groups");
@@ -1825,6 +2111,35 @@ export function App() {
     [futureModalId],
   );
   const ActiveIcon = activeAudience.icon;
+
+  useEffect(() => {
+    function updateProgress() {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(maxScroll > 0 ? Math.min(1, window.scrollY / maxScroll) : 0);
+
+      const sections = pitchNavItems
+        .map((item) => document.getElementById(item.id))
+        .filter((section): section is HTMLElement => Boolean(section));
+      let current = sections[0];
+
+      for (const section of sections) {
+        if (section.offsetTop <= window.scrollY + 140) {
+          current = section;
+        }
+      }
+
+      setActiveSectionId(current?.id ?? "top");
+    }
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+
+    return () => {
+      window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
+    };
+  }, []);
 
   function changeMode(nextMode: AudienceMode) {
     setMode(nextMode);
@@ -1863,31 +2178,43 @@ export function App() {
 
   return (
     <main>
+      <nav className="pitch-progress-nav" aria-label="Pitch-Fortschritt">
+        <div className="pitch-progress-nav__bar">
+          <span style={{ width: `${scrollProgress * 100}%` }} />
+        </div>
+        <div>
+          {pitchNavItems.map((item) => (
+            <a key={item.id} className={activeSectionId === item.id ? "is-active" : undefined} href={`#${item.id}`}>
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       <section id="top" className="hero-section">
         <div className="hero-shell">
           <div className="hero-copy">
             <nav className="top-nav" aria-label="Hauptnavigation">
-              <a href="#top">Idee</a>
+              <a href="#decision">Beschluss</a>
               <a href="#app-dummy">Prototyp</a>
-              <a href="#context">Warum jetzt</a>
-              <a href="#process">Wissen</a>
-              <a href="#extensions">Besuchsanlässe</a>
+              <a href="#studio">Wissen</a>
+              <a href="#demo">Karte</a>
               <a href="#costs">Aufwand</a>
             </nav>
-            <div className="hero-context">Zielbild</div>
+            <div className="hero-context">Entscheidungsseite</div>
             <h1>
-              Aus Museumswissen
+              Pilot freigeben.
               <br />
-              wird ein Erlebnis.
+              Museumswissen erlebbar machen.
             </h1>
             <h2 className="hero-thesis-lines">
-              <span>Entscheidung für Pilotprojekt.</span>
-              <span>Wissen sammeln.</span>
-              <span>Besucher zu Botschaftern machen.</span>
+              <span>Schulroute testen.</span>
+              <span>Guide-Wissen sichern.</span>
+              <span>Danach Ausbau entscheiden.</span>
             </h2>
             <p>
-              Diese Seite führt zuerst zu einer kleinen Entscheidung: eine Schulroute als Hofrunde,
-              ein Guide-Studio-Workshop und eine Auswertung. Alles Weitere bleibt Ausbau.
+              Heute geht es nicht um eine fertige Plattform, sondern um die Freigabe eines
+              begrenzten Schulklassen-Piloten mit 4 bis 5 Stationen.
             </p>
             <div className="hero-decision-card" aria-label="Beschlussvorschlag">
               <span>Beschlussvorschlag</span>
@@ -1898,17 +2225,19 @@ export function App() {
               </p>
             </div>
             <div className="hero-actions">
-              <a className="primary-action" href="#app-dummy">
-                App ausprobieren <ArrowRight size={18} />
+              <a className="primary-action" href="#decision">
+                Pilot freigeben <ArrowRight size={18} />
               </a>
-              <a className="secondary-action" href="#decision">
-                Beschluss ansehen
+              <a className="secondary-action" href="#app-dummy">
+                Demo ansehen
               </a>
             </div>
           </div>
           <PitchPanel />
         </div>
       </section>
+
+      <DecisionAndRoadmapSection />
 
       <AppClickDummy />
 
@@ -1918,7 +2247,7 @@ export function App() {
         <div className="section-heading">
           <div>
             <div className="section-kicker">Erlebniskarte</div>
-            <h2>Eine Karte, acht Zielgruppenmodi.</h2>
+            <h2>Eine Karte, acht Nutzungsmöglichkeiten.</h2>
           </div>
           <p>
             Ein System, viele Layer. Jede Zielgruppe sieht nur, was für sie wichtig ist.
@@ -1936,32 +2265,44 @@ export function App() {
               </div>
             </div>
             <p className="mode-value">{activeAudience.value}</p>
-            <div className="point-list">
-              <strong>Aktive Stationen</strong>
-              <div>
-                {featurePoints.map((point) => (
-                  <button
-                    key={point.id}
-                    className={selectedPoint?.id === point.id ? "point-list__item point-list__item--active" : "point-list__item"}
-                    onClick={() => openPoint(point)}
-                  >
-                    {point.title}
-                  </button>
-                ))}
+            <div className="map-list-panel">
+              <div className="map-list-tabs" aria-label="Kartenlisten">
+                <button
+                  className={mapListView === "stations" ? "map-list-tab map-list-tab--active" : "map-list-tab"}
+                  type="button"
+                  onClick={() => setMapListView("stations")}
+                >
+                  Stationen
+                </button>
+                <button
+                  className={mapListView === "hoefe" ? "map-list-tab map-list-tab--active" : "map-list-tab"}
+                  type="button"
+                  onClick={() => setMapListView("hoefe")}
+                >
+                  Höfe
+                </button>
               </div>
-            </div>
-            <div className="hof-list">
-              <strong>Höfe ansehen</strong>
-              <div>
-                {hofPoints.map((point) => (
-                  <button
-                    key={point.id}
-                    className={selectedPoint?.id === point.id ? "hof-list__item hof-list__item--active" : "hof-list__item"}
-                    onClick={() => openPoint(point)}
-                  >
-                    {point.title}
-                  </button>
-                ))}
+              <div className={mapListView === "stations" ? "point-list" : "hof-list"}>
+                <strong>{mapListView === "stations" ? "Aktive Stationen" : "Höfe ansehen"}</strong>
+                <div>
+                  {(mapListView === "stations" ? featurePoints : hofPoints).map((point) => (
+                    <button
+                      key={point.id}
+                      className={
+                        selectedPoint?.id === point.id
+                          ? mapListView === "stations"
+                            ? "point-list__item point-list__item--active"
+                            : "hof-list__item hof-list__item--active"
+                          : mapListView === "stations"
+                            ? "point-list__item"
+                            : "hof-list__item"
+                      }
+                      onClick={() => openPoint(point)}
+                    >
+                      {point.title}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
             <PointDrawer
@@ -1979,6 +2320,7 @@ export function App() {
               selectedPointId={selectedPoint?.id ?? null}
               onSelectPoint={openPoint}
             />
+            <div className="map-scroll-hint">Scrollen bleibt Seite. Karte mit + / - zoomen.</div>
             <div className="map-variant-control" aria-label="Kartenansicht">
               {[
                 ["original", "Original"],
@@ -2016,6 +2358,18 @@ export function App() {
             Die App ist nur die sichtbare Oberfläche. Der Wert entsteht, wenn Guides, Verein und
             Museumsprofis ihr Wissen digital verfügbar machen.
           </p>
+        </div>
+
+        <div className="process-visual-row" aria-label="Bildbeispiele zur Wissensarbeit">
+          {processVisuals.map((item) => (
+            <figure key={item.title}>
+              <img src={publicAsset(item.image)} alt="" loading="lazy" />
+              <figcaption>
+                <strong>{item.title}</strong>
+                <span>{item.text}</span>
+              </figcaption>
+            </figure>
+          ))}
         </div>
 
         <div className="process-board">
@@ -2083,8 +2437,6 @@ export function App() {
           />
         </div>
       </section>
-
-      <DecisionAndRoadmapSection />
 
       <ProjectEstimateSection />
 

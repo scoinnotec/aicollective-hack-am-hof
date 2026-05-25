@@ -2,6 +2,13 @@ import { useState } from "react";
 import { FileAudio, FileText, FolderTree, Mic, UploadCloud } from "lucide-react";
 import { contentCollections, historicalThemes } from "../data/contentStudio";
 
+const guideStudioSteps = ["sammeln", "prüfen", "strukturieren", "freigeben", "nutzen"];
+const sourceStatusItems = [
+  { label: "Quelle", value: "Dokument / Guide / Objekt" },
+  { label: "Status", value: "geprüft vor Veröffentlichung" },
+  { label: "Freigabe", value: "Kinder, Gruppen, öffentlich" },
+];
+
 export function GuideStudio() {
   const [selectedCollection, setSelectedCollection] = useState(contentCollections[0].id);
   const [storyText, setStoryText] = useState(
@@ -21,6 +28,12 @@ export function GuideStudio() {
           Fotos und Geschichten werden nach Hof, Gebäude, Raum, Areal oder Objekt sortiert.
         </p>
       </div>
+
+      <ol className="guide-process" aria-label="Guide-Studio-Prozess">
+        {guideStudioSteps.map((step) => (
+          <li key={step}>{step}</li>
+        ))}
+      </ol>
 
       <div className="guide-grid">
         <div className="collection-list" aria-label="Sammlungen">
@@ -74,6 +87,14 @@ export function GuideStudio() {
               Jede Aussage bekommt später Quelle, Freigabe, Unsicherheitsgrad und Altersstufe.
               Neue Erlebnisvarianten entstehen nur aus geprüftem Museumswissen.
             </p>
+          </div>
+          <div className="source-status-grid" aria-label="Quellenstatus">
+            {sourceStatusItems.map((item) => (
+              <article key={item.label}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </article>
+            ))}
           </div>
         </div>
 
