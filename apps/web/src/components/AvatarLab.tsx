@@ -78,7 +78,7 @@ export function AvatarLab() {
             {previewUrl ? (
               <img src={previewUrl} alt="Avatar-Quelle" />
             ) : (
-              <img src={publicAsset("pitch-images/ki-charaktere-souvenir.png")} alt="" />
+              <img src={publicAsset("lageplan.webp")} alt="" />
             )}
             <div className="avatar-card__costume">
               <Camera size={14} />

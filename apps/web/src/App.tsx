@@ -135,7 +135,7 @@ const contextBlocks: Array<{
     paragraphs: [
       "Der nächste Schritt ist ein bewusst kleines, klickbares App-Erlebnis in Smartphone-Größe. Es zeigt in wenigen Screens, wie Mission, Zeitreise, Foto und Guide-Wissen zusammenwirken.",
       "Parallel braucht es einen Content-Workshop mit Guides, Verein und Museumsprofis: Welche Geschichten sind gesichert? Welche Quellen gibt es? Was darf für Kinder, Gruppen, Hochzeitspaare oder öffentliche Kommunikation verwendet werden?",
-      "Danach kann daraus ein Pilot werden: eine reale Schulroute, ein erstes Foto-/Feierpaket, eine Schmankerl-Idee und ein einfaches Guide Studio. Erst wenn diese Basis trägt, lohnt sich der Ausbau zu App, Buchung, QR-Routen und weiteren Museen.",
+      "Danach kann daraus ein Pilot werden: eine reale Hofrunde, ein erstes Foto-/Feierpaket, eine Schmankerl-Idee und ein einfaches Guide Studio. Erst wenn diese Basis trägt, lohnt sich der Ausbau zu App, Buchung, QR-Routen und weiteren Museen.",
     ],
   },
 ];
@@ -164,7 +164,7 @@ const boardPitchAgenda = [
   {
     time: "45-55 min",
     title: "Pilot entscheiden",
-    text: "Welche kleine Kombination realistisch ist: eine Schulroute, ein Guide-Studio-Workshop, ein Foto-/Feierpaket und ein Schmankerl-Test.",
+    text: "Welche kleine Kombination realistisch ist: eine erste Hofrunde, ein Guide-Studio-Workshop, ein Foto-/Feierpaket und ein Schmankerl-Test.",
   },
   {
     time: "55-60 min",
@@ -209,8 +209,8 @@ const projectEstimates = [
 const pilotDecisionScope = [
   {
     label: "Pilot jetzt",
-    title: "Schulroute als Hofrunde",
-    text: "Eine reale Route mit 4 bis 5 Stationen, QR-/Code-Start, Rollen, Aufgaben und kurzer Feedbackauswertung.",
+    title: "Erste Hofrunde",
+    text: "Ein reales, gut zum Museum passendes Erlebnis mit 4 bis 5 Stationen, QR-/Code-Start, Rollen, Aufgaben und kurzer Feedbackauswertung.",
   },
   {
     label: "Vorbereitung",
@@ -225,7 +225,7 @@ const pilotDecisionScope = [
 ];
 
 const pilotBoundaries = [
-  "Ja/Nein zum begrenzten Schulklassen-Pilot",
+  "Ja/Nein zu einem begrenzten Museumspilot",
   "kein Beschluss über eine fertige Gesamtplattform",
   "Kostenkorridor und Verantwortlichkeiten erst für diesen Pilot schärfen",
 ];
@@ -241,14 +241,14 @@ const pitchNavItems = [
 ];
 
 const pilotSuccessMetrics = [
-  { label: "Nutzung", value: "mind. 2 Schulklassen testen die Route" },
+  { label: "Nutzung", value: "mind. 2 reale Testgruppen erleben die Route" },
   { label: "Verstehen", value: "Guides erkennen Lernziel und Stationen wieder" },
   { label: "Betrieb", value: "Start, Rollen und Abschluss funktionieren ohne Zusatzpersonal" },
-  { label: "Feedback", value: "Lehrkräfte und Kinder bewerten Ablauf, Tempo und Inhalte" },
+  { label: "Feedback", value: "Teilnehmende und Guides bewerten Ablauf, Tempo und Inhalte" },
 ];
 
 const pilotRisks = [
-  { label: "Datenschutz", value: "keine Schülerkonten, Foto/Avatar nur optional und getrennt freigeben" },
+  { label: "Datenschutz", value: "keine Nutzerkonten, Foto/Avatar nur optional und getrennt freigeben" },
   { label: "Scope", value: "nur eine Route, keine Buchungsplattform, keine Voll-App" },
   { label: "Betrieb", value: "QR-/Code-Start muss auch bei schwachem Empfang erklärbar bleiben" },
   { label: "Content", value: "jede Geschichte braucht Quelle, Freigabe und Altersstufe" },
@@ -258,7 +258,7 @@ const decisionMedia = [
   {
     image: "pitch-images/schulklassenmission.png",
     title: "Echte Hofrunde",
-    text: "Der Pilot startet mit einer realen Route für Schulklassen.",
+    text: "Der Pilot startet mit einem realen Rundgang, der zum Charakter des Museums passt.",
   },
   {
     image: "pitch-images/contentmodell-guide-studio.png",
@@ -303,6 +303,20 @@ const processVisuals = [
   },
 ];
 
+const pitchStepVisuals = [
+  { image: "pitch-images/schulklassenmission.png", label: "Ort verstehen" },
+  { image: "pitch-images/contentmodell-guide-studio.png", label: "Wissen ordnen" },
+  { image: "lageplan.webp", label: "Karte nutzen" },
+  { image: "pitch-images/tiroler-schmankerl-route.png", label: "Module kombinieren" },
+  { image: "pitch-images/werkstatt-am-hof.png", label: "Pilot entscheiden" },
+];
+
+const ambassadorVisuals = [
+  { image: "pitch-images/goldene-stunde-am-hof.png", label: "Teilbares Erinnerungsbild" },
+  { image: "pitch-images/rattenberg-busbruecke.png", label: "Rattenberg als Einstieg" },
+  { image: "pitch-images/ki-charaktere-souvenir.png", label: "Späteres Fotomodul" },
+];
+
 const ideaDecisionMetrics = [
   { label: "Zielgruppe", value: "Wer profitiert zuerst?" },
   { label: "Umsetzung", value: "Was ist mit wenig Risiko testbar?" },
@@ -314,8 +328,8 @@ const ideaDecisionRows = [
   {
     title: "Jetzt als Pilot vorantreiben",
     tag: "Beschlussfähig",
-    ideas: ["Spiel am Hof / Hofrunde", "Werkstattvormittage", "Schulpartnerschaft"],
-    text: "Diese Ideen passen direkt zur Schulroute, zum Bildungsauftrag und zu einem kontrollierten Test im Museum.",
+    ideas: ["Spiel am Hof / Hofrunde", "Werkstattvormittage", "Besucherpaket"],
+    text: "Diese Ideen sind realistisch testbar, passen zum Charakter des Museums und lassen sich kontrolliert vor Ort erproben.",
   },
   {
     title: "Mitdenken, aber nicht überladen",
@@ -340,7 +354,7 @@ const ideaDecisionRows = [
 type ScopeLabel = "Pilot jetzt" | "Nächster Ausbau" | "Spätere Plattform" | "Ideenpool";
 
 const moduleScopeById: Record<string, { label: ScopeLabel; note: string }> = {
-  school: { label: "Pilot jetzt", note: "Kern der ersten Schulroute" },
+  school: { label: "Pilot jetzt", note: "Kern einer ersten Hofrunde" },
   content: { label: "Pilot jetzt", note: "Voraussetzung für den Pilot" },
   celebration: { label: "Nächster Ausbau", note: "buchbares Partnerpaket nach der Route" },
   culinary: { label: "Nächster Ausbau", note: "Schmankerl-Route als Partnerpaket" },
@@ -810,7 +824,7 @@ function DecisionAndRoadmapSection() {
       <div className="pilot-decision-box">
         <div className="pilot-decision-box__intro">
           <div className="section-kicker">Beschlussvorschlag</div>
-          <h3>Freigabe für einen kontrollierbaren Schulklassen-Pilot.</h3>
+          <h3>Freigabe für einen kontrollierbaren Museumspilot.</h3>
           <p>
             Der Vorstand entscheidet nicht über die ganze Plattform, sondern über einen testbaren
             nächsten Schritt mit echtem Museumswissen, klarer Route und messbarem Feedback.
@@ -844,6 +858,10 @@ function DecisionAndRoadmapSection() {
         <article>
           <div className="section-kicker">Erfolgskriterien</div>
           <h3>Woran der Pilot gemessen wird.</h3>
+          <figure className="pilot-proof-visual">
+            <img src={publicAsset("pitch-images/hofspur-im-sommer.png")} alt="" loading="lazy" />
+            <figcaption>Testen mit echter Hofsituation statt abstrakter App-Idee.</figcaption>
+          </figure>
           <div>
             {pilotSuccessMetrics.map((metric) => (
               <section key={metric.label}>
@@ -856,6 +874,10 @@ function DecisionAndRoadmapSection() {
         <article>
           <div className="section-kicker">Risiken kontrollieren</div>
           <h3>Was vor dem Start sauber begrenzt wird.</h3>
+          <figure className="pilot-proof-visual">
+            <img src={publicAsset("pitch-images/contentmodell-guide-studio.png")} alt="" loading="lazy" />
+            <figcaption>Wissen, Freigaben und Betrieb werden zuerst sortiert.</figcaption>
+          </figure>
           <div>
             {pilotRisks.map((risk) => (
               <section key={risk.label}>
@@ -870,7 +892,11 @@ function DecisionAndRoadmapSection() {
       <div className="decision-workflow">
         <article className="decision-agenda">
           <div className="section-kicker">60 Minuten Pitchlogik</div>
-          <h3>So kann der Vorstand durch die Entscheidung geführt werden.</h3>
+          <h3>Vorstand sicher zur Entscheidung führen.</h3>
+          <figure className="decision-flow-visual">
+            <img src={publicAsset("pitch-images/tirol-verstehen.png")} alt="" loading="lazy" />
+            <figcaption>Erst Ort und Nutzen klären, dann den nächsten belastbaren Schritt entscheiden.</figcaption>
+          </figure>
           <div>
             {boardPitchAgenda.map((item) => (
               <section key={item.time}>
@@ -884,7 +910,11 @@ function DecisionAndRoadmapSection() {
 
         <article className="decision-roadmap">
           <div className="section-kicker">Nächste Schritte</div>
-          <h3>Schnell vorführbar, danach kontrolliert ausbaubar.</h3>
+          <h3>Schnell zeigen. Kontrolliert ausbauen.</h3>
+          <figure className="decision-flow-visual">
+            <img src={publicAsset("pitch-images/werkstatt-am-hof.png")} alt="" loading="lazy" />
+            <figcaption>Aus einem kleinen Pilot wird nur dann mehr, wenn Ablauf und Betrieb tragen.</figcaption>
+          </figure>
           <div>
             {pitchRoadmap.map((item) => (
               <section key={item.phase}>
@@ -898,15 +928,6 @@ function DecisionAndRoadmapSection() {
       </div>
 
       <div className="decision-support">
-        <article className="decision-thesis-card">
-          <CalendarDays size={24} />
-          <h3>Der nächste Schritt ist vorbereitet.</h3>
-          <p>
-            Für den Start reichen eine erste Route, ein Wissensworkshop und zwei bis drei
-            Besucherangebote. Später kann daraus eine App und eine Plattform für weitere Orte
-            entstehen.
-          </p>
-        </article>
         <article className="decision-thesis-card decision-thesis-card--dark">
           <BadgeEuro size={24} />
           <h3>Kernthese</h3>
@@ -932,8 +953,22 @@ function DecisionAndRoadmapSection() {
             <a href="https://aicollective.at/hack-am-hof" target="_blank" rel="noreferrer">
               Hack am Hof <ExternalLink size={14} />
             </a>
-            <span>{buildathonReferences.length} Prototypen dokumentiert</span>
+            <a href="https://aicollective.at/api/share?e=hack-am-hof" target="_blank" rel="noreferrer">
+              {buildathonReferences.length} Prototypen Übersicht <ExternalLink size={14} />
+            </a>
+            <a href="#buildathon-prototypes">
+              Prototypen auf dieser Seite <ChevronRight size={14} />
+            </a>
           </div>
+        </article>
+        <article className="decision-thesis-card">
+          <CalendarDays size={24} />
+          <h3>Der nächste Schritt ist vorbereitet.</h3>
+          <p>
+            Für den Start reichen eine erste Route, ein Wissensworkshop und zwei bis drei
+            Besucherangebote. Später kann daraus eine App und eine Plattform für weitere Orte
+            entstehen.
+          </p>
         </article>
       </div>
 
@@ -999,6 +1034,10 @@ function DecisionAndRoadmapSection() {
         <ol className="pitch-steps">
           {pitchSteps.map((step, index) => (
             <li key={step}>
+              <figure>
+                <img src={publicAsset(pitchStepVisuals[index]?.image ?? "pitch-images/hofspur-im-sommer.png")} alt="" loading="lazy" />
+                <figcaption>{pitchStepVisuals[index]?.label}</figcaption>
+              </figure>
               <span>{index + 1}</span>
               <p>{step}</p>
             </li>
@@ -1014,6 +1053,14 @@ function DecisionAndRoadmapSection() {
             Der Foto- und Avatar-Teil ist nicht nur Spielerei. Er erzeugt erinnerbare Bilder, die
             Reisegruppen in ihren Ländern und Communities weitertragen.
           </p>
+          <div className="ambassador-visual-strip" aria-label="Beispiele für Foto- und Besucherwirkung">
+            {ambassadorVisuals.map((visual) => (
+              <figure key={visual.label}>
+                <img src={publicAsset(visual.image)} alt="" loading="lazy" />
+                <figcaption>{visual.label}</figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
         <div className="ambassador-grid">
           {ambassadorLevers.map((lever) => (
@@ -1152,6 +1199,8 @@ function ProjectEstimateSection() {
         <p>
           Die Werte sind bewusst als Korridor formuliert. Der kleinste sinnvolle Beschluss wäre
           kein Großprojekt, sondern ein sauber begrenzter Pilot mit echter Route und echtem Wissen.
+          Es sind grobe KI-basierte Kostenschätzungen, damit der Vorstand eine erste Orientierung
+          bekommt, wohin die Reise ungefähr gehen könnte.
         </p>
       </div>
 
@@ -2340,13 +2389,13 @@ export function App() {
         </div>
       </section>
 
-      <AvatarLab />
-
       <ModuleIdeas />
 
       <ContextStory />
 
       <BuildathonPrototypeSection />
+
+      <AvatarLab />
 
       <section id="process" className="process-section">
         <div className="section-heading">
