@@ -10,6 +10,8 @@ Das Repository knüpft an den AI-Hackathon im Museum Tiroler Bauernhöfe an und 
 
 - [AI Collective](https://aicollective.at)
 - [Hack am Hof](https://aicollective.at/hack-am-hof)
+- [Webdemo auf GitHub Pages](https://scoinnotec.github.io/aicollective-hack-am-hof/)
+- [Projekt-Wiki](https://github.com/scoinnotec/aicollective-hack-am-hof/wiki)
 
 ## Was man sieht
 
