@@ -4,22 +4,48 @@ Pitchbarer Webapp-/PWA-Prototyp für eine ortsbezogene Erlebnis- und Betriebspla
 
 Das Repository knüpft an den AI-Hackathon im Museum Tiroler Bauernhöfe an und führt den entstandenen Projektstand als lauffähige Webdemo weiter.
 
+![Hack am Hof Buildathon](apps/web/public/pitch-images/hack-am-hof.jpeg.jpg)
+
 ## Kontext
 
 - [AI Collective](https://aicollective.at)
 - [Hack am Hof](https://aicollective.at/hack-am-hof)
 
+## Was man sieht
+
+Der Prototyp zeigt keine einzelne Museums-App, sondern ein wiederverwendbares System aus Hofpass, Karte, Guide-Wissen, Zielgruppenlayern und späteren Partnerpaketen.
+
+![Lageplan Museum Tiroler Bauernhöfe](apps/web/public/lageplan.webp)
+
+### Kernmodule
+
+| Modul | Bild | Kurzbeschreibung |
+| --- | --- | --- |
+| Schulklassenmission | ![Schulklassenmission](apps/web/public/pitch-images/schulklassenmission.png) | Hofpass-Pilot mit Rollen, QR-Stationen, Karte, Aufgaben und Abschluss. |
+| Guide Studio | ![Guide Studio](apps/web/public/pitch-images/contentmodell-guide-studio.png) | Guide-Wissen, Quellen, Fotos, Audio und Freigaben werden gesammelt, bevor daraus Missionen entstehen. |
+| Foto & Feier | ![Feier- und Fotomodul](apps/web/public/pitch-images/feier-fotomodul.png) | Fotospots, freie Trauung, Taufe, Erinnerungsprodukt und Ambassador-Logik. |
+| Schmankerl-Route | ![Tiroler-Schmankerl-Route](apps/web/public/pitch-images/tiroler-schmankerl-route.png) | Kulinarik, Hofgeschichten, Rezeptpass, Audio und Abschluss im Gasthaus. |
+| Rattenberg-Brücke | ![Rattenberg-Busbrücke](apps/web/public/pitch-images/rattenberg-busbruecke.png) | Kombipaket aus Glasstadt, Museum, Schmankerl, Erinnerungsfoto und planbarer Rückfahrt. |
+| Zeitreise Foto | ![KI-Charaktere und Souvenir](apps/web/public/pitch-images/ki-charaktere-souvenir.png) | Besucher:innen werden Teil einer historischen Hofszene, später mit Druck-/Souvenirprozess. |
+
+### Weitere Ausbaupfade
+
+![HofSpur im Sommer](apps/web/public/pitch-images/hofspur-im-sommer.png)
+
+- Familienmodus, Pensionistenmodus, Chroniker-Modus und interner Betrieb.
+- Bauernhaus-Inspiration für hochwertige Umbau- und Handwerksfragen.
+- Kräuterpfad, Living History, Markt und Handwerk, Oldtimer-Tag, VR/AR-Zeitreise und weitere bewusst geparkte Ideen.
+- Medien- und Audiofundament für QR-Hinweise, Guide-Joker und spätere PWA-/App-Erweiterung.
+
 ## Ziel
 
-In ca. drei Stunden soll ein vorzeigbarer Prototyp entstehen:
+Der aktuelle Stand soll vor allem eine kleine, klare Pilotentscheidung ermöglichen:
 
-- kleine Pitch-Website,
-- interaktive Museums-Karte,
-- Zielgruppenmodi für Schulklassen, Hochzeiten, Kulinarik, Kräuter/Natur, Familien, Pensionisten, Chroniker und interne Wartung,
-- Foto-/Avatar-Modul als KI-Zukunftsfeature,
-- Guide Studio für Fachwissen, Dokumente und eingesprochene Geschichten,
-- Ideenparkplatz für spätere Formate wie Geocaching, FPV-Events und Creator-Walks,
-- saubere Grundlage für spätere PWA/App-Erweiterung.
+- eine reale Schulroute mit 4 bis 5 Stationen,
+- einen Guide-Studio-Workshop mit Museum, Guides und Verein,
+- einen klickbaren Hofpass-Flow mit Rollen, QR-Start, Karte und Feedback,
+- erste Partnerpakete als nächster Ausbau, etwa Foto/Feier und Schmankerl-Route,
+- klare Trennung zwischen Pilot, nächstem Ausbau und Ideenpool.
 
 ## Stack
 
