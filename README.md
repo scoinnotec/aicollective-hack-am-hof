@@ -10,6 +10,10 @@ Das Repository knüpft an den AI-Hackathon im Museum Tiroler Bauernhöfe an und 
 
 - [AI Collective](https://aicollective.at)
 - [Hack am Hof](https://aicollective.at/hack-am-hof)
+- [Offizielle Website Museum Tiroler Bauernhöfe](https://www.museum-tb.at)
+- [Museum Tiroler Bauernhöfe bei Wikipedia](https://de.wikipedia.org/wiki/Museum_Tiroler_Bauernhöfe)
+- [Museum Tiroler Bauernhöfe im Alpbachtal](https://www.alpbachtal.at/de/entdecke-das-alpbachtal/kultur-und-brauchtum/kulturelle-perlen-der-region/museum-tiroler-bauernhoefe)
+- [Museum Tiroler Bauernhöfe bei Tripadvisor](https://www.tripadvisor.at/Attraction_Review-g811449-d3605911-Reviews-Museum_of_Tyrolean_Farmsteads-Kramsach_Tirol_Austrian_Alps.html)
 - [Webdemo auf GitHub Pages](https://scoinnotec.github.io/aicollective-hack-am-hof/)
 - [Projekt-Wiki](https://github.com/scoinnotec/aicollective-hack-am-hof/wiki)
 
