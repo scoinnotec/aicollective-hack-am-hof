@@ -5,23 +5,23 @@ Basis: Review-Dokument `2026-05-25_Hack-am-Hof-Iteration-I-Review.md`
 
 ## Ziel dieser Paketplanung
 
-Die Optimierungen sollen nicht als grosser Umbau passieren, sondern in kleinen, kontrollierbaren Paketen. Jedes Paket soll einzeln besprochen, umgesetzt, getestet und bei Bedarf verworfen oder angepasst werden koennen.
+Die Optimierungen sollen nicht als großer Umbau passieren, sondern in kleinen, kontrollierbaren Paketen. Jedes Paket soll einzeln besprochen, umgesetzt, getestet und bei Bedarf verworfen oder angepasst werden können.
 
-Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/Datenfundament, dann Ausbauideen.
+Leitprinzip: Erst Entscheidungsschärfe, dann Pitch-Dramaturgie, dann Produkt-/Datenfundament, dann Ausbauideen.
 
-## Prioritaetslogik
+## Prioritätslogik
 
-- **P0**: Muss vor der naechsten ernsthaften Praesentation oder Vorstandsrunde passieren.
-- **P1**: Wichtig fuer einen belastbaren Pilot, aber nicht zwingend fuer die erste gekuerzte Pitch-Version.
-- **P2**: Wichtig fuer Plattformausbau, Foerderlogik oder echte Produktentwicklung.
+- **P0**: Muss vor der nächsten ernsthaften Präsentation oder Vorstandsrunde passieren.
+- **P1**: Wichtig für einen belastbaren Pilot, aber nicht zwingend für die erste gekürzte Pitch-Version.
+- **P2**: Wichtig für Plattformausbau, Förderlogik oder echte Produktentwicklung.
 - **P3**: Ideenparkplatz, erst nach Validierung des Piloten relevant.
 
-## Paket 1 - Pilotentscheidung schaerfen
+## Paket 1 - Pilotentscheidung schärfen
 
-**Prioritaet:** P0  
-**Groesse:** klein  
-**Abhaengigkeiten:** keine  
-**Ziel:** Der Pitch soll nicht mehr wie eine Gesamtausbauentscheidung wirken, sondern auf einen kleinen, entscheidbaren Pilot fuehren.
+**Priorität:** P0  
+**Größe:** klein  
+**Abhängigkeiten:** keine  
+**Ziel:** Der Pitch soll nicht mehr wie eine Gesamtausbauentscheidung wirken, sondern auf einen kleinen, entscheidbaren Pilot führen.
 
 ### Inhalt
 
@@ -33,8 +33,8 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
   - Rollen und Aufgaben,
   - Guide-Studio-Workshop,
   - Feedbackauswertung.
-- Alle anderen Ideen sichtbar als `spaeter`, `Partnerpaket` oder `Ideenpool` markieren.
-- Kostenkorridor fuer genau diesen Pilot konkretisieren.
+- Alle anderen Ideen sichtbar als `später`, `Partnerpaket` oder `Ideenpool` markieren.
+- Kostenkorridor für genau diesen Pilot konkretisieren.
 
 ### Nicht enthalten
 
@@ -45,21 +45,21 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 ### Definition of Done
 
 - Es gibt einen kurzen Abschnitt `Beschlussvorschlag`.
-- Der Vorstand kann mit Ja/Nein ueber den naechsten Schritt entscheiden.
-- Der Unterschied zwischen Pilot und spaeterem Ausbau ist eindeutig.
+- Der Vorstand kann mit Ja/Nein über den nächsten Schritt entscheiden.
+- Der Unterschied zwischen Pilot und späterem Ausbau ist eindeutig.
 
 ## Paket 2 - 5-Minuten-Pitchdramaturgie bauen
 
-**Prioritaet:** P0  
-**Groesse:** klein bis mittel  
-**Abhaengigkeiten:** Paket 1  
-**Ziel:** Eine kompakte Erzaehlreihenfolge fuer Live-Pitch und Vorstand.
+**Priorität:** P0  
+**Größe:** klein bis mittel  
+**Abhängigkeiten:** Paket 1  
+**Ziel:** Eine kompakte Erzählreihenfolge für Live-Pitch und Vorstand.
 
 ### Inhalt
 
 - Pitch auf 5 Kernschritte reduzieren:
   1. Problem.
-  2. Loesung.
+  2. Lösung.
   3. Pilotflow.
   4. Nutzen.
   5. Beschluss.
@@ -69,49 +69,49 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 
 ### Nicht enthalten
 
-- Keine komplette Seitenaenderung.
+- Keine komplette Seitenänderung.
 - Keine neue Funktion.
 
 ### Definition of Done
 
-- Es gibt ein Demo-Script fuer 5 Minuten.
+- Es gibt ein Demo-Script für 5 Minuten.
 - Die Live-Demo springt nicht wahllos durch die Seite.
 - Jeder gezeigte Abschnitt beantwortet eine konkrete Pitchfrage.
 
 ## Paket 3 - Seitenstruktur in drei Ebenen ordnen
 
-**Prioritaet:** P0  
-**Groesse:** mittel  
-**Abhaengigkeiten:** Paket 1 und 2  
-**Ziel:** Die bestehende Seite soll auf einen Blick zwischen Pilot, naechstem Ausbau und Ideenpool unterscheiden.
+**Priorität:** P0  
+**Größe:** mittel  
+**Abhängigkeiten:** Paket 1 und 2  
+**Ziel:** Die bestehende Seite soll auf einen Blick zwischen Pilot, nächstem Ausbau und Ideenpool unterscheiden.
 
 ### Inhalt
 
-- Sichtbare Labels einfuehren:
+- Sichtbare Labels einführen:
   - `Pilot jetzt`,
-  - `Naechster Ausbau`,
+  - `Nächster Ausbau`,
   - `Ideenpool`,
-  - `Spaetere Plattform`.
+  - `Spätere Plattform`.
 - Erweiterungsformate wie FPV, LARP, XR, Oldtimer, Tracht als Ideenpool gruppieren.
 - Schulroute, Guide Studio und QR-Mission nach vorne ziehen.
 - Partnerpakete wie Foto/Feier, Schmankerl, Rattenberg als zweite Ebene darstellen.
 
 ### Nicht enthalten
 
-- Keine inhaltliche Loeschung.
+- Keine inhaltliche Löschung.
 - Keine neue Datenbankstruktur.
 
 ### Definition of Done
 
 - Ein Erstbetrachter versteht innerhalb von 60 Sekunden, was jetzt entschieden werden soll.
-- Spaetere Ideen wirken nicht mehr wie Teil des Sofortumfangs.
+- Spätere Ideen wirken nicht mehr wie Teil des Sofortumfangs.
 - Die Seite bleibt als Gesamtvision nutzbar.
 
 ## Paket 4 - Produktbegriffe vereinheitlichen
 
-**Prioritaet:** P0  
-**Groesse:** klein  
-**Abhaengigkeiten:** Paket 1  
+**Priorität:** P0  
+**Größe:** klein  
+**Abhängigkeiten:** Paket 1  
 **Ziel:** Begriffe sollen nicht zwischen Projektname, Appname, Modulname und Pitchbegriff verschwimmen.
 
 ### Inhalt
@@ -139,9 +139,9 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 
 ## Paket 5 - Klickdummy fokussieren
 
-**Prioritaet:** P1  
-**Groesse:** mittel  
-**Abhaengigkeiten:** Paket 2  
+**Priorität:** P1  
+**Größe:** mittel  
+**Abhängigkeiten:** Paket 2  
 **Ziel:** Der Klickdummy soll den Pilotflow klarer zeigen und nicht wie ein kompletter App-Produktumfang wirken.
 
 ### Inhalt
@@ -154,26 +154,26 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 
 ### Nicht enthalten
 
-- Kein echter Mehrgeraete-Gruppenraum.
+- Kein echter Mehrgeräte-Gruppenraum.
 - Keine echte QR-/NFC-Funktion.
 
 ### Definition of Done
 
-- Eine Person kann den Flow ohne Erklaerung durchklicken.
+- Eine Person kann den Flow ohne Erklärung durchklicken.
 - Der Flow passt zur Pilotentscheidung.
 - Der Klickdummy zeigt nicht mehr zu viele parallele Produktversprechen.
 
 ## Paket 6 - Karte auf Pilotroute verdichten
 
-**Prioritaet:** P1  
-**Groesse:** mittel  
-**Abhaengigkeiten:** Paket 1  
-**Ziel:** Die Karte soll im Pitch zuerst eine reale Pilotroute zeigen, nicht alle Moeglichkeiten gleichzeitig.
+**Priorität:** P1  
+**Größe:** mittel  
+**Abhängigkeiten:** Paket 1  
+**Ziel:** Die Karte soll im Pitch zuerst eine reale Pilotroute zeigen, nicht alle Möglichkeiten gleichzeitig.
 
 ### Inhalt
 
 - Schulmodus initial auf 4 bis 5 Pilotstationen begrenzen.
-- Hoefe weiterhin sichtbar, aber weniger dominant.
+- Höfe weiterhin sichtbar, aber weniger dominant.
 - Pilotroute visuell hervorheben.
 - Kartenpunkte mit klaren Labels versehen.
 - Marker-Accessibility verbessern.
@@ -186,34 +186,34 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 ### Definition of Done
 
 - Die Schulroute ist sofort erkennbar.
-- Detail-Drawer erklaert pro Station Aufgabe, Wissen und Nutzen.
+- Detail-Drawer erklärt pro Station Aufgabe, Wissen und Nutzen.
 - Andere Zielgruppenlayer bleiben erreichbar, aber nicht im Vordergrund.
 
 ## Paket 7 - Guide-Studio-Fundament konkretisieren
 
-**Prioritaet:** P1  
-**Groesse:** mittel  
-**Abhaengigkeiten:** Paket 4  
+**Priorität:** P1  
+**Größe:** mittel  
+**Abhängigkeiten:** Paket 4  
 **Ziel:** Das Guide Studio soll weniger wie ein UI-Mockup und mehr wie ein fachlicher Arbeitsprozess wirken.
 
 ### Inhalt
 
-- Contentstatus einfuehren:
+- Contentstatus einführen:
   - Entwurf,
-  - fachlich geprueft,
+  - fachlich geprüft,
   - freigegeben,
   - gesperrt,
   - unsicher.
 - Minimalfelder definieren:
   - Hof,
-  - Ort/Gebaeude/Raum/Objekt,
+  - Ort/Gebäude/Raum/Objekt,
   - Aussage,
   - Quelle,
   - Altersstufe,
   - Zielgruppe,
   - Freigabestatus.
 - In der UI zeigen, dass Upload und Aufnahme derzeit Prototyp sind.
-- Beispiel fuer eine echte Station mit Fakten, Anekdote, Quelle und Freigabe anlegen.
+- Beispiel für eine echte Station mit Fakten, Anekdote, Quelle und Freigabe anlegen.
 
 ### Nicht enthalten
 
@@ -223,20 +223,20 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 
 ### Definition of Done
 
-- Museum/Guides verstehen, was sie liefern muessen.
+- Museum/Guides verstehen, was sie liefern müssen.
 - KI-Generierung wirkt klar an Freigaben gebunden.
-- Der Contentprozess ist als Vorbedingung fuer die App sichtbar.
+- Der Contentprozess ist als Vorbedingung für die App sichtbar.
 
 ## Paket 8 - Risiken und Vorstandsfragen sichtbar machen
 
-**Prioritaet:** P1  
-**Groesse:** klein  
-**Abhaengigkeiten:** Paket 1  
+**Priorität:** P1  
+**Größe:** klein  
+**Abhängigkeiten:** Paket 1  
 **Ziel:** Der Pitch soll Vertrauen schaffen, indem Risiken kontrolliert benannt werden.
 
 ### Inhalt
 
-- Kurzer Abschnitt `Was vor dem Pilot geklaert wird`.
+- Kurzer Abschnitt `Was vor dem Pilot geklärt wird`.
 - Risiken aufnehmen:
   - historische Freigabe,
   - Datenschutz/Kinderfotos,
@@ -248,34 +248,34 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 
 ### Nicht enthalten
 
-- Kein vollstaendiges Datenschutzkonzept.
+- Kein vollständiges Datenschutzkonzept.
 - Keine Rechtsberatung.
 
 ### Definition of Done
 
 - Kritische Fragen werden nicht versteckt.
 - Der Vorstand sieht, dass der Pilot bewusst begrenzt ist.
-- Risiken blockieren nicht den Pilot, sondern werden als Arbeitspunkte gefuehrt.
+- Risiken blockieren nicht den Pilot, sondern werden als Arbeitspunkte geführt.
 
-## Paket 9 - Erfolgsmessung fuer Pilot definieren
+## Paket 9 - Erfolgsmessung für Pilot definieren
 
-**Prioritaet:** P1  
-**Groesse:** klein  
-**Abhaengigkeiten:** Paket 1  
-**Ziel:** Nach dem Pilot soll objektiver entschieden werden koennen, ob ein Ausbau sinnvoll ist.
+**Priorität:** P1  
+**Größe:** klein  
+**Abhängigkeiten:** Paket 1  
+**Ziel:** Nach dem Pilot soll objektiver entschieden werden können, ob ein Ausbau sinnvoll ist.
 
 ### Inhalt
 
 - 5 bis 8 Erfolgskriterien definieren:
   - Anzahl getesteter Gruppen,
   - Abschlussquote,
-  - Verstaendlichkeit,
+  - Verständlichkeit,
   - Guide-/Lehrerfeedback,
   - technische Probleme,
   - Contentaufwand,
   - Wiederverwendungswert,
   - Partnerinteresse.
-- Feedbackfragen fuer Lehrperson, Guide und Besuchergruppe skizzieren.
+- Feedbackfragen für Lehrperson, Guide und Besuchergruppe skizzieren.
 - Auswertung als Teil des Pilotumfangs benennen.
 
 ### Nicht enthalten
@@ -286,19 +286,19 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 ### Definition of Done
 
 - Der Pilot hat messbare Ziele.
-- Ausbauentscheidung basiert nicht nur auf Bauchgefuehl.
+- Ausbauentscheidung basiert nicht nur auf Bauchgefühl.
 - Erfolg und Abbruchkriterien sind klar.
 
 ## Paket 10 - Technisches Datenmodell skizzieren
 
-**Prioritaet:** P2  
-**Groesse:** mittel  
-**Abhaengigkeiten:** Paket 7  
-**Ziel:** Vor echter Entwicklung soll klar sein, welche Daten spaeter gepflegt werden.
+**Priorität:** P2  
+**Größe:** mittel  
+**Abhängigkeiten:** Paket 7  
+**Ziel:** Vor echter Entwicklung soll klar sein, welche Daten später gepflegt werden.
 
 ### Inhalt
 
-- Tabellen/Entitaeten skizzieren:
+- Tabellen/Entitäten skizzieren:
   - `Location`,
   - `Building`,
   - `Room`,
@@ -311,8 +311,8 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
   - `Release`,
   - `Feedback`.
 - Beziehungen darstellen.
-- Pflichtfelder fuer Pilot markieren.
-- Spaetere Felder fuer Plattform markieren.
+- Pflichtfelder für Pilot markieren.
+- Spätere Felder für Plattform markieren.
 
 ### Nicht enthalten
 
@@ -321,27 +321,27 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 
 ### Definition of Done
 
-- Entwickler koennen aus dem Modell eine erste technische Architektur ableiten.
-- Museum/Guides koennen pruefen, ob das Modell fachlich passt.
+- Entwickler können aus dem Modell eine erste technische Architektur ableiten.
+- Museum/Guides können prüfen, ob das Modell fachlich passt.
 - MVP- und Plattformdaten sind getrennt.
 
 ## Paket 11 - Performance und technische Hygiene
 
-**Prioritaet:** P2  
-**Groesse:** klein bis mittel  
-**Abhaengigkeiten:** keine, aber sinnvoll nach Paket 3  
-**Ziel:** Die App soll fuer mobile Vor-Ort-Nutzung vorbereitet werden.
+**Priorität:** P2  
+**Größe:** klein bis mittel  
+**Abhängigkeiten:** keine, aber sinnvoll nach Paket 3  
+**Ziel:** Die App soll für mobile Vor-Ort-Nutzung vorbereitet werden.
 
 ### Inhalt
 
 - Bundle-Hinweis analysieren.
-- Code-Splitting fuer schwere Bereiche pruefen:
+- Code-Splitting für schwere Bereiche prüfen:
   - Karte/Leaflet,
   - Modals,
   - Avatar/Fotos,
-  - grosse Datenlisten.
+  - große Datenlisten.
 - Statische Datenmodule fachlich trennen.
-- Basis-Tests fuer kritische Flows ergaenzen.
+- Basis-Tests für kritische Flows ergänzen.
 
 ### Nicht enthalten
 
@@ -350,16 +350,16 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 
 ### Definition of Done
 
-- Build laeuft ohne neue Warnungen oder mit dokumentierter Begruendung.
+- Build läuft ohne neue Warnungen oder mit dokumentierter Begründung.
 - Kritische UI-Flows sind leichter testbar.
 - Der Code ist besser auf echte Pilotentwicklung vorbereitet.
 
 ## Paket 12 - Partnerpakete strukturieren
 
-**Prioritaet:** P2  
-**Groesse:** mittel  
-**Abhaengigkeiten:** Paket 3 und 9  
-**Ziel:** Foto/Feier, Schmankerl und Rattenberg sollen als reale naechste Pakete pruefbar werden.
+**Priorität:** P2  
+**Größe:** mittel  
+**Abhängigkeiten:** Paket 3 und 9  
+**Ziel:** Foto/Feier, Schmankerl und Rattenberg sollen als reale nächste Pakete prüfbar werden.
 
 ### Inhalt
 
@@ -367,14 +367,14 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
   - Feier/Fotopunkt,
   - Schmankerlroute,
   - Rattenberg/Busgruppe.
-- Pro Paket klaeren:
+- Pro Paket klären:
   - Zielgruppe,
   - Partner,
   - Leistung,
   - Buchungslogik,
   - Museumsnutzen,
   - Risiken,
-  - naechster Test.
+  - nächster Test.
 - Alles andere im Ideenpool lassen.
 
 ### Nicht enthalten
@@ -384,16 +384,16 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 
 ### Definition of Done
 
-- Jedes Partnerpaket ist als Gespraechsgrundlage nutzbar.
+- Jedes Partnerpaket ist als Gesprächsgrundlage nutzbar.
 - Der Unterschied zwischen Besucher-App und buchbarem Angebot ist klar.
 - Partnerpakete konkurrieren nicht mehr mit dem Schulpilot.
 
 ## Paket 13 - Ideenpool parken und kuratieren
 
-**Prioritaet:** P3  
-**Groesse:** klein  
-**Abhaengigkeiten:** Paket 3  
-**Ziel:** Gute Ideen bleiben erhalten, stoeren aber nicht die Pilotentscheidung.
+**Priorität:** P3  
+**Größe:** klein  
+**Abhängigkeiten:** Paket 3  
+**Ziel:** Gute Ideen bleiben erhalten, stören aber nicht die Pilotentscheidung.
 
 ### Inhalt
 
@@ -405,9 +405,9 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
   - Premium/Beratung.
 - Jede Idee bekommt Status:
   - `parken`,
-  - `spaeter pruefen`,
+  - `später prüfen`,
   - `nur mit Partner`,
-  - `nicht fuer Pilot`.
+  - `nicht für Pilot`.
 - Im Pitch nur 3 bis 5 Ideen sichtbar hervorheben.
 
 ### Nicht enthalten
@@ -417,19 +417,19 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 ### Definition of Done
 
 - Ideen werden nicht verloren.
-- Der Pitch wirkt nicht ueberladen.
+- Der Pitch wirkt nicht überladen.
 - Der Pilot bleibt priorisiert.
 
 ## Empfohlene Reihenfolge
 
-1. Paket 1 - Pilotentscheidung schaerfen
+1. Paket 1 - Pilotentscheidung schärfen
 2. Paket 2 - 5-Minuten-Pitchdramaturgie bauen
 3. Paket 4 - Produktbegriffe vereinheitlichen
 4. Paket 3 - Seitenstruktur in drei Ebenen ordnen
 5. Paket 5 - Klickdummy fokussieren
 6. Paket 6 - Karte auf Pilotroute verdichten
 7. Paket 8 - Risiken und Vorstandsfragen sichtbar machen
-8. Paket 9 - Erfolgsmessung fuer Pilot definieren
+8. Paket 9 - Erfolgsmessung für Pilot definieren
 9. Paket 7 - Guide-Studio-Fundament konkretisieren
 10. Paket 10 - Technisches Datenmodell skizzieren
 11. Paket 12 - Partnerpakete strukturieren
@@ -441,30 +441,30 @@ Leitprinzip: Erst Entscheidungsschaerfe, dann Pitch-Dramaturgie, dann Produkt-/D
 Pro Paket sollte nur eine kleine Entscheidung getroffen werden:
 
 - **Startfrage:** Was soll nach diesem Paket klarer sein?
-- **Aenderungsumfang:** Welche Dateien oder Inhalte werden angefasst?
+- **Änderungsumfang:** Welche Dateien oder Inhalte werden angefasst?
 - **Review:** Ist der Pitch danach klarer oder nur voller?
 - **Stop-Kriterium:** Was wird bewusst nicht gemacht?
 
-## Arbeitsregel fuer jede Phase
+## Arbeitsregel für jede Phase
 
 Vor jeder Umsetzung wird kurz dokumentiert:
 
-- **Was ich in dieser Phase aendern wuerde:** konkrete sichtbare und inhaltliche Aenderungen.
-- **Warum diese Aenderung jetzt dran ist:** Bezug zum Paket und zur Entscheidungsschaerfe.
-- **Was bewusst nicht geaendert wird:** Schutz vor Scope-Creep.
+- **Was ich in dieser Phase ändern würde:** konkrete sichtbare und inhaltliche Änderungen.
+- **Warum diese Änderung jetzt dran ist:** Bezug zum Paket und zur Entscheidungsschärfe.
+- **Was bewusst nicht geändert wird:** Schutz vor Scope-Creep.
 
 Nach jeder sichtbaren Umsetzung wird kurz dokumentiert:
 
-- **Sichtbar umgesetzt:** welche UI-, Text-, Struktur- oder Doku-Aenderung jetzt im Projekt sichtbar ist.
-- **Pruefung:** wo die Aenderung kontrolliert wurde, zum Beispiel Browser, Build oder Doku-Lesetest.
-- **Naechster kleiner Schritt:** welches Paket oder welcher Teilbereich als naechstes sinnvoll ist.
+- **Sichtbar umgesetzt:** welche UI-, Text-, Struktur- oder Doku-Änderung jetzt im Projekt sichtbar ist.
+- **Prüfung:** wo die Änderung kontrolliert wurde, zum Beispiel Browser, Build oder Doku-Lesetest.
+- **Nächster kleiner Schritt:** welches Paket oder welcher Teilbereich als nächstes sinnvoll ist.
 
-Diese Rueckmeldung soll pro Phase knapp bleiben, aber konkret genug sein, damit jederzeit nachvollziehbar ist, was geplant war und was wirklich sichtbar umgesetzt wurde.
+Diese Rückmeldung soll pro Phase knapp bleiben, aber konkret genug sein, damit jederzeit nachvollziehbar ist, was geplant war und was wirklich sichtbar umgesetzt wurde.
 
 ## Erste sinnvolle Arbeitseinheit
 
-Als naechster konkreter Schritt empfiehlt sich **Paket 1**:
+Als nächster konkreter Schritt empfiehlt sich **Paket 1**:
 
-> Aus der aktuellen Vision einen knappen Beschlussvorschlag fuer einen Schulklassen-Pilot machen.
+> Aus der aktuellen Vision einen knappen Beschlussvorschlag für einen Schulklassen-Pilot machen.
 
-Das ist der groesste Hebel, weil alle weiteren Pakete davon abhaengen. Solange der Pilotumfang nicht sauber abgegrenzt ist, werden UI, Texte, Technik und Partnerideen automatisch weiter auseinanderlaufen.
+Das ist der größte Hebel, weil alle weiteren Pakete davon abhängen. Solange der Pilotumfang nicht sauber abgegrenzt ist, werden UI, Texte, Technik und Partnerideen automatisch weiter auseinanderlaufen.

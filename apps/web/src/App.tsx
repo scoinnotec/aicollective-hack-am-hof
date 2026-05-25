@@ -206,6 +206,30 @@ const projectEstimates = [
   },
 ];
 
+const pilotDecisionScope = [
+  {
+    label: "Pilot jetzt",
+    title: "Schulroute als Hofpass-Mission",
+    text: "Eine reale Route mit 4 bis 5 Stationen, QR-/Code-Start, Rollen, Aufgaben und kurzer Feedbackauswertung.",
+  },
+  {
+    label: "Vorbereitung",
+    title: "Guide-Studio-Workshop",
+    text: "Guides, Verein und Museum liefern gesichertes Wissen, Quellen, Anekdoten, Fotos und Freigaben für genau diese Route.",
+  },
+  {
+    label: "Nicht Teil des Beschlusses",
+    title: "Vollausbau und Zusatzmodule",
+    text: "Foto-/Feierpakete, Schmankerlroute, Buchung, XR, FPV, LARP und weitere Museen bleiben sichtbar, aber als spätere Ausbaustufen.",
+  },
+];
+
+const pilotBoundaries = [
+  "Ja/Nein zum begrenzten Schulklassen-Pilot",
+  "kein Beschluss über eine fertige Gesamtplattform",
+  "Kostenkorridor und Verantwortlichkeiten erst für diesen Pilot schärfen",
+];
+
 const technicalNotes = [
   {
     title: "Start als Webapp/PWA",
@@ -523,6 +547,34 @@ function DecisionAndRoadmapSection() {
             </article>
           );
         })}
+      </div>
+
+      <div className="pilot-decision-box">
+        <div className="pilot-decision-box__intro">
+          <div className="section-kicker">Beschlussvorschlag</div>
+          <h3>Freigabe für einen kontrollierbaren Schulklassen-Pilot.</h3>
+          <p>
+            Der Vorstand entscheidet nicht über die ganze Plattform, sondern über einen testbaren
+            nächsten Schritt mit echtem Museumswissen, klarer Route und messbarem Feedback.
+          </p>
+          <ul>
+            {pilotBoundaries.map((boundary) => (
+              <li key={boundary}>
+                <ShieldCheck size={17} />
+                <span>{boundary}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="pilot-decision-box__grid">
+          {pilotDecisionScope.map((item) => (
+            <article key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.title}</strong>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
       </div>
 
       <div className="decision-workflow">
@@ -1691,15 +1743,23 @@ export function App() {
               <span>Besucher zu Botschaftern machen.</span>
             </h2>
             <p>
-              Diese Seite zeigt, wie aus Höfen, Guide-Wissen, Fotos und Partnern ein System für
-              Schule, Feiern, Gruppenreisen, Kulinarik und Betrieb werden kann.
+              Diese Seite führt zuerst zu einer kleinen Entscheidung: eine Schulroute als Hofpass,
+              ein Guide-Studio-Workshop und eine Auswertung. Alles Weitere bleibt Ausbau.
             </p>
+            <div className="hero-decision-card" aria-label="Beschlussvorschlag">
+              <span>Beschlussvorschlag</span>
+              <strong>Freigabe für einen begrenzten Schulklassen-Pilot</strong>
+              <p>
+                4 bis 5 Stationen, QR-/Code-Start, Rollen, Aufgaben, Guide-Wissen und Feedback.
+                Keine Entscheidung über den Vollausbau.
+              </p>
+            </div>
             <div className="hero-actions">
               <a className="primary-action" href="#app-dummy">
                 App ausprobieren <ArrowRight size={18} />
               </a>
-              <a className="secondary-action" href="#context">
-                Warum das sinnvoll ist
+              <a className="secondary-action" href="#decision">
+                Beschluss ansehen
               </a>
             </div>
           </div>

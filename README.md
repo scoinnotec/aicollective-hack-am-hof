@@ -27,7 +27,7 @@ In ca. drei Stunden soll ein vorzeigbarer Prototyp entstehen:
 
 ## Start
 
-### Fuer Entwickler
+### Für Entwickler
 
 ```bash
 npm install
@@ -53,13 +53,13 @@ Danach liegt die fertige statische Demo unter:
 apps/web/dist/
 ```
 
-### Lokal starten fuer Laien
+### Lokal starten für Laien
 
 Nach dem Build kann die Demo ohne Entwicklungsserver lokal gestartet werden:
 
 - Windows: `start-demo.bat` doppelklicken
-- Windows PowerShell: `start-demo.ps1` ausfuehren
-- macOS/Linux: `./start-demo.sh` ausfuehren
+- Windows PowerShell: `start-demo.ps1` ausführen
+- macOS/Linux: `./start-demo.sh` ausführen
 
 Die Startdateien starten einen kleinen lokalen Server unter:
 
@@ -67,13 +67,13 @@ Die Startdateien starten einen kleinen lokalen Server unter:
 http://127.0.0.1:8088/
 ```
 
-Voraussetzung fuer den lokalen Laienstart ist Python. Wenn Python fehlt, zeigen die Startdateien eine verstaendliche Meldung.
+Voraussetzung für den lokalen Laienstart ist Python. Wenn Python fehlt, zeigen die Startdateien eine verständliche Meldung.
 
-### Online ueber GitHub Pages
+### Online über GitHub Pages
 
-Das Projekt ist fuer GitHub Pages vorbereitet. Beim Push auf `main` baut die GitHub Action `.github/workflows/deploy-pages.yml` die Webapp und veroeffentlicht `apps/web/dist`.
+Das Projekt ist für GitHub Pages vorbereitet. Beim Push auf `main` baut die GitHub Action `.github/workflows/deploy-pages.yml` die Webapp und veröffentlicht `apps/web/dist`.
 
-Fuer das Repository:
+Für das Repository:
 
 ```text
 https://github.com/scoinnotec/aicollective-hack-am-hof.git

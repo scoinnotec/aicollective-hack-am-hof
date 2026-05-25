@@ -11,11 +11,11 @@ if (-not (Test-Path $Index)) {
   Write-Host "Die fertige Demo wurde noch nicht gefunden:" -ForegroundColor Yellow
   Write-Host $Index
   Write-Host ""
-  Write-Host "Bitte zuerst im Projektordner ausfuehren:"
+  Write-Host "Bitte zuerst im Projektordner ausführen:"
   Write-Host "  npm install"
   Write-Host "  npm run build"
   Write-Host ""
-  Read-Host "Enter druecken zum Beenden"
+  Read-Host "Enter drücken zum Beenden"
   exit 1
 }
 
@@ -36,9 +36,9 @@ if (Get-Command py -ErrorAction SilentlyContinue) {
 if (-not $PythonCommand) {
   Write-Host ""
   Write-Host "Python wurde nicht gefunden." -ForegroundColor Yellow
-  Write-Host "Installiere Python oder oeffne die Online-Version ueber GitHub Pages."
+  Write-Host "Installiere Python oder öffne die Online-Version über GitHub Pages."
   Write-Host ""
-  Read-Host "Enter druecken zum Beenden"
+  Read-Host "Enter drücken zum Beenden"
   exit 1
 }
 
@@ -46,7 +46,7 @@ Write-Host ""
 Write-Host "Hack am Hof Demo startet lokal:"
 Write-Host "  $Url"
 Write-Host ""
-Write-Host "Dieses Fenster offen lassen. Zum Beenden Strg+C druecken."
+Write-Host "Dieses Fenster offen lassen. Zum Beenden Strg+C drücken."
 Write-Host ""
 
 Start-Process $Url

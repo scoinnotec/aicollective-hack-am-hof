@@ -12,7 +12,7 @@ if [ ! -f "$INDEX_FILE" ]; then
   echo "Die fertige Demo wurde noch nicht gefunden:"
   echo "$INDEX_FILE"
   echo ""
-  echo "Bitte zuerst im Projektordner ausfuehren:"
+  echo "Bitte zuerst im Projektordner ausführen:"
   echo "  npm install"
   echo "  npm run build"
   echo ""
@@ -26,7 +26,7 @@ elif command -v python >/dev/null 2>&1; then
 else
   echo ""
   echo "Python wurde nicht gefunden."
-  echo "Installiere Python oder oeffne die Online-Version ueber GitHub Pages."
+  echo "Installiere Python oder öffne die Online-Version über GitHub Pages."
   echo ""
   exit 1
 fi
@@ -35,7 +35,7 @@ echo ""
 echo "Hack am Hof Demo startet lokal:"
 echo "  $URL"
 echo ""
-echo "Dieses Terminal offen lassen. Zum Beenden Strg+C druecken."
+echo "Dieses Terminal offen lassen. Zum Beenden Strg+C drücken."
 echo ""
 
 if command -v open >/dev/null 2>&1; then

@@ -1,6 +1,6 @@
-# Bildprompts fuer Pitch-Fotos
+# Bildprompts für Pitch-Fotos
 
-Diese Prompts sind fuer fotorealistische Pitch-Bilder gedacht. Ziel: echte Situationen im Kontext des Tiroler Hoefemuseums zeigen, nicht generische Symbolbilder. Bitte jeweils ohne lesbaren Text, ohne Logos und ohne erkennbare echten Personen generieren.
+Diese Prompts sind für fotorealistische Pitch-Bilder gedacht. Ziel: echte Situationen im Kontext des Tiroler Höfemuseums zeigen, nicht generische Symbolbilder. Bitte jeweils ohne lesbaren Text, ohne Logos und ohne erkennbare echten Personen generieren.
 
 ## Schulklassenmission
 
@@ -12,9 +12,9 @@ Photorealistic wedding couple and small family group at a historic Tyrolean farm
 
 ## Tiroler-Schmankerl-Route
 
-Photorealistic image of a calm Tyrolean food route inside an open-air farmhouse museum, visitors tasting small portions of Kasspatzln, Kiachl and Pruegeltorte near wooden farmhouses, local musicians in the background, rustic tables, autumn Kirchtag mood, warm natural light, authentic regional cuisine, no readable text, no logos.
+Photorealistic image of a calm Tyrolean food route inside an open-air farmhouse museum, visitors tasting small portions of Kasspatzln, Kiachl and Prügeltorte near wooden farmhouses, local musicians in the background, rustic tables, autumn Kirchtag mood, warm natural light, authentic regional cuisine, no readable text, no logos.
 
-## Kraeuterpfad
+## Kräuterpfad
 
 Photorealistic herb workshop at a Tyrolean farmhouse museum garden, a guide showing alpine herbs to families and adults, wooden farmhouse in the background, small baskets and labelled but unreadable cards, no picking from wild areas, educational and safe mood, spring daylight, no readable text, no logos.
 
@@ -44,7 +44,7 @@ Photorealistic workshop table in a museum office, guides and museum staff sortin
 
 ## Bauernhaus-Inspiration
 
-Photorealistic premium architecture inspiration tour inside an old Tyrolean farmhouse room, architect, craftsperson and homeowner examining timber joints, tiled stove, old door hardware and wood surfaces, elegant but authentic Kitzbuehel farmhouse renovation context, natural light, no readable text, no logos.
+Photorealistic premium architecture inspiration tour inside an old Tyrolean farmhouse room, architect, craftsperson and homeowner examining timber joints, tiled stove, old door hardware and wood surfaces, elegant but authentic Kitzbühel farmhouse renovation context, natural light, no readable text, no logos.
 
 ## Geschichtsmodus
 
@@ -54,7 +54,7 @@ Photorealistic small cultural history group at a Tyrolean farmhouse museum viewp
 
 Photorealistic living history scene at a Tyrolean open-air farmhouse museum, small group of adult roleplayers in historically inspired but realistic rural clothing, museum guide calmly explaining boundaries and sources, wooden farmhouses and meadow in the background, respectful educational atmosphere, not fantasy, not battle, warm natural daylight, no readable text, no logos.
 
-## 3D-Bogenparcours / Jaeger- und Wilderergeschichte
+## 3D-Bogenparcours / Jäger- und Wilderergeschichte
 
 Photorealistic supervised 3D archery experience near a Tyrolean farmhouse museum forest edge, instructor showing safe shooting direction, small group with traditional-looking bows, discreet animal-shaped target in the distance, historic wooden farmhouse nearby, calm educational mood about forest, hunting rules and poaching stories, no action drama, no readable text, no logos.
 

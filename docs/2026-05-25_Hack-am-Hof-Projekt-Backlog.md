@@ -5,83 +5,89 @@ Basis: Review und Optimierungspakete aus Iteration I
 
 ## Backlog-Ziel
 
-Dieser Backlog uebersetzt die Review-Erkenntnisse in kleine, bearbeitbare Tickets. Er ist bewusst nicht nach Ideenbreite sortiert, sondern nach dem Weg zu einem entscheidbaren und danach pilotierbaren Projekt.
+Dieser Backlog übersetzt die Review-Erkenntnisse in kleine, bearbeitbare Tickets. Er ist bewusst nicht nach Ideenbreite sortiert, sondern nach dem Weg zu einem entscheidbaren und danach pilotierbaren Projekt.
 
 ## Statuswerte
 
 - `todo`: noch nicht begonnen
-- `ready`: fachlich klar genug fuer Umsetzung
+- `ready`: fachlich klar genug für Umsetzung
 - `doing`: in Arbeit
-- `review`: umgesetzt, wartet auf Sichtpruefung
-- `done`: umgesetzt und geprueft
-- `parked`: bewusst spaeter
+- `review`: umgesetzt, wartet auf Sichtprüfung
+- `done`: umgesetzt und geprüft
+- `parked`: bewusst später
 
-## Prioritaeten
+## Prioritäten
 
-- `P0`: vor der naechsten Praesentation/Vorstandsrunde
+- `P0`: vor der nächsten Präsentation/Vorstandsrunde
 - `P1`: vor einem echten Pilot
-- `P2`: vor Plattformausbau oder Foerder-/Partnergespraechen
+- `P2`: vor Plattformausbau oder Förder-/Partnergesprächen
 - `P3`: Ideenpool
 
-## Sprint 0 - Entscheidungsschaerfe
+## Sprint 0 - Entscheidungsschärfe
 
-### HAH-001 - Beschlussvorschlag fuer Pilot formulieren
+### HAH-001 - Beschlussvorschlag für Pilot formulieren
 
-**Prioritaet:** P0  
+**Priorität:** P0  
 **Typ:** Pitch / Strategie  
-**Status:** todo  
-**Abhaengigkeit:** keine
+**Status:** done  
+**Abhängigkeit:** keine
 
 **Beschreibung:**  
 Einen kurzen Beschlussvorschlag formulieren, der klar macht, dass nicht der Vollausbau, sondern ein begrenzter Schulklassen-Pilot freigegeben werden soll.
 
 **Akzeptanzkriterien:**
 
-- Beschlussfrage ist in 2 bis 4 Saetzen formulierbar.
+- Beschlussfrage ist in 2 bis 4 Sätzen formulierbar.
 - Umfang nennt Route, Stationen, QR-/Code-Start, Rollen, Guide-Studio-Workshop und Feedbackauswertung.
 - Ausbauideen sind nicht Teil der Freigabe.
 
+**Umsetzung 2026-05-25:**
+
+- Hero enthält einen sichtbaren Beschlussvorschlag für einen begrenzten Schulklassen-Pilot.
+- Entscheidungsabschnitt grenzt Pilot, Vorbereitung und spätere Ausbaustufen sichtbar voneinander ab.
+- Button `Beschluss ansehen` führt direkt zur Beschlusslogik.
+
 ### HAH-002 - Pilotumfang in der Seite sichtbar markieren
 
-**Prioritaet:** P0  
+**Priorität:** P0  
 **Typ:** UI / Content  
-**Status:** todo  
-**Abhaengigkeit:** HAH-001
+**Status:** doing  
+**Abhängigkeit:** HAH-001
 
 **Beschreibung:**  
-Die Seite soll sichtbar zwischen `Pilot jetzt`, `Naechster Ausbau`, `Ideenpool` und `Spaetere Plattform` unterscheiden.
+Die Seite soll sichtbar zwischen `Pilot jetzt`, `Nächster Ausbau`, `Ideenpool` und `Spätere Plattform` unterscheiden.
 
 **Akzeptanzkriterien:**
 
 - Schulroute und Guide Studio sind als Pilotkern erkennbar.
-- Foto/Feier, Schmankerl und Rattenberg sind als naechster Ausbau markiert.
-- FPV, LARP, XR, Oldtimer und aehnliche Formate sind als Ideenpool markiert.
+- Foto/Feier, Schmankerl und Rattenberg sind als nächster Ausbau markiert.
+- FPV, LARP, XR, Oldtimer und ähnliche Formate sind als Ideenpool markiert.
 
 ### HAH-003 - 5-Minuten-Demo-Script schreiben
 
-**Prioritaet:** P0  
+**Priorität:** P0  
 **Typ:** Pitch / Demo  
 **Status:** todo  
-**Abhaengigkeit:** HAH-001
+**Abhängigkeit:** HAH-001
 
 **Beschreibung:**  
-Ein kurzes Script fuer den Live-Pitch erstellen: welche Abschnitte werden gezeigt, welche Klicks werden ausgefuehrt, welche Aussage gehoert dazu.
+Ein kurzes Script für den Live-Pitch erstellen: welche Abschnitte werden gezeigt, welche Klicks werden ausgeführt, welche Aussage gehört dazu.
 
 **Akzeptanzkriterien:**
 
-- Script enthaelt maximal 7 aktive Klicks.
+- Script enthält maximal 7 aktive Klicks.
 - Jeder Klick hat eine Pitch-Aussage.
 - Demo endet mit der Beschlussfrage.
 
 ### HAH-004 - Produktbegriffe vereinheitlichen
 
-**Prioritaet:** P0  
+**Priorität:** P0  
 **Typ:** Content / Produktstrategie  
 **Status:** todo  
-**Abhaengigkeit:** HAH-001
+**Abhängigkeit:** HAH-001
 
 **Beschreibung:**  
-Ein konsistentes Begriffsset einfuehren: `Hack am Hof`, `Hofpass`, `Guide Studio`, `Mission`, `Layer/Modus`, `Partnerpaket`.
+Ein konsistentes Begriffsset einführen: `Hack am Hof`, `Hofpass`, `Guide Studio`, `Mission`, `Layer/Modus`, `Partnerpaket`.
 
 **Akzeptanzkriterien:**
 
@@ -91,44 +97,49 @@ Ein konsistentes Begriffsset einfuehren: `Hack am Hof`, `Hofpass`, `Guide Studio
 
 ## Sprint 1 - Pitch und UI fokussieren
 
-### HAH-005 - Hero auf Pilotentscheidung nachschaerfen
+### HAH-005 - Hero auf Pilotentscheidung nachschärfen
 
-**Prioritaet:** P0  
+**Priorität:** P0  
 **Typ:** UI / Copy  
-**Status:** todo  
-**Abhaengigkeit:** HAH-001, HAH-004
+**Status:** review  
+**Abhängigkeit:** HAH-001, HAH-004
 
 **Beschreibung:**  
-Der Hero soll sofort klarer machen: Es geht um einen kleinen Pilot, nicht um eine sofort vollstaendige Plattform.
+Der Hero soll sofort klarer machen: Es geht um einen kleinen Pilot, nicht um eine sofort vollständige Plattform.
 
 **Akzeptanzkriterien:**
 
-- Headline bleibt stark, aber fuehrt zur Pilotentscheidung.
-- Entscheidungsvorschlag nennt den naechsten konkreten Schritt.
-- Sekundaere Thesen konkurrieren nicht mit der Hauptaussage.
+- Headline bleibt stark, aber führt zur Pilotentscheidung.
+- Entscheidungsvorschlag nennt den nächsten konkreten Schritt.
+- Sekundäre Thesen konkurrieren nicht mit der Hauptaussage.
+
+**Umsetzung 2026-05-25:**
+
+- Hero-Text wurde auf den Pilotentscheid statt auf die Gesamtplattform zugespitzt.
+- Beschlussvorschlag steht direkt im ersten Abschnitt.
 
 ### HAH-006 - Klickdummy auf Schulklassen-Pilot fokussieren
 
-**Prioritaet:** P1  
+**Priorität:** P1  
 **Typ:** UI / Produktflow  
 **Status:** todo  
-**Abhaengigkeit:** HAH-003
+**Abhängigkeit:** HAH-003
 
 **Beschreibung:**  
-Der Klickdummy soll primaer den Schulklassen-Pilot zeigen: Gruppe erstellen, Warteraum, Rollen, Station, Abschluss.
+Der Klickdummy soll primär den Schulklassen-Pilot zeigen: Gruppe erstellen, Warteraum, Rollen, Station, Abschluss.
 
 **Akzeptanzkriterien:**
 
 - Standardpfad ist Schulklasse.
-- Besucher koennen den Flow ohne Erklaerung durchklicken.
+- Besucher können den Flow ohne Erklärung durchklicken.
 - Optionale Modi sind reduziert oder klar als Beispiele markiert.
 
 ### HAH-007 - Smartphone-Prototyp vom Klickdummy abgrenzen
 
-**Prioritaet:** P1  
+**Priorität:** P1  
 **Typ:** UI / Informationsarchitektur  
 **Status:** todo  
-**Abhaengigkeit:** HAH-006
+**Abhängigkeit:** HAH-006
 
 **Beschreibung:**  
 Klarstellen, warum es sowohl Klickdummy als auch Smartphone-Konzeptscreens gibt.
@@ -136,33 +147,33 @@ Klarstellen, warum es sowohl Klickdummy als auch Smartphone-Konzeptscreens gibt.
 **Akzeptanzkriterien:**
 
 - Klickdummy ist als Pilotflow beschriftet.
-- Smartphone-Prototyp ist als spaetere Modulvorschau beschriftet.
-- Redundante Erklaerungen sind reduziert.
+- Smartphone-Prototyp ist als spätere Modulvorschau beschriftet.
+- Redundante Erklärungen sind reduziert.
 
 ### HAH-008 - Kartenansicht auf Pilotroute verdichten
 
-**Prioritaet:** P1  
+**Priorität:** P1  
 **Typ:** UI / Karte  
 **Status:** todo  
-**Abhaengigkeit:** HAH-002
+**Abhängigkeit:** HAH-002
 
 **Beschreibung:**  
-Die Karte soll im Einstieg nicht alle Moeglichkeiten gleich stark zeigen, sondern zuerst die Pilotroute.
+Die Karte soll im Einstieg nicht alle Möglichkeiten gleich stark zeigen, sondern zuerst die Pilotroute.
 
 **Akzeptanzkriterien:**
 
 - 4 bis 5 Pilotstationen sind visuell hervorgehoben.
-- Hoefe bleiben sichtbar, aber zweitrangig.
-- Marker haben klare Labels fuer Barrierefreiheit und QA.
+- Höfe bleiben sichtbar, aber zweitrangig.
+- Marker haben klare Labels für Barrierefreiheit und QA.
 
-## Sprint 2 - Vorstands- und Pilotfaehigkeit
+## Sprint 2 - Vorstands- und Pilotfähigkeit
 
-### HAH-009 - Risikoabschnitt fuer Vorstand ergaenzen
+### HAH-009 - Risikoabschnitt für Vorstand ergänzen
 
-**Prioritaet:** P1  
+**Priorität:** P1  
 **Typ:** Pitch / Governance  
 **Status:** todo  
-**Abhaengigkeit:** HAH-001
+**Abhängigkeit:** HAH-001
 
 **Beschreibung:**  
 Risiken offen benennen und mit Gegenmassnahmen verbinden.
@@ -170,116 +181,116 @@ Risiken offen benennen und mit Gegenmassnahmen verbinden.
 **Akzeptanzkriterien:**
 
 - Historische Freigabe, Datenschutz, Kinderfotos, Netz/Offline und Betrieb sind genannt.
-- Zu jedem Risiko gibt es eine naechste Massnahme.
+- Zu jedem Risiko gibt es eine nächste Maßnahme.
 - Der Abschnitt blockiert den Pilot nicht, sondern macht ihn kontrollierbar.
 
-### HAH-010 - Erfolgsmessung fuer Pilot definieren
+### HAH-010 - Erfolgsmessung für Pilot definieren
 
-**Prioritaet:** P1  
+**Priorität:** P1  
 **Typ:** Projektleitung / Evaluation  
 **Status:** todo  
-**Abhaengigkeit:** HAH-001
+**Abhängigkeit:** HAH-001
 
 **Beschreibung:**  
-Messbare Kriterien festlegen, damit nach dem Pilot ueber Ausbau entschieden werden kann.
+Messbare Kriterien festlegen, damit nach dem Pilot über Ausbau entschieden werden kann.
 
 **Akzeptanzkriterien:**
 
 - 5 bis 8 Erfolgskriterien sind definiert.
-- Feedbackfragen fuer Lehrperson, Guide und Gruppe sind skizziert.
+- Feedbackfragen für Lehrperson, Guide und Gruppe sind skizziert.
 - Abbruch- oder Nachbesserungskriterien sind benannt.
 
 ### HAH-011 - Guide-Studio-Arbeitsprozess konkretisieren
 
-**Prioritaet:** P1  
+**Priorität:** P1  
 **Typ:** Content / Fachprozess  
 **Status:** todo  
-**Abhaengigkeit:** HAH-004
+**Abhängigkeit:** HAH-004
 
 **Beschreibung:**  
-Das Guide Studio soll zeigen, welche Inhalte in welcher Qualitaet gebraucht werden.
+Das Guide Studio soll zeigen, welche Inhalte in welcher Qualität gebraucht werden.
 
 **Akzeptanzkriterien:**
 
-- Contentstatus ist sichtbar: Entwurf, geprueft, freigegeben, gesperrt, unsicher.
-- Minimalfelder fuer Stationen sind dokumentiert.
+- Contentstatus ist sichtbar: Entwurf, geprüft, freigegeben, gesperrt, unsicher.
+- Minimalfelder für Stationen sind dokumentiert.
 - Mindestens ein Beispiel zeigt Fakt, Anekdote, Quelle und Freigabe.
 
-### HAH-012 - Pilotroute fachlich pruefbar machen
+### HAH-012 - Pilotroute fachlich prüfbar machen
 
-**Prioritaet:** P1  
+**Priorität:** P1  
 **Typ:** Museum / Content  
 **Status:** todo  
-**Abhaengigkeit:** HAH-008, HAH-011
+**Abhängigkeit:** HAH-008, HAH-011
 
 **Beschreibung:**  
-Die Route `Ein Winter ohne Supermarkt` so ausarbeiten, dass Museum und Guides sie fachlich pruefen koennen.
+Die Route `Ein Winter ohne Supermarkt` so ausarbeiten, dass Museum und Guides sie fachlich prüfen können.
 
 **Akzeptanzkriterien:**
 
 - Jede Station hat Ort, Aufgabe, historische Aussage und Quelle/Freigabefeld.
-- Sprache ist fuer Schulklasse geeignet.
+- Sprache ist für Schulklasse geeignet.
 - Unsichere Inhalte sind markiert.
 
 ## Sprint 3 - Technisches Fundament
 
-### HAH-013 - Datenmodell fuer Pilot skizzieren
+### HAH-013 - Datenmodell für Pilot skizzieren
 
-**Prioritaet:** P2  
+**Priorität:** P2  
 **Typ:** Architektur  
 **Status:** todo  
-**Abhaengigkeit:** HAH-011
+**Abhängigkeit:** HAH-011
 
 **Beschreibung:**  
-Ein erstes Datenmodell fuer Pilot und spaetere Plattform dokumentieren.
+Ein erstes Datenmodell für Pilot und spätere Plattform dokumentieren.
 
 **Akzeptanzkriterien:**
 
-- Entitaeten sind skizziert: Location, Building, Room, Object, Source, Media, Mission, Role, Task, Release, Feedback.
-- Pflichtfelder fuer Pilot sind markiert.
-- Spaetere Plattformfelder sind getrennt.
+- Entitäten sind skizziert: Location, Building, Room, Object, Source, Media, Mission, Role, Task, Release, Feedback.
+- Pflichtfelder für Pilot sind markiert.
+- Spätere Plattformfelder sind getrennt.
 
 ### HAH-014 - Statische Daten fachlich aufteilen
 
-**Prioritaet:** P2  
+**Priorität:** P2  
 **Typ:** Code / Wartbarkeit  
 **Status:** todo  
-**Abhaengigkeit:** HAH-013
+**Abhängigkeit:** HAH-013
 
 **Beschreibung:**  
-Die grossen statischen Datenmodule in fachliche Bereiche trennen.
+Die großen statischen Datenmodule in fachliche Bereiche trennen.
 
 **Akzeptanzkriterien:**
 
 - Daten sind nach Audiences, MapPoints, Missions, FutureFormats, ModuleIdeas und References getrennt.
 - Keine UI-Funktion geht verloren.
-- Build laeuft.
+- Build läuft.
 
-### HAH-015 - Bundle-Groesse und Code-Splitting pruefen
+### HAH-015 - Bundle-Größe und Code-Splitting prüfen
 
-**Prioritaet:** P2  
+**Priorität:** P2  
 **Typ:** Performance  
 **Status:** todo  
-**Abhaengigkeit:** HAH-014 optional
+**Abhängigkeit:** HAH-014 optional
 
 **Beschreibung:**  
-Den Vite-Hinweis auf grosses JS-Bundle analysieren und sinnvolle Splits pruefen.
+Den Vite-Hinweis auf großes JS-Bundle analysieren und sinnvolle Splits prüfen.
 
 **Akzeptanzkriterien:**
 
-- Leaflet/Karte ist als moeglicher Split bewertet.
+- Leaflet/Karte ist als möglicher Split bewertet.
 - Modals/Future-Formate sind bewertet.
 - Build-Ergebnis ist dokumentiert.
 
 ### HAH-016 - Kritische UI-Flows testen
 
-**Prioritaet:** P2  
+**Priorität:** P2  
 **Typ:** QA  
 **Status:** todo  
-**Abhaengigkeit:** HAH-006, HAH-008
+**Abhängigkeit:** HAH-006, HAH-008
 
 **Beschreibung:**  
-Basis-QA fuer die wichtigsten sichtbaren Flows definieren und ausfuehren.
+Basis-QA für die wichtigsten sichtbaren Flows definieren und ausführen.
 
 **Akzeptanzkriterien:**
 
@@ -287,16 +298,16 @@ Basis-QA fuer die wichtigsten sichtbaren Flows definieren und ausfuehren.
 - Kartenmodus und Detail-Drawer getestet.
 - Avatar-Flow getestet.
 - Guide-Studio-Tabs getestet.
-- Mobile Sichtpruefung dokumentiert.
+- Mobile Sichtprüfung dokumentiert.
 
 ## Sprint 4 - Partnerpakete und Ausbau
 
 ### HAH-017 - Foto-/Feierpaket als Partnerangebot strukturieren
 
-**Prioritaet:** P2  
+**Priorität:** P2  
 **Typ:** Partner / Angebot  
 **Status:** todo  
-**Abhaengigkeit:** HAH-002, HAH-010
+**Abhängigkeit:** HAH-002, HAH-010
 
 **Beschreibung:**  
 Das Foto-/Feiermodul als reales Partnerpaket beschreiben, nicht nur als App-Idee.
@@ -304,34 +315,34 @@ Das Foto-/Feiermodul als reales Partnerpaket beschreiben, nicht nur als App-Idee
 **Akzeptanzkriterien:**
 
 - Zielgruppe, Leistung, Partner, Ablauf und Risiken sind beschrieben.
-- Datenschutz/Einwilligung ist als Klaerungspunkt enthalten.
+- Datenschutz/Einwilligung ist als Klärungspunkt enthalten.
 - Paket ist nicht Teil des Schulpiloten.
 
 ### HAH-018 - Schmankerlroute als Partnerangebot strukturieren
 
-**Prioritaet:** P2  
+**Priorität:** P2  
 **Typ:** Partner / Angebot  
 **Status:** todo  
-**Abhaengigkeit:** HAH-002, HAH-010
+**Abhängigkeit:** HAH-002, HAH-010
 
 **Beschreibung:**  
-Die Schmankerlroute als pruefbares Angebot mit Gastronomie-/Kulinarikbezug formulieren.
+Die Schmankerlroute als prüfbares Angebot mit Gastronomie-/Kulinarikbezug formulieren.
 
 **Akzeptanzkriterien:**
 
 - Zielgruppe, Route, Partner, Angebot und Museumsnutzen sind beschrieben.
 - Kein Buchungssystem wird vorausgesetzt.
-- Naechster Testschritt ist benannt.
+- Nächster Testschritt ist benannt.
 
 ### HAH-019 - Rattenberg-/Busgruppenpaket strukturieren
 
-**Prioritaet:** P2  
+**Priorität:** P2  
 **Typ:** Tourismus / Partner  
 **Status:** todo  
-**Abhaengigkeit:** HAH-002, HAH-010
+**Abhängigkeit:** HAH-002, HAH-010
 
 **Beschreibung:**  
-Rattenberg als Bruecke fuer Busgruppen und Halbtagesausfluege konkretisieren.
+Rattenberg als Brücke für Busgruppen und Halbtagesausflüge konkretisieren.
 
 **Akzeptanzkriterien:**
 
@@ -341,13 +352,13 @@ Rattenberg als Bruecke fuer Busgruppen und Halbtagesausfluege konkretisieren.
 
 ### HAH-020 - Ideenpool kuratieren
 
-**Prioritaet:** P3  
+**Priorität:** P3  
 **Typ:** Strategie / Content  
 **Status:** todo  
-**Abhaengigkeit:** HAH-002
+**Abhängigkeit:** HAH-002
 
 **Beschreibung:**  
-Spaetere Ideen so parken, dass sie erhalten bleiben, aber den Pilot nicht ueberladen.
+Spätere Ideen so parken, dass sie erhalten bleiben, aber den Pilot nicht überladen.
 
 **Akzeptanzkriterien:**
 
@@ -357,77 +368,77 @@ Spaetere Ideen so parken, dass sie erhalten bleiben, aber den Pilot nicht ueberl
 
 ## Sprint 5 - Auslieferung und Laienstart
 
-### HAH-021 - Deployment-Strategie fuer GitHub und lokale Nutzung festlegen
+### HAH-021 - Deployment-Strategie für GitHub und lokale Nutzung festlegen
 
-**Prioritaet:** P1  
+**Priorität:** P1  
 **Typ:** Deployment / Produktverpackung  
 **Status:** done  
-**Abhaengigkeit:** HAH-005
+**Abhängigkeit:** HAH-005
 
 **Beschreibung:**  
-Festlegen, wie das Projekt fuer Laien gestartet werden soll: GitHub Pages, ZIP-Paket mit lokalem Starter oder echte Desktop-App.
+Festlegen, wie das Projekt für Laien gestartet werden soll: GitHub Pages, ZIP-Paket mit lokalem Starter oder echte Desktop-App.
 
 **Akzeptanzkriterien:**
 
-- Es gibt eine klare Empfehlung fuer `online ansehen`, `lokal starten` und `offline weitergeben`.
-- Voraussetzungen sind fuer Laien verstaendlich dokumentiert.
+- Es gibt eine klare Empfehlung für `online ansehen`, `lokal starten` und `offline weitergeben`.
+- Voraussetzungen sind für Laien verständlich dokumentiert.
 - Der Unterschied zwischen Quellcode-Repo und fertigem Demo-Paket ist klar.
 
-### HAH-022 - Statisches Build fuer GitHub Pages vorbereiten
+### HAH-022 - Statisches Build für GitHub Pages vorbereiten
 
-**Prioritaet:** P1  
+**Priorität:** P1  
 **Typ:** Deployment / Build  
 **Status:** done  
-**Abhaengigkeit:** HAH-021
+**Abhängigkeit:** HAH-021
 
 **Beschreibung:**  
-Die Vite-Konfiguration so vorbereiten, dass das Projekt als statische Website auf GitHub Pages oder einem beliebigen Webserver laeuft.
+Die Vite-Konfiguration so vorbereiten, dass das Projekt als statische Website auf GitHub Pages oder einem beliebigen Webserver läuft.
 
 **Akzeptanzkriterien:**
 
-- `npm run build` erzeugt ein veroeffentlichbares `dist`.
-- Asset-Pfade funktionieren fuer GitHub Pages.
-- README erklaert, wie die Seite online gehostet wird.
+- `npm run build` erzeugt ein veröffentlichbares `dist`.
+- Asset-Pfade funktionieren für GitHub Pages.
+- README erklärt, wie die Seite online gehostet wird.
 
-### HAH-023 - Laien-Starter fuer Windows/macOS/Linux erstellen
+### HAH-023 - Laien-Starter für Windows/macOS/Linux erstellen
 
-**Prioritaet:** P2  
+**Priorität:** P2  
 **Typ:** Tooling / Demo-Paket  
 **Status:** done  
-**Abhaengigkeit:** HAH-021, HAH-022
+**Abhängigkeit:** HAH-021, HAH-022
 
 **Beschreibung:**  
-Einfache Startdateien erstellen, damit ein gebautes Demo-Paket lokal mit Doppelklick oder Terminalstart laeuft.
+Einfache Startdateien erstellen, damit ein gebautes Demo-Paket lokal mit Doppelklick oder Terminalstart läuft.
 
 **Akzeptanzkriterien:**
 
-- Windows: `.bat` oder `.ps1` startet einen lokalen Server und oeffnet die Seite.
+- Windows: `.bat` oder `.ps1` startet einen lokalen Server und öffnet die Seite.
 - macOS/Linux: `.sh` startet einen lokalen Server und zeigt die lokale URL.
-- Fehlermeldungen erklaeren, falls Node oder Python fehlt.
-- README enthaelt eine Ein-Klick-/Doppelklick-Anleitung.
+- Fehlermeldungen erklären, falls Node oder Python fehlt.
+- README enthält eine Ein-Klick-/Doppelklick-Anleitung.
 
-### HAH-024 - Optional: echte Desktop-App pruefen
+### HAH-024 - Optional: echte Desktop-App prüfen
 
-**Prioritaet:** P3  
+**Priorität:** P3  
 **Typ:** Packaging / Desktop  
 **Status:** parked  
-**Abhaengigkeit:** HAH-021
+**Abhängigkeit:** HAH-021
 
 **Beschreibung:**  
-Pruefen, ob spaeter eine echte installierbare App mit Tauri oder Electron sinnvoll ist, wenn das Projekt ohne Node/Python auf beliebigen PCs laufen soll.
+Prüfen, ob später eine echte installierbare App mit Tauri oder Electron sinnvoll ist, wenn das Projekt ohne Node/Python auf beliebigen PCs laufen soll.
 
 **Akzeptanzkriterien:**
 
 - Vor- und Nachteile von Tauri und Electron sind dokumentiert.
-- Aufwand, Paketgroesse und Update-Logik sind grob eingeschaetzt.
-- Entscheidung ist erst nach validiertem Pilot noetig.
+- Aufwand, Paketgröße und Update-Logik sind grob eingeschätzt.
+- Entscheidung ist erst nach validiertem Pilot nötig.
 
 ## Erste empfohlene Tickets
 
-1. `HAH-001` - Beschlussvorschlag fuer Pilot formulieren
+1. `HAH-001` - Beschlussvorschlag für Pilot formulieren
 2. `HAH-003` - 5-Minuten-Demo-Script schreiben
 3. `HAH-004` - Produktbegriffe vereinheitlichen
 4. `HAH-002` - Pilotumfang in der Seite sichtbar markieren
-5. `HAH-021` - Deployment-Strategie fuer GitHub und lokale Nutzung festlegen
+5. `HAH-021` - Deployment-Strategie für GitHub und lokale Nutzung festlegen
 
-Diese Tickets bilden die Grundlage. Erst danach lohnt sich die sichtbare UI-Umsortierung, weil sonst unklar bleibt, worauf die Seite eigentlich optimiert und wie sie spaeter weitergegeben wird.
+Diese Tickets bilden die Grundlage. Erst danach lohnt sich die sichtbare UI-Umsortierung, weil sonst unklar bleibt, worauf die Seite eigentlich optimiert und wie sie später weitergegeben wird.

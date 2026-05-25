@@ -168,6 +168,40 @@ main {
   background: rgba(255, 248, 234, 0.1);
 }
 
+.hero-decision-card {
+  max-width: 660px;
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid rgba(255, 248, 234, 0.24);
+  border-radius: 8px;
+  background: rgba(255, 248, 234, 0.12);
+}
+
+.hero-decision-card span {
+  display: block;
+  color: rgba(255, 248, 234, 0.72);
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero-decision-card strong {
+  display: block;
+  margin-top: 10px;
+  color: #fff8ea;
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  line-height: 1.2;
+}
+
+.hero-decision-card p {
+  margin-top: 8px;
+  color: rgba(255, 248, 234, 0.82);
+  font-size: 0.96rem;
+  line-height: 1.45;
+}
+
 .pitch-panel {
   display: flex;
   flex-direction: column;
@@ -2061,6 +2095,7 @@ body {
 }
 
 .hero-copy {
+  justify-content: flex-start;
   color: var(--ink);
   border: 1px solid rgba(74, 52, 29, 0.22);
   background:
@@ -2071,6 +2106,10 @@ body {
   background-position: center;
 }
 
+.top-nav {
+  margin-bottom: clamp(28px, 5vh, 54px);
+}
+
 .top-nav a {
   border-color: rgba(74, 52, 29, 0.22);
   border-radius: 4px;
@@ -2079,7 +2118,7 @@ body {
 }
 
 .hero-context {
-  margin-top: 70px;
+  margin-top: 0;
   color: var(--green);
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -2105,6 +2144,20 @@ body {
 
 .hero-copy p {
   color: #3f3325;
+}
+
+.hero-copy .hero-decision-card {
+  background: rgba(23, 63, 45, 0.92);
+  border-color: rgba(23, 63, 45, 0.22);
+}
+
+.hero-copy .hero-decision-card span {
+  color: #f5d487;
+}
+
+.hero-copy .hero-decision-card strong,
+.hero-copy .hero-decision-card p {
+  color: #fff8ea;
 }
 
 .primary-action {
@@ -3733,10 +3786,15 @@ textarea {
   .ambassador-panel,
   .ambassador-grid,
   .decision-cards,
+  .pilot-decision-box,
   .decision-workflow,
   .decision-support,
   .buildathon-photo-panel,
   .future-group__heading {
+    grid-template-columns: 1fr;
+  }
+
+  .pilot-decision-box__grid {
     grid-template-columns: 1fr;
   }
 
@@ -4811,6 +4869,109 @@ textarea {
   margin-top: 10px;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.pilot-decision-box {
+  max-width: 1180px;
+  margin: 14px auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.35fr);
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(22, 63, 53, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(22, 63, 53, 0.94), rgba(31, 93, 74, 0.9)),
+    #163f35;
+  color: #fff8ea;
+}
+
+.pilot-decision-box__intro {
+  padding: 6px 4px 6px 6px;
+}
+
+.pilot-decision-box__intro .section-kicker {
+  color: #d4a449;
+}
+
+.pilot-decision-box__intro h3 {
+  max-width: 480px;
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+  font-weight: 650;
+  line-height: 1.05;
+}
+
+.pilot-decision-box__intro p {
+  max-width: 520px;
+  margin-top: 12px;
+  color: rgba(255, 248, 234, 0.78);
+  line-height: 1.52;
+}
+
+.pilot-decision-box__intro ul {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+.pilot-decision-box__intro li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  color: rgba(255, 248, 234, 0.88);
+  font-size: 0.94rem;
+  line-height: 1.35;
+}
+
+.pilot-decision-box__intro svg {
+  flex: 0 0 auto;
+  color: #d4a449;
+  margin-top: 1px;
+}
+
+.pilot-decision-box__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pilot-decision-box__grid article {
+  min-height: 190px;
+  padding: 16px;
+  border: 1px solid rgba(255, 248, 234, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 248, 234, 0.1);
+}
+
+.pilot-decision-box__grid span {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 0 9px;
+  border-radius: 999px;
+  background: rgba(255, 248, 234, 0.13);
+  color: #f5d487;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.pilot-decision-box__grid strong {
+  display: block;
+  margin-top: 14px;
+  color: #fff8ea;
+  font-size: 1.03rem;
+  line-height: 1.2;
+}
+
+.pilot-decision-box__grid p {
+  margin-top: 9px;
+  color: rgba(255, 248, 234, 0.76);
+  font-size: 0.9rem;
+  line-height: 1.45;
 }
 
 .decision-workflow {
