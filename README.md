@@ -13,6 +13,19 @@ Das Repository knüpft an den AI-Hackathon im Museum Tiroler Bauernhöfe an und 
 - [Webdemo auf GitHub Pages](https://scoinnotec.github.io/aicollective-hack-am-hof/)
 - [Projekt-Wiki](https://github.com/scoinnotec/aicollective-hack-am-hof/wiki)
 
+## Wichtige Dokumente
+
+- [Pitch & Projektlogik](docs/PITCH.md)
+- [Projekt-Backlog](docs/BACKLOG.md)
+- [Roadmap und offene Aufgaben](docs/2026-05-25_Hack-am-Hof-Projekt-Backlog.md)
+- [Architektur](docs/ARCHITECTURE.md)
+- [Event-Blueprint](docs/EVENT_BLUEPRINT.md)
+- [Buildathon-Referenzen](docs/BUILDATHON_REFERENCES.md)
+- [Update-Log](docs/UPDATELOG.md)
+- [Bildprompts](BILDPROMPTS.md)
+- [GitHub-Webprojekt](https://github.com/scoinnotec/aicollective-hack-am-hof)
+- [GitHub-Wiki](https://github.com/scoinnotec/aicollective-hack-am-hof/wiki)
+
 ## Was man sieht
 
 Der Prototyp zeigt keine einzelne Museums-App, sondern ein wiederverwendbares System aus Hofpass, Karte, Guide-Wissen, Zielgruppenlayern und späteren Partnerpaketen.
