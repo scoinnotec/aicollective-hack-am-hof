@@ -1,6 +1,6 @@
-# Hack am Hof — AI Hackathon im Museum Tiroler Bauernhöfe
+# Hack am Hof - AI Hackathon im Museum Tiroler Bauernhöfe
 
-> Gemischte Teams entwickeln innerhalb von 5 Stunden funktionierende KI-Prototypen mit Lovable, generativer KI und modernen No-Code-/Low-Code-Workflows — direkt im Umfeld des Museums Tiroler Bauernhöfe.
+> Gemischte Teams entwickeln innerhalb von 5 Stunden funktionierende KI-Prototypen mit Lovable, generativer KI und modernen No-Code-/Low-Code-Workflows, direkt im Umfeld des Museums Tiroler Bauernhöfe.
 
 Pfingstsamstag-Edition inklusive optionaler Privatführung durch das Museum.
 
