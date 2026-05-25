@@ -47,7 +47,7 @@
 - Wissenssammlung und Guide Studio enger gekoppelt, damit klarer wird: erst sammeln, ordnen und freigeben, dann Missionen bauen.
 - Kartenkoordinatenlogik korrigiert: Leaflet-Y-Achse wird gegen den Lageplan gespiegelt, damit Marker auf den Hofpositionen landen.
 - Pitch-These und KINN-/AI-Collective-Verlinkung in den unteren Kontext-/Credits-Bereich verschoben und kontrastreicher gestaltet.
-- Spielbaren App-Ausschnitt ergänzt: Besucher:innen können Modus wählen, Route wechseln, Stationen öffnen, Aufgaben beantworten, Sammelzeichen erhalten und einen Abschluss sehen.
+- Spielbaren App-Ausschnitt ergänzt: Besucher:innen können Modus wählen, Route wechseln, Stationen öffnen, Aufgaben beantworten, Abzeichen erhalten und einen Abschluss sehen.
 - Lokaler Missionskatalog ergänzt: Kinder, Schulklasse, Geschichtsmodus, Feier/Fotopaket und Bauernhaus-Inspiration zeigen unterschiedliche Erlebnisse aus demselben Wissensmodell.
 - Ausbaukarten als Kampagnen-Popover umgesetzt: jede Idee zeigt Bildausschnitt, Kampagne, Museumsnutzen, Rhythmus und Leitplanke.
 - Zusatzideen ergänzt: 3D-Bogenparcours mit Jäger-/Wilderer-Story, optionaler Geschichtsmodus und Bauernhaus-Inspirationsmodus.

@@ -68,7 +68,7 @@ const groupProfiles: GroupProfile[] = [
     defaultCount: 24,
     defaultAge: "10-12 Jahre",
     defaultDuration: "75 Minuten",
-    description: "Für eine Klasse mit mehreren Handys, Rollen, QR-Stationen und gemeinsamem Abschluss.",
+    description: "Mehrere Handys, Rollen, QR-Stationen und gemeinsamer Abschluss.",
   },
   {
     id: "family",
@@ -128,8 +128,18 @@ const groupNameSuggestions = [
   "Wald Wasser Hof",
 ];
 
+const ageOptions = [
+  "6-8 Jahre",
+  "8-10 Jahre",
+  "10-12 Jahre",
+  "12-14 Jahre",
+  "14-16 Jahre",
+  "alle Altersstufen",
+  "Erwachsene",
+  "60+ Jahre",
+];
+
 const joinPreviewNames = ["Lena", "Emir", "Mia", "Jonas", "Nora", "Theo", "Sara", "Max"];
-const joinPreviewRoles = ["Mühle", "Stall", "Holz", "Backen", "Wasser", "Werkzeug", "Kräuter", "Spuren"];
 
 const defaultRoleProfile: RoleProfile = {
   id: "hofkind",
@@ -409,6 +419,7 @@ export function AppClickDummy() {
   const [groupCount, setGroupCount] = useState(groupProfiles[0].defaultCount);
   const [groupAge, setGroupAge] = useState(groupProfiles[0].defaultAge);
   const [groupDuration, setGroupDuration] = useState(groupProfiles[0].defaultDuration);
+  const [roleAssignmentMode, setRoleAssignmentMode] = useState<"random" | "manual">("random");
   const [joinCount, setJoinCount] = useState(0);
   const [avatarRoleId, setAvatarRoleId] = useState(avatarRoles[0].id);
   const [avatarScene, setAvatarScene] = useState(avatarScenes[0]);
@@ -558,15 +569,16 @@ export function AppClickDummy() {
 
   return (
     <section id="app-dummy" className="app-dummy-section app-dummy-section--primary">
-      <div className="section-heading">
+      <div className="section-heading app-dummy-heading">
         <div>
           <div className="section-kicker">Die App zum Anklicken</div>
           <h2>Hier wird aus dem Museumsbesuch ein unvergessliches Erlebnis.</h2>
         </div>
-        <p>
-          Der Ausschnitt zeigt den Kern: passende Route wählen, Rollen verteilen, private Hinweise
-          teilen, Minispiel lösen, Gruppenscore sammeln und am Ende Wissen mitnehmen.
-        </p>
+        <ol className="app-dummy-heading__steps" aria-label="Ablauf im App-Ausschnitt">
+          <li>Route wählen</li>
+          <li>Rollen verteilen</li>
+          <li>Wissen mitnehmen</li>
+        </ol>
       </div>
 
       <div className="app-dummy-layout">
@@ -640,9 +652,9 @@ export function AppClickDummy() {
                   {setupSelectionLocked
                     ? (
                         <>
-                          Name, Kinder, Alter und Besuchszeit festlegen.
+                          Name, Anzahl und Besuchszeit festlegen.
                           <br />
-                          Danach zeigt die App den Startcode.
+                          Danach erscheint der Startcode.
                         </>
                       )
                     : (
@@ -709,7 +721,11 @@ export function AppClickDummy() {
                       </label>
                       <label>
                         Alter
-                        <input value={groupAge} onChange={(event) => setGroupAge(event.target.value)} />
+                        <select value={groupAge} onChange={(event) => setGroupAge(event.target.value)}>
+                          {ageOptions.map((option) => (
+                            <option key={option}>{option}</option>
+                          ))}
+                        </select>
                       </label>
                       <label>
                         Dauer
@@ -723,9 +739,33 @@ export function AppClickDummy() {
                       </label>
                     </div>
                     <div className="dummy-join-methods">
-                      <span>QR zeigen</span>
-                      <span>Code nennen</span>
-                      <span>NFC am Eingang</span>
+                      <span>QR</span>
+                      <span>Code</span>
+                      <span>NFC</span>
+                    </div>
+                    <div className="dummy-role-assignment">
+                      <span>Rollenvergabe</span>
+                      <div>
+                        <button
+                          className={roleAssignmentMode === "random" ? "is-active" : undefined}
+                          type="button"
+                          onClick={() => setRoleAssignmentMode("random")}
+                        >
+                          Zufällig
+                        </button>
+                        <button
+                          className={roleAssignmentMode === "manual" ? "is-active" : undefined}
+                          type="button"
+                          onClick={() => setRoleAssignmentMode("manual")}
+                        >
+                          Auswählbar
+                        </button>
+                      </div>
+                      <p>
+                        {roleAssignmentMode === "random"
+                          ? "Jedes Handy zieht beim Start automatisch eine Rolle."
+                          : "Die Spielleitung kann Rollen vor dem Start zuordnen."}
+                      </p>
                     </div>
                     <button className="dummy-create-group" type="button" onClick={createGroup}>
                       Gruppe öffnen
@@ -766,10 +806,10 @@ export function AppClickDummy() {
               <div className="dummy-participant-list" aria-label="Teilnehmende Vorschau">
                 {visibleJoinedCount ? (
                   <>
-                    {joinPreviewNames.slice(0, visibleJoinedCount).map((name, index) => (
+                    {joinPreviewNames.slice(0, visibleJoinedCount).map((name) => (
                       <span key={name}>
                         <CheckCircle2 size={13} />
-                        {name} · {joinPreviewRoles[index]}
+                        {name}
                       </span>
                     ))}
                     {joinCount > visibleJoinedCount ? <span>+ {joinCount - visibleJoinedCount} weitere</span> : null}
@@ -781,16 +821,32 @@ export function AppClickDummy() {
 
               <div className="dummy-child-preview">
                 <strong>Auf den Handys der {setupProfile.participants}</strong>
-                <p>Rolle ziehen, ersten Hinweis lesen, Station finden und gemeinsam Hofsiegel sammeln.</p>
+                <p>
+                  {roleAssignmentMode === "random"
+                    ? "Beim Start zieht jedes Handy eine Rolle. Danach erscheinen Hinweis und erste Station."
+                    : "Nach der Freigabe erscheint die zugeteilte Rolle mit Hinweis und erster Station."}
+                </p>
               </div>
 
-              <button className="dummy-create-group" type="button" onClick={startJoinedMission}>
-                Hofrunde starten
-                <ArrowRight size={16} />
-              </button>
-              <button className="dummy-audience-back" type="button" onClick={() => setAppStage("setup")}>
-                Gruppe bearbeiten
-              </button>
+              <div className="dummy-role-assignment dummy-role-assignment--summary">
+                <span>Rollen</span>
+                <strong>{roleAssignmentMode === "random" ? "Zufällig beim Start" : "Auswählbar durch Spielleitung"}</strong>
+                <p>
+                  {roleAssignmentMode === "random"
+                    ? "Die Gruppe sieht vor dem Start nur, wer dabei ist."
+                    : "Die Gruppe sieht die Rollen erst nach der Freigabe."}
+                </p>
+              </div>
+
+              <div className="dummy-join-actions">
+                <button className="dummy-create-group" type="button" onClick={startJoinedMission}>
+                  Hofrunde starten
+                  <ArrowRight size={16} />
+                </button>
+                <button className="dummy-audience-back" type="button" onClick={() => setAppStage("setup")}>
+                  Gruppe bearbeiten
+                </button>
+              </div>
             </div>
           ) : (
           <>
@@ -1194,7 +1250,7 @@ export function AppClickDummy() {
 
               {(screenId === "station" || screenId === "mini" || screenId === "photo") && <div className="dummy-reward-row">
                 <Gift size={16} />
-                {collectedRewards.length ? collectedRewards.join(" · ") : "Noch kein Sammelzeichen"}
+                {collectedRewards.length ? collectedRewards.join(" · ") : "Noch kein Abzeichen"}
               </div>}
             </>
           )}
@@ -1213,7 +1269,11 @@ export function AppClickDummy() {
             </article>
             <article>
               <strong>Score als Teamwappen</strong>
-              <p>Die Gruppe sammelt gemeinsam Punkte, Hofsiegel und Titel. Keine Bloßstellung, kein Einzelranking.</p>
+              <p>
+                Die Gruppe sammelt gemeinsam Punkte und Titel.
+                <br />
+                Keine Bloßstellung, kein Einzelranking.
+              </p>
             </article>
             <article>
               <strong>Hofrunde & Saisonkarte</strong>
@@ -1222,6 +1282,14 @@ export function AppClickDummy() {
             <article>
               <strong>Kurze Minispiele</strong>
               <p>30 bis 90 Sekunden: Vorräte sortieren, Butter machen, Spuren verbinden oder Feuer sichern.</p>
+            </article>
+            <article>
+              <strong>Bewusst kein Actionspiel</strong>
+              <p>
+                Der Pilot bleibt ruhig und wissensorientiert.
+                <br />
+                Ein Pokémon-Go ähnlicher Modus wäre aber möglich, wenn das Museum genau dieses Ziel verfolgt.
+              </p>
             </article>
             <article>
               <strong>Im Klickdummy simuliert</strong>

@@ -745,7 +745,7 @@ export const clickDummyModes: ClickDummyMode[] = [
     id: "kids",
     label: "Kinder",
     title: "Abenteuer für Kinder",
-    description: "Kurze Aufgaben, Rollen, Sammelzeichen und klare Sprache.",
+    description: "Kurze Aufgaben, Rollen, Abzeichen und klare Sprache.",
     benefit: "Kinder bleiben aktiv, Guides bekommen strukturierte Stationen und Familien haben einen Grund wiederzukommen.",
   },
   {

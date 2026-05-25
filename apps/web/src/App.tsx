@@ -1148,7 +1148,7 @@ const modulePitchDetails: Record<string, {
     imageUrl: publicAsset("pitch-images/familienmodus.png"),
     sceneTitle: "Kurze Familienrunde",
     sceneSubtitle: "wenig Text, viel Entdecken",
-    campaign: "Familien erhalten eine kurze Route mit Pausen, Sammelzeichen, einfachen Aufgaben und optionalem Hof-Avatar.",
+    campaign: "Familien erhalten eine kurze Route mit Pausen, Abzeichen, einfachen Aufgaben und optionalem Hof-Avatar.",
     museumBenefit: "Mehr Zufriedenheit bei Familien, weniger Überforderung und ein guter Wiederbesuchsgrund durch wechselnde Mini-Missionen.",
     rhythm: "Dauerhaft, mit saisonal wechselnden Aufgaben.",
     nextStep: "Eine 30-Minuten-Runde mit drei Stationen und einer einfachen Belohnung definieren.",
@@ -1875,7 +1875,11 @@ export function App() {
               <a href="#costs">Aufwand</a>
             </nav>
             <div className="hero-context">Zielbild</div>
-            <h1>Aus Museumswissen wird ein buchbares Erlebnis.</h1>
+            <h1>
+              Aus Museumswissen
+              <br />
+              wird ein Erlebnis.
+            </h1>
             <h2 className="hero-thesis-lines">
               <span>Entscheidung für Pilotprojekt.</span>
               <span>Wissen sammeln.</span>

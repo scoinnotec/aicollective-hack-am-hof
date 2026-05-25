@@ -4,6 +4,11 @@ Pitchbarer Webapp-/PWA-Prototyp für eine ortsbezogene Erlebnis- und Betriebspla
 
 Das Repository knüpft an den AI-Hackathon im Museum Tiroler Bauernhöfe an und führt den entstandenen Projektstand als lauffähige Webdemo weiter.
 
+## Kontext
+
+- [AI Collective](https://aicollective.at)
+- [Hack am Hof](https://aicollective.at/hack-am-hof)
+
 ## Ziel
 
 In ca. drei Stunden soll ein vorzeigbarer Prototyp entstehen:

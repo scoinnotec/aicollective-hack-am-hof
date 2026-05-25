@@ -19,7 +19,7 @@
 - [x] Best-of der Buildathon-Ideen in Smartphone-Prototyp und Modul-Popovers überführt.
 - [x] Kartenkoordinaten an Leaflet-Logik angepasst, damit Marker auf den Höfen sitzen.
 - [x] KINN und AI Collective als Credits und Kontext verlinkt.
-- [x] Spielbaren App-Ausschnitt mit Moduswahl, Stationen, Fragen, Fortschritt, Sammelzeichen und Abschluss ergänzt.
+- [x] Spielbaren App-Ausschnitt mit Moduswahl, Stationen, Fragen, Fortschritt, Abzeichen und Abschluss ergänzt.
 - [x] Missionskatalog für Kinder, Schule, Geschichtsmodus, Feier/Foto und Bauernhaus-Inspiration aufgebaut.
 - [x] Kampagnen-Popover für Ausbauideen ergänzt: Kampagne, Museumsnutzen, Rhythmus, Leitplanke.
 - [x] Typecheck und Produktionsbuild abschließen.

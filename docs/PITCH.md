@@ -17,7 +17,7 @@ Am Ende des Pitchs soll nicht nur Interesse entstehen, sondern eine Pilotentsche
 
 1. Idee zeigen: echte Orte werden digital erlebbar, nicht durch eine generische Museums-App.
 2. Kontext erklären: Höfemuseum, Besucherproblem, AI Collective/KINN/Buildathon, zehn Prototypen und Folgeschritte.
-3. Spielbaren App-Ausschnitt zeigen: Modus wählen, Station öffnen, Frage beantworten, Sammelzeichen erhalten.
+3. Spielbaren App-Ausschnitt zeigen: Modus wählen, Station öffnen, Frage beantworten, Abzeichen erhalten.
 4. Smartphone-Ansicht zeigen: Mission, Zeitreise, Foto und Guide-Wissen in iPhone-Größe.
 5. Prozess erklären: Menschenwissen sammeln, ordnen, freigeben und erst dann in Erlebnisse übersetzen.
 6. Plattform-Demo öffnen: Karte, Zielgruppenlayer, Guide Studio, Avatar und Inhalte.
@@ -43,7 +43,7 @@ Eine Webapp/PWA mit gemeinsamer Karten- und Inhaltslogik:
 - Interne Teams dokumentieren Reparaturen.
 - Guides laden Geschichten, Dokumente und Audio ein.
 - KI erzeugt später Avatare und Missionsvarianten aus geprüften Inhalten.
-- Ein erster App-Ausschnitt zeigt bereits spielbare Elemente: Moduswahl, Stationen, Fragen, Fortschritt, Sammelzeichen und Abschlussmoment.
+- Ein erster App-Ausschnitt zeigt bereits spielbare Elemente: Moduswahl, Stationen, Fragen, Fortschritt, Abzeichen und Abschlussmoment.
 - Geocaching, FPV-Drohnenrennen und Creator-Walks bleiben als spätere Erweiterungsformate sichtbar, aber nicht Kern des MVP.
 - Bustourismus, Motorrad-Einkehr, LARP/Living-History, Mittelalterfest und Oldtimer-Sternfahrt werden als Partnerformate vorbereitet.
 - Rattenberg wird als nahe Bus- und Gruppenreise-Brücke gedacht: kurzer Kulturstopp, Museumserlebnis, Schmankerl und Erinnerungsfoto.
@@ -69,7 +69,7 @@ Im Website-Prototyp werden die Referenzen nicht mehr als eigener langer Block ge
 
 1. Hero: Plattformthese zeigen.
 2. Kontextblöcke: in je drei Absätzen erklären, warum das Projekt aus Museum, Besucherproblem, Buildathon und Folgechance entsteht.
-3. App-Ausschnitt: Modus wechseln, Aufgabe beantworten, Sammelzeichen und Abschluss zeigen.
+3. App-Ausschnitt: Modus wechseln, Aufgabe beantworten, Abzeichen und Abschluss zeigen.
 4. iPhone-Ansicht: zwischen `Mission`, `Zeitreise`, `Foto` und `Guide` wechseln.
 5. Prozess und Guide Studio zeigen: warum zuerst Guides, Verein, Quellen und Freigaben gebraucht werden.
 6. Live-Karte: Modus `Schule` auswählen und vier Missionsstationen zeigen.
