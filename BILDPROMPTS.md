@@ -4,7 +4,7 @@ Diese Prompts sind für fotorealistische Pitch-Bilder gedacht. Ziel: echte Situa
 
 ## Schulklassenmission
 
-Photorealistic documentary image of an Austrian school class, ages 10-13, exploring a Tyrolean open-air farmhouse museum in Kramsach, children in small groups holding a paper Hofpass and one smartphone, a museum guide pointing at a wooden farmhouse, warm daylight, authentic alpine rural setting, respectful educational mood, no readable text, no logos.
+Photorealistic documentary image of an Austrian school class, ages 10-13, exploring a Tyrolean open-air farmhouse museum in Kramsach, children in small groups holding a paper Hofrunde and one smartphone, a museum guide pointing at a wooden farmhouse, warm daylight, authentic alpine rural setting, respectful educational mood, no readable text, no logos.
 
 ## Feier- und Fotomodul
 

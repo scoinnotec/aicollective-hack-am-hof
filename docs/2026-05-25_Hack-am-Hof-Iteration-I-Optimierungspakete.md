@@ -118,7 +118,7 @@ Leitprinzip: Erst Entscheidungsschärfe, dann Pitch-Dramaturgie, dann Produkt-/D
 
 - Begriffsset festlegen:
   - `Hack am Hof` als Projekt-/Arbeitsname,
-  - `Hofpass` als Besucherprodukt,
+  - `Hofrunde` als Besucherprodukt,
   - `Guide Studio` als internes Werkzeug,
   - `Mission` als Route mit Aufgaben,
   - `Layer` oder `Modus` als Zielgruppenansicht,

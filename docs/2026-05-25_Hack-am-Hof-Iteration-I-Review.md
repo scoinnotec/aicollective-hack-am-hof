@@ -213,7 +213,7 @@ Nicht den Vollausbau freigeben. Sinnvoll wäre ein Beschluss dieser Art:
 ### Begriffe, die vereinheitlicht werden sollten
 
 - `Hack am Hof`: Projektname, Eventname oder Produktname?
-- `Hofpass`: Besucherprodukt für Gruppen/Kinder.
+- `Hofrunde`: Besucherprodukt für Gruppen/Kinder.
 - `Guide Studio`: internes Content- und Freigabewerkzeug.
 - `Mission`: konkrete Besucherroute mit Rollen und Aufgaben.
 - `Layer` oder `Modus`: Zielgruppenansicht auf dieselbe Karte.
@@ -222,7 +222,7 @@ Nicht den Vollausbau freigeben. Sinnvoll wäre ein Beschluss dieser Art:
 
 ### Empfohlene Produktarchitektur in Sprache
 
-- **Hofpass**: Das sichtbare Besuchserlebnis.
+- **Hofrunde**: Das sichtbare Besuchserlebnis.
 - **Guide Studio**: Das interne Wissens- und Freigabesystem.
 - **Partnerpakete**: Buchbare Angebote für Gruppen, Feiern und Tourismus.
 - **Plattformkern**: Karte, Datenmodell, Rechte, Medien, Missionen, Feedback.

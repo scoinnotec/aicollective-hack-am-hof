@@ -90,7 +90,7 @@
 
 ### App-Dummy und Event-Popups
 
-- Neue Unterlagen aus `Iterationen/2026-05-24` eingelesen: Saisonkarte/Erlebnispass, physischer Hofpass, Minispiele, Gruppenscore und kollaboratives Score-System.
-- App-Dummy deutlich spielbarer gemacht: Rollen, private Hinweise, gemeinsame Hinweiswand, Guide-Joker, Gruppenscore, Hofpass, Minispiel und gemeinsame Abschlusslösung.
+- Neue Unterlagen aus `Iterationen/2026-05-24` eingelesen: Saisonkarte/Erlebnispass, physische Hofrunde, Minispiele, Gruppenscore und kollaboratives Score-System.
+- App-Dummy deutlich spielbarer gemacht: Rollen, private Hinweise, gemeinsame Hinweiswand, Guide-Joker, Gruppenscore, Hofrunde, Minispiel und gemeinsame Abschlusslösung.
 - Startreihenfolge angepasst: Die anklickbare App steht jetzt direkt nach der Startansicht und vor dem Kontextteil.
 - Ausbauformate mit individuellen Motivbildern und konkreten Popover-Beschreibungen ergänzt, damit jedes Eventformat anders wirkt und verständlicher wird.

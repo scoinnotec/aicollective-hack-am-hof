@@ -209,7 +209,7 @@ const projectEstimates = [
 const pilotDecisionScope = [
   {
     label: "Pilot jetzt",
-    title: "Schulroute als Hofpass-Mission",
+    title: "Schulroute als Hofrunde",
     text: "Eine reale Route mit 4 bis 5 Stationen, QR-/Code-Start, Rollen, Aufgaben und kurzer Feedbackauswertung.",
   },
   {
@@ -230,6 +230,48 @@ const pilotBoundaries = [
   "Kostenkorridor und Verantwortlichkeiten erst für diesen Pilot schärfen",
 ];
 
+type ScopeLabel = "Pilot jetzt" | "Nächster Ausbau" | "Spätere Plattform" | "Ideenpool";
+
+const moduleScopeById: Record<string, { label: ScopeLabel; note: string }> = {
+  school: { label: "Pilot jetzt", note: "Kern der ersten Schulroute" },
+  content: { label: "Pilot jetzt", note: "Voraussetzung für den Pilot" },
+  celebration: { label: "Nächster Ausbau", note: "buchbares Partnerpaket nach der Route" },
+  culinary: { label: "Nächster Ausbau", note: "Schmankerl-Route als Partnerpaket" },
+  avatar: { label: "Nächster Ausbau", note: "Fotomodul nach Datenschutzklärung" },
+  herbs: { label: "Spätere Plattform", note: "fachlich freigegebener Themenlayer" },
+  family: { label: "Spätere Plattform", note: "weiterer Zielgruppenmodus" },
+  pensioners: { label: "Spätere Plattform", note: "barrierearmer Zielgruppenmodus" },
+  chroniclers: { label: "Spätere Plattform", note: "Wissenssicherung nach Pilotstart" },
+  maintenance: { label: "Spätere Plattform", note: "interner Betriebsmodus" },
+  inspiration: { label: "Spätere Plattform", note: "Premium-/Beratungsformat" },
+  history: { label: "Spätere Plattform", note: "vertiefender Kulturmodus" },
+};
+
+const futureScopeById: Record<string, { label: ScopeLabel; note: string }> = {
+  geocaching: { label: "Spätere Plattform", note: "saisonale Hofspur nach Pilot" },
+  "creator-walk": { label: "Nächster Ausbau", note: "Fotospot-/Creator-Format" },
+  "xr-time-travel": { label: "Ideenpool", note: "erst nach Contentfundament" },
+  "history-salon": { label: "Spätere Plattform", note: "vertiefendes Themenformat" },
+  "heritage-consulting": { label: "Spätere Plattform", note: "Premium-Beratung prüfen" },
+  "data-check": { label: "Pilot jetzt", note: "Grundlage für Freigaben" },
+  "bus-groups": { label: "Nächster Ausbau", note: "Rattenberg-/Busbrücke" },
+  "motorcycle-stop": { label: "Nächster Ausbau", note: "Partnerformat Tourismus" },
+  "oldtimer-rally": { label: "Ideenpool", note: "stärkeres Eventformat" },
+  "tracht-show": { label: "Nächster Ausbau", note: "jährliches Partnerformat" },
+  fpv: { label: "Ideenpool", note: "Sonderformat mit Sicherheitsregeln" },
+  larp: { label: "Ideenpool", note: "erst nach Quellen- und Betriebsregeln" },
+  "medieval-fest": { label: "Ideenpool", note: "großes Kulturformat" },
+  "archery-story": { label: "Ideenpool", note: "Outdoor-Sonderformat" },
+  "craft-challenge": { label: "Spätere Plattform", note: "interne Werkstattlogik" },
+};
+
+const scopeStyleByLabel: Record<ScopeLabel, string> = {
+  "Pilot jetzt": "pilot",
+  "Nächster Ausbau": "next",
+  "Spätere Plattform": "platform",
+  Ideenpool: "idea",
+};
+
 const technicalNotes = [
   {
     title: "Start als Webapp/PWA",
@@ -248,6 +290,53 @@ const technicalNotes = [
     text: "Foto-Upload, Kindergruppen, Souvenirverkauf und interne Aufgaben brauchen einfache Rollenrechte, Löschlogik und Zustimmungstexte.",
   },
 ];
+
+const routeRoleShowcase = [
+  {
+    roleId: "fire",
+    image: "pitch-images/role-baeckerkind.png",
+    station: "Stube / Backofen",
+    task: "Welche Arbeit braucht zuerst Wärme?",
+  },
+  {
+    roleId: "animals",
+    image: "pitch-images/role-stallhelfer.png",
+    station: "Stall / Weide",
+    task: "Warum waren Tiere Teil des ganzen Hofsystems?",
+  },
+  {
+    roleId: "storage",
+    image: "pitch-images/role-muellerkind.png",
+    station: "Speicher / Mühle",
+    task: "Welche Vorräte reichen durch den Winter?",
+  },
+  {
+    roleId: "repair",
+    image: "pitch-images/role-tischlerlehrling.png",
+    station: "Werkstatt / Schmiede",
+    task: "Welche Reparaturspur erzählt eine Geschichte?",
+  },
+];
+
+const missionVariantVisuals: Record<string, string> = {
+  "Ein Winter ohne Supermarkt": "pitch-images/schulklassenmission.png",
+  "Der verschwundene Mehlsack": "pitch-images/role-muellerkind.png",
+  "Wilderer, Jäger und der Wald": "pitch-images/waldspur-mit-boegen.png",
+  "Die Stube vor dem Fest": "pitch-images/kirchtag.png",
+  "Das Haus will repariert werden": "pitch-images/werkstatt-am-hof.png",
+};
+
+const generatedMissionVisuals: Record<string, string> = {
+  "winter-system-school": "pitch-images/schulklassenmission.png",
+  "flour-family": "pitch-images/role-muellerkind.png",
+  "hunter-forest": "pitch-images/waldspur-mit-boegen.png",
+  "wood-water": "pitch-images/hofspur-im-sommer.png",
+  "mining-rattenberg": "pitch-images/rattenberg-busbruecke.png",
+  "festival-stube": "pitch-images/kirchtag.png",
+  "repair-craft": "pitch-images/werkstatt-am-hof.png",
+  "quiet-memory": "pitch-images/pensionistenmodus.png",
+  "house-inspiration": "pitch-images/bauernhaus-inspiration.png",
+};
 
 function PhonePrototype() {
   const [activePrototypeId, setActivePrototypeId] = useState(prototypeScreens[0].id);
@@ -371,55 +460,74 @@ function PhonePrototype() {
       </div>
 
       <div className="prototype-role-panel">
-        <div>
+        <div className="route-lab-intro">
           <div className="section-kicker">Beispiel Erlebnisroute</div>
           <h3>Aus Wissen entstehen viele spielbare Missionen.</h3>
           <p>
-            Die KI soll nicht frei fantasieren, sondern aus freigegebenem Hofwissen Varianten
-            erzeugen: passend zu Alter, Gruppengröße, verfügbarer Zeit, Wetter und Lernziel.
+            Aus einem geprüften Wissensbestand werden konkrete Erlebnisrouten: mit Rollen,
+            Stationen, Aufgaben, Dauer und Abschlussfrage. Die KI liefert Varianten, das Museum
+            behält Quelle, Tonalität und Freigabe.
           </p>
-        </div>
-        <div className="prototype-role-list">
-          {missionRoles.map((role) => (
-            <article key={role.id}>
-              <strong>{role.name}</strong>
-              <span>{role.description}</span>
-            </article>
-          ))}
-        </div>
-        <div className="mission-generator">
-          <div>
-            <Sparkles size={22} />
-            <h4>KI unterstützt die Guides</h4>
-            <p>
-              Guides geben Fakten, Quellen, Anekdoten und Freigaben vor. Die KI kombiniert daraus
-              neue Einstiege, Rollen, Hinweise und Abschlussfragen, bleibt aber an geprüfte Inhalte
-              gebunden.
-            </p>
+          <div className="route-proof-card">
+            <Sparkles size={20} />
+            <strong>Guide Studio statt freier KI</strong>
+            <span>Fakten, Quellen, Bilder und Anekdoten werden kuratiert. Daraus entstehen wiederverwendbare Routenbausteine.</span>
           </div>
-          <div className="mission-variant-grid">
-            {missionVariants.map((variant) => (
-              <article key={variant.title}>
+        </div>
+
+        <div className="role-showcase-grid">
+          {routeRoleShowcase.map((item) => {
+            const role = missionRoles.find((entry) => entry.id === item.roleId) ?? missionRoles[0];
+            return (
+              <article key={item.roleId} className="role-showcase-card">
+                <img src={publicAsset(item.image)} alt="" />
+                <div>
+                  <span>{item.station}</span>
+                  <strong>{role.name}</strong>
+                  <p>{item.task}</p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="route-system-strip">
+          <article>
+            <BookOpen size={19} />
+            <strong>Wissen</strong>
+            <span>Objekte, Gebäude, Geschichten, Quellen und Freigaben.</span>
+          </article>
+          <article>
+            <Users size={19} />
+            <strong>Rollen</strong>
+            <span>Jede Person bekommt eine Aufgabe und einen Blickwinkel.</span>
+          </article>
+          <article>
+            <Route size={19} />
+            <strong>Route</strong>
+            <span>Dauer, Stationen, Wetter, Gruppe und Lernziel werden kombiniert.</span>
+          </article>
+        </div>
+
+        <div className="mission-variant-grid">
+          {missionVariants.map((variant) => (
+            <article key={variant.title}>
+              <img src={publicAsset(missionVariantVisuals[variant.title] ?? "pitch-images/hofspur-im-sommer.png")} alt="" />
+              <div>
                 <span>{variant.audience} · {variant.duration}</span>
                 <strong>{variant.title}</strong>
                 <p>{variant.description}</p>
-              </article>
-            ))}
-          </div>
+              </div>
+            </article>
+          ))}
         </div>
-        <div className="replay-note">
-          <Clock size={20} />
-          <p>
-            Dadurch steigt der Wiederspiel- und Wiederbesuchswert: dieselbe Klasse, Familie oder
-            Gruppe kann beim nächsten Besuch ein anderes Entdeckungserlebnis bekommen, ohne dass das
-            Museum jedes Mal alles neu schreiben muss.
-          </p>
-        </div>
+
         <div className="mission-generator-demo">
           <div className="mission-generator-controls">
             <div>
               <div className="section-kicker">Erlebnisgenerator</div>
-              <h4>Jeder Klick zeigt eine neue passende Route.</h4>
+              <h4>Auswahl ändern, passende Route sehen.</h4>
+              <p>Der Generator zeigt, wie aus demselben Material andere Rundgänge entstehen.</p>
             </div>
             <label>
               Zielgruppe
@@ -448,32 +556,44 @@ function PhonePrototype() {
           </div>
 
           <article className="generated-mission-card">
-            <span>{generatedMission.audience} · {generatedMission.duration}</span>
-            <h4>{generatedMission.title}</h4>
-            <p>{generatedMission.setup}</p>
-            <div className="generated-mission-columns">
-              <div>
-                <strong>Rollen</strong>
-                {generatedMission.roles.map((role) => (
-                  <em key={role}>{role}</em>
-                ))}
+            <img src={publicAsset(generatedMissionVisuals[generatedMission.id] ?? "pitch-images/hofspur-im-sommer.png")} alt="" />
+            <div className="generated-mission-content">
+              <span>{generatedMission.audience} · {generatedMission.duration}</span>
+              <h4>{generatedMission.title}</h4>
+              <p>{generatedMission.setup}</p>
+              <div className="generated-mission-columns">
+                <div>
+                  <strong>Rollen</strong>
+                  {generatedMission.roles.map((role) => (
+                    <em key={role}>{role}</em>
+                  ))}
+                </div>
+                <div>
+                  <strong>Stationen</strong>
+                  {generatedMission.stations.map((station) => (
+                    <em key={station}>{station}</em>
+                  ))}
+                </div>
               </div>
-              <div>
-                <strong>Stationen</strong>
-                {generatedMission.stations.map((station) => (
-                  <em key={station}>{station}</em>
-                ))}
+              <div className="generated-mission-learning">
+                <strong>Wissen</strong>
+                <p>{generatedMission.knowledge}</p>
               </div>
-            </div>
-            <div className="generated-mission-learning">
-              <strong>Wissen</strong>
-              <p>{generatedMission.knowledge}</p>
-            </div>
-            <div className="generated-mission-learning">
-              <strong>Abschlussfrage</strong>
-              <p>{generatedMission.finale}</p>
+              <div className="generated-mission-learning">
+                <strong>Abschlussfrage</strong>
+                <p>{generatedMission.finale}</p>
+              </div>
             </div>
           </article>
+        </div>
+
+        <div className="replay-note">
+          <Clock size={20} />
+          <p>
+            Dadurch steigt der Wiederspiel- und Wiederbesuchswert: dieselbe Klasse, Familie oder
+            Gruppe kann beim nächsten Besuch ein anderes Entdeckungserlebnis bekommen, ohne dass das
+            Museum jedes Mal alles neu schreiben muss.
+          </p>
         </div>
       </div>
     </section>
@@ -713,6 +833,7 @@ function FutureFormatCard({
 }) {
   const Icon = futureIcon(format.id);
   const visual = futureVisual(format.id);
+  const scope = futureScopeById[format.id] ?? { label: "Ideenpool" as ScopeLabel, note: "später prüfen" };
 
   return (
     <button
@@ -736,9 +857,11 @@ function FutureFormatCard({
       <div className="future-icon" aria-hidden="true">
         <Icon size={22} />
       </div>
+      <span className={`scope-badge scope-badge--${scopeStyleByLabel[scope.label]}`}>{scope.label}</span>
       <span>{format.stage}</span>
       <h3>{format.title}</h3>
       <p>{format.description}</p>
+      <em className="scope-note">{scope.note}</em>
       <strong>Details öffnen</strong>
     </button>
   );
@@ -985,7 +1108,7 @@ const modulePitchDetails: Record<string, {
     museumBenefit: "Planbarer Bildungsbesuch, klare Lernziele, wiederverwendbare Route und ein einfacher Einstieg in Förder- oder Partnergespräche.",
     rhythm: "Dauerhaft buchbar, zuerst als Pilot mit wenigen Klassen.",
     nextStep: "Eine Route auswählen, Stationstexte prüfen und mit echten Guides einmal durchspielen.",
-    imagePrompt: "Photorealistic documentary image of an Austrian school class, ages 10-13, exploring a Tyrolean open-air farmhouse museum in Kramsach, children in small groups holding a paper Hofpass and one smartphone, a museum guide pointing at a wooden farmhouse, warm daylight, authentic alpine rural setting, respectful educational mood, no readable text, no logos.",
+    imagePrompt: "Photorealistic documentary image of an Austrian school class, ages 10-13, exploring a Tyrolean open-air farmhouse museum in Kramsach, children in small groups holding a paper Hofrunde and one smartphone, a museum guide pointing at a wooden farmhouse, warm daylight, authentic alpine rural setting, respectful educational mood, no readable text, no logos.",
   },
   celebration: {
     visualClass: "creator-walk",
@@ -1129,10 +1252,19 @@ function ModuleIdeas() {
         </p>
       </div>
 
+      <div className="scope-legend" aria-label="Umsetzungsstufen">
+        {(["Pilot jetzt", "Nächster Ausbau", "Spätere Plattform", "Ideenpool"] as ScopeLabel[]).map((label) => (
+          <span key={label} className={`scope-badge scope-badge--${scopeStyleByLabel[label]}`}>
+            {label}
+          </span>
+        ))}
+      </div>
+
       <div className="idea-layout">
         <div className="idea-grid">
           {moduleIdeas.map((idea) => {
             const Icon = moduleIdeaIcon(idea.id);
+            const scope = moduleScopeById[idea.id] ?? { label: "Ideenpool" as ScopeLabel, note: "später prüfen" };
             return (
               <button
                 key={idea.id}
@@ -1141,8 +1273,10 @@ function ModuleIdeas() {
                 onClick={() => setSelectedIdeaId(idea.id)}
               >
                 <Icon size={24} />
+                <em className={`scope-badge scope-badge--${scopeStyleByLabel[scope.label]}`}>{scope.label}</em>
                 <span>{idea.title}</span>
                 <p>{idea.description}</p>
+                <small>{scope.note}</small>
                 <strong>Pitch-Popup öffnen</strong>
               </button>
             );
@@ -1187,7 +1321,7 @@ const futureVisuals: Record<string, {
     photoTitle: "Hofspur im Sommer",
     photoSubtitle: "Familien suchen Hofsiegel",
     popupDescription:
-      "Kinder starten mit einem gedruckten Hofpass, scannen am Speicher einen QR-Code und finden eine kurze Geschichte, die nur an diesem Ort Sinn ergibt.",
+      "Kinder starten mit einer gedruckten Hofrunde, scannen am Speicher einen QR-Code und finden eine kurze Geschichte, die nur an diesem Ort Sinn ergibt.",
     moments: ["Ferienpass", "Stempel am Hof", "neue Spur pro Woche"],
   },
   fpv: {
@@ -1473,6 +1607,7 @@ function PitchModalShell({
 function ModuleIdeaModal({ idea, onClose }: { idea: ModuleIdea; onClose: () => void }) {
   const Icon = moduleIdeaIcon(idea.id);
   const detail = modulePitchDetails[idea.id] ?? modulePitchDetails.content;
+  const scope = moduleScopeById[idea.id] ?? { label: "Ideenpool" as ScopeLabel, note: "später prüfen" };
 
   return (
     <PitchModalShell kicker="Ideen-Popup" title={idea.title} onClose={onClose}>
@@ -1487,6 +1622,10 @@ function ModuleIdeaModal({ idea, onClose }: { idea: ModuleIdea; onClose: () => v
         </div>
 
         <div className="pitch-modal__content">
+          <div className="pitch-modal__scope">
+            <span className={`scope-badge scope-badge--${scopeStyleByLabel[scope.label]}`}>{scope.label}</span>
+            <p>{scope.note}</p>
+          </div>
           <p className="pitch-modal__lead">{idea.detail}</p>
           <div className="pitch-modal__chips">
             {idea.examples.map((example) => (
@@ -1743,7 +1882,7 @@ export function App() {
               <span>Besucher zu Botschaftern machen.</span>
             </h2>
             <p>
-              Diese Seite führt zuerst zu einer kleinen Entscheidung: eine Schulroute als Hofpass,
+              Diese Seite führt zuerst zu einer kleinen Entscheidung: eine Schulroute als Hofrunde,
               ein Guide-Studio-Workshop und eine Auswertung. Alles Weitere bleibt Ausbau.
             </p>
             <div className="hero-decision-card" aria-label="Beschlussvorschlag">
@@ -1923,6 +2062,13 @@ export function App() {
               Diese Ideen sind kein Pflichtumfang für den Pilot. Sie zeigen, wie viele
               Besuchsanlässe aus demselben Ort entstehen können.
             </p>
+            <div className="scope-legend scope-legend--left" aria-label="Einordnung der Ausbauideen">
+              {(["Pilot jetzt", "Nächster Ausbau", "Spätere Plattform", "Ideenpool"] as ScopeLabel[]).map((label) => (
+                <span key={label} className={`scope-badge scope-badge--${scopeStyleByLabel[label]}`}>
+                  {label}
+                </span>
+              ))}
+            </div>
           </div>
           <FutureFormatGroups
             activeId={selectedFuture.id}

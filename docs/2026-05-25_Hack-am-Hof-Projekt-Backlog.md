@@ -87,7 +87,7 @@ Ein kurzes Script für den Live-Pitch erstellen: welche Abschnitte werden gezeig
 **Abhängigkeit:** HAH-001
 
 **Beschreibung:**  
-Ein konsistentes Begriffsset einführen: `Hack am Hof`, `Hofpass`, `Guide Studio`, `Mission`, `Layer/Modus`, `Partnerpaket`.
+Ein konsistentes Begriffsset einführen: `Hack am Hof`, `Hofrunde`, `Guide Studio`, `Mission`, `Layer/Modus`, `Partnerpaket`.
 
 **Akzeptanzkriterien:**
 

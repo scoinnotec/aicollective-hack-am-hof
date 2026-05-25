@@ -33,7 +33,7 @@ type MiniGame = {
 };
 
 type DummyScreen = "start" | "roles" | "station" | "mini" | "photo" | "finale";
-type AppStage = "login" | "setup" | "join" | "mission";
+type AppStage = "splash" | "login" | "setup" | "join" | "mission";
 
 type GroupProfile = {
   id: string;
@@ -402,7 +402,7 @@ export function AppClickDummy() {
   const [usedJoker, setUsedJoker] = useState(false);
   const [showFinale, setShowFinale] = useState(false);
   const [screenId, setScreenId] = useState<DummyScreen>("start");
-  const [appStage, setAppStage] = useState<AppStage>("login");
+  const [appStage, setAppStage] = useState<AppStage>("splash");
   const [setupSelectionLocked, setSetupSelectionLocked] = useState(false);
   const [setupProfileId, setSetupProfileId] = useState(groupProfiles[0].id);
   const [groupName, setGroupName] = useState(groupProfiles[0].defaultName);
@@ -561,7 +561,7 @@ export function AppClickDummy() {
       <div className="section-heading">
         <div>
           <div className="section-kicker">Die App zum Anklicken</div>
-          <h2>Hier wird aus dem Museumsbesuch ein gemeinsames Spiel.</h2>
+          <h2>Hier wird aus dem Museumsbesuch ein unvergessliches Erlebnis.</h2>
         </div>
         <p>
           Der Ausschnitt zeigt den Kern: passende Route wählen, Rollen verteilen, private Hinweise
@@ -571,32 +571,60 @@ export function AppClickDummy() {
 
       <div className="app-dummy-layout">
         <div className="dummy-phone" aria-label="Spielbarer App-Ausschnitt">
-          {appStage === "login" ? (
+          {appStage === "splash" ? (
+            <div className="dummy-splash-screen">
+              <div className="dummy-splash-visual" aria-hidden="true">
+                <img className="dummy-splash-visual__main" src={publicAsset("pitch-images/schulklassenmission.png")} alt="" />
+                <img className="dummy-splash-visual__mini dummy-splash-visual__mini--left" src={publicAsset("pitch-images/role-muellerkind.png")} alt="" />
+                <img className="dummy-splash-visual__mini dummy-splash-visual__mini--right" src={publicAsset("pitch-images/werkstatt-am-hof.png")} alt="" />
+              </div>
+
+              <div className="dummy-splash-copy">
+                <h3>
+                  Eine Runde.
+                  <br />
+                  Viele Rollen.
+                </h3>
+                <p>Entdeckt Höfe, Aufgaben und Geschichten gemeinsam vor Ort.</p>
+              </div>
+
+              <div className="dummy-splash-tags" aria-hidden="true">
+                <span>Route</span>
+                <span>Rollen</span>
+                <span>QR-Start</span>
+              </div>
+
+              <button className="dummy-splash-start" type="button" onClick={() => setAppStage("login")}>
+                Starten
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          ) : appStage === "login" ? (
             <div className="dummy-login-screen">
               <div className="dummy-login-hero">
                 <span>Hack am Hof</span>
-                <h3>Hofpass starten</h3>
+                <h3>Hofrunde starten</h3>
                 <p>
-                  Eine Person eröffnet die Runde. Alle anderen treten mit Code, QR oder NFC bei
-                  und bekommen danach ihre eigene Rolle auf dem Handy.
+                  Eine Person startet die Runde. Alle anderen treten per Code, QR oder NFC bei
+                  und erhalten ihre Rolle.
                 </p>
               </div>
 
               <div className="dummy-login-form">
                 <button className="dummy-entry-choice" type="button" onClick={openSetup}>
-                  <strong>Ich erstelle eine Gruppe</strong>
-                  <span>Schulklasse, Familie, Reisegruppe oder Feier vorbereiten</span>
+                  <strong>Gruppe erstellen</strong>
+                  <span>Neue Runde</span>
                   <ArrowRight size={16} />
                 </button>
                 <button className="dummy-entry-choice dummy-entry-choice--secondary" type="button" onClick={() => setAppStage("join")}>
-                  <strong>Ich trete einer Gruppe bei</strong>
-                  <span>Code scannen, Gruppennamen eingeben oder NFC-Punkt berühren</span>
+                  <strong>Gruppe beitreten</strong>
+                  <span>Mit Code oder QR</span>
                 </button>
               </div>
 
               <div className="dummy-login-note">
                 <QrCode size={17} />
-                <p>Am Eingang, am Kassenticket oder bei der Lehrperson steht der Startcode.</p>
+                <p>Am Eingang, am Kassenticket oder bei der Gruppenleitung steht der Startcode.</p>
               </div>
             </div>
           ) : appStage === "setup" ? (
@@ -610,8 +638,20 @@ export function AppClickDummy() {
                 <h3>{setupSelectionLocked ? setupProfile.label : "Wer spielt heute?"}</h3>
                 <p>
                   {setupSelectionLocked
-                    ? "Name, Kinder, Alter und Besuchszeit festlegen. Danach zeigt die App den Startcode."
-                    : "Wähle zuerst eine Gruppe. Danach wird der passende Hofpass vorbereitet."}
+                    ? (
+                        <>
+                          Name, Kinder, Alter und Besuchszeit festlegen.
+                          <br />
+                          Danach zeigt die App den Startcode.
+                        </>
+                      )
+                    : (
+                        <>
+                          Wähle zuerst eine Gruppe.
+                          <br />
+                          Danach wird die passende Hofrunde vorbereitet.
+                        </>
+                      )}
                 </p>
               </div>
               {!setupSelectionLocked ? (
@@ -701,8 +741,9 @@ export function AppClickDummy() {
                 <span>Warteraum</span>
                 <h3>{groupName}</h3>
                 <p>
-                  Zeig diesen Code am Eingang oder auf dem Handy der Lehrperson. Sobald alle da
-                  sind, startet die Mission auf den Geräten.
+                  Zeig diesen Code am Eingang oder bei der Gruppenleitung.
+                  <br />
+                  Sobald alle da sind, startet die Mission.
                 </p>
               </div>
 
@@ -744,7 +785,7 @@ export function AppClickDummy() {
               </div>
 
               <button className="dummy-create-group" type="button" onClick={startJoinedMission}>
-                Hofpass jetzt starten
+                Hofrunde starten
                 <ArrowRight size={16} />
               </button>
               <button className="dummy-audience-back" type="button" onClick={() => setAppStage("setup")}>
@@ -754,7 +795,7 @@ export function AppClickDummy() {
           ) : (
           <>
           <div className="dummy-phone__bar">
-            <span>Hofpass</span>
+            <span>Hofrunde</span>
             <span>{score} Punkte</span>
           </div>
 
@@ -861,7 +902,7 @@ export function AppClickDummy() {
               <div className="dummy-finale-product">
                 <Gift size={18} />
                 <p>
-                  Mitnahme: digitales Gruppenbild, Hofpass-Stempel, Holzmarke oder hochwertiges
+                  Mitnahme: digitales Gruppenbild, Hofrunden-Stempel, Holzmarke oder hochwertiges
                   Erinnerungsprodukt an der Kasse.
                 </p>
               </div>
@@ -1175,7 +1216,7 @@ export function AppClickDummy() {
               <p>Die Gruppe sammelt gemeinsam Punkte, Hofsiegel und Titel. Keine Bloßstellung, kein Einzelranking.</p>
             </article>
             <article>
-              <strong>Hofpass & Saisonkarte</strong>
+              <strong>Hofrunde & Saisonkarte</strong>
               <p>Digitale Missionen können mit Stempelpass, Holzmarken, Saisonabzeichen und Eventeinladungen verbunden werden.</p>
             </article>
             <article>
