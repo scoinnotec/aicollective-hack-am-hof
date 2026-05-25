@@ -21,7 +21,7 @@ Der Prototyp zeigt keine einzelne Museums-App, sondern ein wiederverwendbares Sy
 
 | Modul | Bild | Kurzbeschreibung |
 | --- | --- | --- |
-| Schulklassenmission | ![Schulklassenmission](apps/web/public/pitch-images/schulklassenmission.png) | Hofpass-Pilot mit Rollen, QR-Stationen, Karte, Aufgaben und Abschluss. |
+| Schulklassenmission | ![Schulklassenmission](apps/web/public/pitch-images/schulklassenmission.png) | Hofpass-Pilot mit Rollen, QR-Stationen, Karte, Aufgaben und Abschluss. Danach schrittweise erweiterbar für Familien, Senior:innen, Reisegruppen, Chroniker:innen und weitere Zielgruppen. |
 | Guide Studio | ![Guide Studio](apps/web/public/pitch-images/contentmodell-guide-studio.png) | Guide-Wissen, Quellen, Fotos, Audio und Freigaben werden gesammelt, bevor daraus Missionen entstehen. |
 | Foto & Feier | ![Feier- und Fotomodul](apps/web/public/pitch-images/feier-fotomodul.png) | Fotospots, freie Trauung, Taufe, Erinnerungsprodukt und Ambassador-Logik. |
 | Schmankerl-Route | ![Tiroler-Schmankerl-Route](apps/web/public/pitch-images/tiroler-schmankerl-route.png) | Kulinarik, Hofgeschichten, Rezeptpass, Audio und Abschluss im Gasthaus. |
