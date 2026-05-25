@@ -266,7 +266,7 @@ const decisionMedia = [
     text: "Quellen, Geschichten und Freigaben werden einmal strukturiert.",
   },
   {
-    image: "pitch-images/hack-am-hof.jpeg.jpg",
+    image: "pitch-images/hack-am-hof-teilnehmerinnen.png",
     title: "Partner einbinden",
     text: "Museum, Tourismus und Community entscheiden über den nächsten Schritt.",
   },
@@ -274,7 +274,7 @@ const decisionMedia = [
 
 const contextVisuals = [
   {
-    image: "pitch-images/hack-am-hof.jpeg.jpg",
+    image: "pitch-images/hack-am-hof-teilnehmerinnen.png",
     title: "Hack am Hof",
     text: "Aus vielen Ideen entsteht ein gemeinsamer Baukasten.",
   },
@@ -437,7 +437,7 @@ const generatedMissionVisuals: Record<string, string> = {
   "winter-system-school": "pitch-images/schulklassenmission.png",
   "flour-family": "pitch-images/role-muellerkind.png",
   "hunter-forest": "pitch-images/waldspur-mit-boegen.png",
-  "wood-water": "pitch-images/hofspur-im-sommer.png",
+  "wood-water": "pitch-images/hack-am-hof-teilnehmerinnen.png",
   "mining-rattenberg": "pitch-images/rattenberg-busbruecke.png",
   "festival-stube": "pitch-images/kirchtag.png",
   "repair-craft": "pitch-images/werkstatt-am-hof.png",
@@ -624,7 +624,7 @@ function PhonePrototype() {
         >
           {missionVariants.map((variant) => (
             <article key={variant.title}>
-              <img src={publicAsset(missionVariantVisuals[variant.title] ?? "pitch-images/hofspur-im-sommer.png")} alt="" />
+              <img src={publicAsset(missionVariantVisuals[variant.title] ?? "pitch-images/hack-am-hof-teilnehmerinnen.png")} alt="" />
               <div>
                 <span>{variant.audience} · {variant.duration}</span>
                 <strong>{variant.title}</strong>
@@ -668,7 +668,7 @@ function PhonePrototype() {
           </div>
 
           <article className="generated-mission-card">
-            <img src={publicAsset(generatedMissionVisuals[generatedMission.id] ?? "pitch-images/hofspur-im-sommer.png")} alt="" />
+            <img src={publicAsset(generatedMissionVisuals[generatedMission.id] ?? "pitch-images/hack-am-hof-teilnehmerinnen.png")} alt="" />
             <div className="generated-mission-content">
               <span>{generatedMission.audience} · {generatedMission.duration}</span>
               <h4>{generatedMission.title}</h4>
@@ -1269,7 +1269,7 @@ function BuildathonPrototypeSection() {
 
       <div className="buildathon-photo-panel">
         <figure>
-          <img src={publicAsset("pitch-images/hack-am-hof.jpeg.jpg")} alt="Teilnehmerinnen und Teilnehmer des Hack am Hof vor einem historischen Hofgebäude." />
+          <img src={publicAsset("pitch-images/hack-am-hof-teilnehmerinnen.png")} alt="Stilisiertes Hack am Hof Gruppenmotiv ohne erkennbare Personen." />
         </figure>
         <div>
           <div className="section-kicker">Publikums-Ranking</div>
@@ -1600,7 +1600,7 @@ const futureVisuals: Record<string, {
   moments: string[];
 }> = {
   geocaching: {
-    imageUrl: publicAsset("pitch-images/hofspur-im-sommer.png"),
+    imageUrl: publicAsset("pitch-images/hack-am-hof-teilnehmerinnen.png"),
     photoTitle: "Hofspur im Sommer",
     photoSubtitle: "Familien suchen Hofsiegel",
     popupDescription:
