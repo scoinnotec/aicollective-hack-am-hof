@@ -1,0 +1,19 @@
+{
+  "name": "hack-am-hof-platform",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Pitchable PWA prototype for the Hack am Hof museum experience platform.",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm --workspace apps/web run dev",
+    "build": "npm --workspace apps/web run build",
+    "preview": "npm --workspace apps/web run preview",
+    "typecheck": "npm --workspace apps/web run typecheck"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

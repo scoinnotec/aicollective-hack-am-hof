@@ -1,272 +1,107 @@
-# Hack am Hof - AI Hackathon im Museum Tiroler Bauernhöfe
+# Hack am Hof - Museumsplattform
 
-> Gemischte Teams entwickeln innerhalb von 5 Stunden funktionierende KI-Prototypen mit Lovable, generativer KI und modernen No-Code-/Low-Code-Workflows, direkt im Umfeld des Museums Tiroler Bauernhöfe.
+Pitchbarer Webapp-/PWA-Prototyp für eine ortsbezogene Erlebnis- und Betriebsplattform rund um das Museum Tiroler Bauernhöfe.
 
-Pfingstsamstag-Edition inklusive optionaler Privatführung durch das Museum.
+Das Repository knüpft an den AI-Hackathon im Museum Tiroler Bauernhöfe an und führt den entstandenen Projektstand als lauffähige Webdemo weiter.
 
----
+## Ziel
 
-# Vision
+In ca. drei Stunden soll ein vorzeigbarer Prototyp entstehen:
 
-„Hack am Hof“ verbindet:
-- Kultur
-- KI
-- Storytelling
-- Tourismus
-- Bildung
-- Prototyping
-- digitale Erlebniswelten
+- kleine Pitch-Website,
+- interaktive Museums-Karte,
+- Zielgruppenmodi für Schulklassen, Hochzeiten, Kulinarik, Kräuter/Natur, Familien, Pensionisten, Chroniker und interne Wartung,
+- Foto-/Avatar-Modul als KI-Zukunftsfeature,
+- Guide Studio für Fachwissen, Dokumente und eingesprochene Geschichten,
+- Ideenparkplatz für spätere Formate wie Geocaching, FPV-Events und Creator-Walks,
+- saubere Grundlage für spätere PWA/App-Erweiterung.
 
-Das Ziel ist nicht nur ein einmaliger Hackathon.
+## Stack
 
-Die Veranstaltung soll als Startpunkt dienen, damit Teilnehmer:innen:
-- ihre Ideen weiterentwickeln,
-- Teams bilden,
-- Prototypen zu echten Projekten ausbauen,
-- neue Kultur- und Tourismusformate entwickeln,
-- Startups gründen,
-- Museumsinnovationen schaffen,
-- und langfristige Kooperationen aufbauen können.
+- React
+- TypeScript
+- Vite
+- Leaflet / React Leaflet
+- PWA-Grundstruktur
+- statische TypeScript-Daten
 
-Der Hackathon ist damit bewusst als:
-- Community-Format,
-- Innovationslabor,
-- Netzwerkplattform
-- und Inkubator für kreative KI-Projekte gedacht.
+## Start
 
----
+### Fuer Entwickler
 
-# Überblick
-
-Innerhalb von 5 Stunden entwickeln interdisziplinäre Teams:
-- funktionierende Demos,
-- klickbare MVPs,
-- KI-Erlebnisformate,
-- Museums-Apps,
-- Avatar-Systeme,
-- Storytelling-Prototypen
-- und kulturelle KI-Anwendungen.
-
-Dabei entstehen reale Konzepte mit Potential zur Weiterentwicklung über das Event hinaus.
-
----
-
-# Event-Fakten
-
-| Bereich | Information |
-|---|---|
-| Event | Hack am Hof |
-| Format | KI-Hackathon |
-| Ort | Museum Tiroler Bauernhöfe |
-| Dauer | 5 Stunden |
-| Edition | Pfingstsamstag |
-| Fokus | funktionierende KI-Prototypen |
-| Plattform | Lovable |
-| Ziel | schnelle MVPs + Weiterentwicklung |
-| Optional | Privatführung durchs Museum |
-| Website | https://aicollective.at/hack-am-hof |
-
----
-
-# Kernidee
-
-Museen sollen nicht nur Orte der Vergangenheit sein.
-
-Sie können:
-- Innovationsräume,
-- kreative Labore,
-- Community-Hubs
-- und Testfelder für neue Technologien werden.
-
-„Hack am Hof“ zeigt, wie:
-- kulturelles Erbe,
-- moderne KI,
-- digitales Storytelling
-- und Tourismusinnovation
-
-miteinander kombiniert werden können.
-
----
-
-# Langfristiger Ansatz
-
-Der Hackathon endet nicht mit der Abschlusspräsentation.
-
-Teilnehmer:innen sollen die Möglichkeit haben:
-- ihre Ideen weiterzuführen,
-- neue Features zu entwickeln,
-- Open-Source-Projekte aufzubauen,
-- Förderungen zu beantragen,
-- Pilotprojekte mit Museen umzusetzen,
-- oder gemeinsam Startups zu gründen.
-
-Mögliche Folgeformate:
-- Community Meetups
-- Online-Sessions
-- offene Projektgruppen
-- Museumskooperationen
-- regionale KI-Initiativen
-- Folge-Hackathons
-- Bildungsprojekte
-- Tourismuspiloten
-
----
-
-# Typische Projektideen
-
-## Historische Avatar-App
-
-Besucher:innen werden:
-- fotografiert,
-- analysiert,
-- historisch interpretiert
-- und in historische Rollen transformiert.
-
-Beispiele:
-- Müllerkind
-- Sennerkind
-- Schäferkind
-- Ziegenhüterkind
-- Krämerkind
-- Tischlerlehrling
-- Weberkind
-- Fischerkind
-- Feuerhüterkind
-
-Die App generiert:
-- historische Porträts,
-- Sammelkarten,
-- Museumsquests,
-- Storytelling-Inhalte,
-- digitale Souvenirs,
-- Druckvorlagen
-- und personalisierte Erinnerungen.
-
----
-
-## KI-gestützte Museumserlebnisse
-
-Mögliche Ideen:
-- AR-/VR-Erweiterungen
-- interaktive Hofgeschichten
-- KI-Audioguides
-- Museumsquests
-- Familien-Challenges
-- historische Rollenspiele
-- dynamische Museumsrouten
-- Bildungsformate für Schulklassen
-
----
-
-## Tourismus & Erlebnisdesign
-
-Beispiele:
-- GeoCaching
-- Fotografie-Erlebnisse
-- FPV-Drohnenformate
-- historische Handwerksrouten
-- Outdoor-Lernspiele
-- KI-gestützte Besucherführung
-- hybride Kulturformate
-
----
-
-# Technologie-Stack
-
-## Lovable
-
-Rapid Prototyping von:
-- Web-Apps
-- mobilen Interfaces
-- Erlebnisplattformen
-- KI-Frontends
-
----
-
-## Weitere Technologien
-
-| Bereich | Beispiele |
-|---|---|
-| KI-Bildgenerierung | OpenAI Images |
-| Storytelling | LLMs |
-| UI/UX | Lovable |
-| Automatisierung | APIs / No-Code |
-| Avatar-Systeme | generative KI |
-| Museumslogik | JSON-basierte Promptsysteme |
-
----
-
-# Historisches Prompt-System
-
-Das Projekt nutzt modulare Prompt-Bausteine.
-
-## Beispielstruktur
-
-```text
-Photorealistic historical portrait of {CHARACTER}
-inside {LOCATION},
-wearing {CLOTHING},
-using {OBJECTS},
-performing {ACTIVITY},
-with {LIGHTING},
-authentic 19th century Tyrolean alpine atmosphere,
-cinematic documentary realism,
-no readable text,
-no logos.
+```bash
+npm install
+npm run dev
 ```
 
----
+Dann im Browser:
 
-# Fokus des Events
+```text
+http://127.0.0.1:5173
+```
 
-## Nicht:
-- reine Theorie
-- PowerPoint-only
-- abstrakte Konzepte
+### Fertige Demo bauen
 
-## Sondern:
-- funktionierende Prototypen
-- echte User Journeys
-- kreative Experimente
-- schnelle MVPs
-- sichtbare KI-Anwendungen
+```bash
+npm install
+npm run build
+```
 
----
+Danach liegt die fertige statische Demo unter:
 
-# Community & Open Innovation
+```text
+apps/web/dist/
+```
 
-„Hack am Hof“ versteht sich als offene Innovationsplattform.
+### Lokal starten fuer Laien
 
-Die Veranstaltung soll:
-- Menschen vernetzen,
-- Ideen sichtbar machen,
-- Kooperationen fördern,
-- kreative Experimente ermöglichen
-- und langfristige Projekte entstehen lassen.
+Nach dem Build kann die Demo ohne Entwicklungsserver lokal gestartet werden:
 
-Teilnehmer:innen können:
-- ihre Projekte offen dokumentieren,
-- andere Teams einladen,
-- gemeinsam weiterentwickeln,
-- neue Module bauen,
-- oder Folgeprojekte initiieren.
+- Windows: `start-demo.bat` doppelklicken
+- Windows PowerShell: `start-demo.ps1` ausfuehren
+- macOS/Linux: `./start-demo.sh` ausfuehren
 
----
+Die Startdateien starten einen kleinen lokalen Server unter:
 
-# Links
+```text
+http://127.0.0.1:8088/
+```
 
-- Event: https://aicollective.at/hack-am-hof
-- AI Collective: https://aicollective.at
+Voraussetzung fuer den lokalen Laienstart ist Python. Wenn Python fehlt, zeigen die Startdateien eine verstaendliche Meldung.
 
----
+### Online ueber GitHub Pages
 
-# Lizenz
+Das Projekt ist fuer GitHub Pages vorbereitet. Beim Push auf `main` baut die GitHub Action `.github/workflows/deploy-pages.yml` die Webapp und veroeffentlicht `apps/web/dist`.
 
-Dieses Repository dient als:
-- Dokumentation,
-- Inspirationssammlung,
-- Promptbibliothek,
-- Demo-Basis
-- und offene Projektplattform.
+Fuer das Repository:
 
-Lizenz und Nutzungsbedingungen projektspezifisch definieren.
+```text
+https://github.com/scoinnotec/aicollective-hack-am-hof.git
+```
+
+muss in GitHub unter `Settings -> Pages` als Quelle `GitHub Actions` aktiviert sein.
+
+## Projektstruktur
+
+```text
+apps/web/
+  public/
+    lageplan.webp
+    manifest.webmanifest
+    sw.js
+  src/
+    components/
+    data/
+    features/map/
+    lib/
+docs/
+  ARCHITECTURE.md
+  BACKLOG.md
+  EVENT_BLUEPRINT.md
+  PITCH.md
+  UPDATELOG.md
+```
+
+## Prinzip
+
+Der Prototyp startet bewusst lokal und datengetrieben. Später können Datenbank, Admin-Login, KI-Bildgenerierung, echte Uploads, QR-Codes, Offline-Modus und App-Verpackung mit Capacitor ergänzt werden.
