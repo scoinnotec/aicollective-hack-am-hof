@@ -1,0 +1,17 @@
+{
+  "name": "Hack am Hof",
+  "short_name": "HofSpur",
+  "description": "Museumsmissionen, Fotospots, Kräuterpunkte, Kulinarik und interne Aufgaben auf einer gemeinsamen Karte.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f6efe2",
+  "theme_color": "#163f35",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
