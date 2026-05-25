@@ -28,6 +28,8 @@ Der Prototyp zeigt keine einzelne Museums-App, sondern ein wiederverwendbares Sy
 | Rattenberg-Brücke | ![Rattenberg-Busbrücke](apps/web/public/pitch-images/rattenberg-busbruecke.png) | Kombipaket aus Glasstadt, Museum, Schmankerl, Erinnerungsfoto und planbarer Rückfahrt. |
 | Zeitreise Foto | ![KI-Charaktere und Souvenir](apps/web/public/pitch-images/ki-charaktere-souvenir.png) | Besucher:innen werden Teil einer historischen Hofszene, später mit Druck-/Souvenirprozess. |
 
+Der erste sinnvolle Pilot ist die Schulklassenmission. Dieselbe technische und inhaltliche Grundlage kann danach Schritt für Schritt erweitert werden: für Familien mit kürzeren Runden, für Senior:innen mit ruhigen Wegen, größerer Schrift und Audio, für Reisegruppen mit planbaren Zeitfenstern, für Chroniker:innen mit Quellen- und Erinnerungsarbeit sowie für interne Teams mit Wartungs- und Dokumentationspunkten.
+
 ### Weitere Ausbaupfade
 
 ![HofSpur im Sommer](apps/web/public/pitch-images/hofspur-im-sommer.png)
