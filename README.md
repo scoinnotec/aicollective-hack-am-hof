@@ -4,6 +4,8 @@ Pitchbarer Webapp-/PWA-Prototyp für eine ortsbezogene Erlebnis- und Betriebspla
 
 Das Repository knüpft an den AI-Hackathon im Museum Tiroler Bauernhöfe an und führt den entstandenen Projektstand als lauffähige Webdemo weiter.
 
+![Stilisiertes Hack am Hof Gruppenmotiv](apps/web/public/pitch-images/hack-am-hof-teilnehmerinnen.png)
+
 ## Kontext
 
 - [AI Collective](https://aicollective.at)
@@ -29,8 +31,6 @@ Der Prototyp zeigt keine einzelne Museums-App, sondern ein wiederverwendbares Sy
 Der erste sinnvolle Pilot ist die Schulklassenmission. Dieselbe technische und inhaltliche Grundlage kann danach Schritt für Schritt erweitert werden: für Familien mit kürzeren Runden, für Senior:innen mit ruhigen Wegen, größerer Schrift und Audio, für Reisegruppen mit planbaren Zeitfenstern, für Chroniker:innen mit Quellen- und Erinnerungsarbeit sowie für interne Teams mit Wartungs- und Dokumentationspunkten.
 
 ### Weitere Ausbaupfade
-
-![Stilisiertes Hack am Hof Gruppenmotiv](apps/web/public/pitch-images/hack-am-hof-teilnehmerinnen.png)
 
 - Familienmodus, Pensionistenmodus, Chroniker-Modus und interner Betrieb.
 - Bauernhaus-Inspiration für hochwertige Umbau- und Handwerksfragen.
