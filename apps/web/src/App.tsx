@@ -312,11 +312,6 @@ const contextVisuals = [
 
 const ideaNoteVisuals = [
   {
-    image: "pitch-images/erste-ideen-notizen-01.jpg",
-    title: "Erste Ideenzettel",
-    text: "Schulklasse, Info am Hof, Schatzjagd, Tradition und physische Hinweise tauchen schon in den ersten Rohnotizen auf.",
-  },
-  {
     image: "pitch-images/erste-ideen-notizen-02.jpg",
     title: "Vom Zettel zur Route",
     text: "Aus verstreuten Stichworten werden später klare Bausteine: Rätsel, Story, Gruppenlogik, Hinweise und Museumswissen.",
@@ -776,7 +771,7 @@ function ContextStory() {
           <div className="section-kicker">Erste Ideen am Tisch</div>
           <h3>Die Plattform beginnt nicht im Code, sondern mit Zetteln.</h3>
           <p>
-            Diese Fotos zeigen den frühen Arbeitsstand: lose Begriffe, erste Richtungen und
+            Dieses Foto zeigt den frühen Arbeitsstand: lose Begriffe, erste Richtungen und
             mögliche Spielmechaniken. Genau daraus entsteht der nächste Schritt: sortieren,
             bewerten, zu einer Route verdichten und erst danach bauen.
           </p>
@@ -1426,7 +1421,10 @@ function BuildathonPrototypeSection() {
       <details className="buildathon-accordion">
         <summary>
           <span>Alle 10 Prototypen</span>
-          <strong>Nach Tisch T01-T10 sortiert anzeigen</strong>
+          <strong>
+            Nach Tisch T01-T10 sortiert anzeigen
+            <ChevronRight size={18} aria-hidden="true" />
+          </strong>
         </summary>
         <div className="buildathon-table" role="list">
         {sortedReferences.map((reference) => {

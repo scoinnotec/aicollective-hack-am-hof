@@ -8952,7 +8952,7 @@ textarea {
 
 .idea-notes-panel {
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  grid-template-columns: minmax(260px, 0.76fr) minmax(0, 1.24fr);
   gap: clamp(18px, 3vw, 34px);
   align-items: stretch;
   margin: 0 0 clamp(50px, 7vw, 82px);
@@ -9024,7 +9024,7 @@ textarea {
 
 .idea-notes-panel__photos figure {
   position: relative;
-  min-height: 220px;
+  min-height: clamp(260px, 24vw, 360px);
   overflow: hidden;
   border: 1px solid rgba(74, 52, 29, 0.18);
   border-radius: 8px;
@@ -9082,18 +9082,19 @@ textarea {
 
 .context-extra-details {
   grid-column: 2;
-  margin-top: 2px;
+  margin-top: 18px;
+  padding-bottom: 8px;
 }
 
 .context-extra-details summary {
   width: fit-content;
-  min-height: 34px;
+  min-height: 42px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   border: 1px solid rgba(74, 52, 29, 0.16);
   border-radius: 999px;
-  padding: 0 12px;
+  padding: 0 16px;
   background: rgba(255, 250, 240, 0.66);
   color: var(--green);
   cursor: pointer;
@@ -9115,7 +9116,7 @@ textarea {
 }
 
 .context-extra-details p {
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 .context-card-links a {
@@ -12179,7 +12180,7 @@ textarea {
 
 .context-extra-details {
   grid-column: auto;
-  margin: 6px 18px 0;
+  margin: 16px 18px 18px;
 }
 
 .context-extra-details p {
@@ -13040,7 +13041,7 @@ textarea {
 }
 
 .buildathon-podium__place strong {
-  font-size: clamp(1.38rem, 2.2vw, 1.86rem);
+  font-size: clamp(0.98rem, 1.25vw, 1.16rem);
 }
 
 .buildathon-podium__place em {
@@ -13456,7 +13457,7 @@ textarea {
   }
 
   .buildathon-podium__place strong {
-    font-size: 1.22rem;
+    font-size: 1.28rem;
   }
 
   .buildathon-podium__place b {
@@ -13466,5 +13467,140 @@ textarea {
 
   .buildathon-podium__place em {
     justify-self: end;
+  }
+}
+
+/* Ranking polish: clearer medal hierarchy and a heading-style accordion trigger. */
+.buildathon-podium__place {
+  position: relative;
+  overflow: hidden;
+  align-items: flex-start;
+  isolation: isolate;
+}
+
+.buildathon-podium__place::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: 5px;
+  background: var(--medal-line, rgba(74, 52, 29, 0.16));
+}
+
+.buildathon-podium__place--1 {
+  --medal-line: #d9a63a;
+  border-color: rgba(217, 166, 58, 0.62);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 242, 0.96), rgba(242, 207, 116, 0.82)),
+    #f6dc8e;
+}
+
+.buildathon-podium__place--2 {
+  --medal-line: #aeb4b9;
+  border-color: rgba(151, 159, 166, 0.48);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 242, 0.94), rgba(219, 219, 211, 0.78)),
+    #e8e6dc;
+}
+
+.buildathon-podium__place--3 {
+  --medal-line: #b97843;
+  border-color: rgba(185, 120, 67, 0.48);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 242, 0.94), rgba(218, 170, 119, 0.66)),
+    #ead0ad;
+}
+
+.buildathon-podium__place span,
+.buildathon-podium__place b {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.buildathon-podium__place strong,
+.buildathon-podium__place em {
+  align-self: stretch;
+  text-align: left;
+}
+
+.buildathon-accordion {
+  border-top: 0;
+}
+
+.buildathon-accordion summary {
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-top: clamp(20px, 3vw, 34px);
+  border-top: 1px solid rgba(154, 62, 35, 0.22);
+  border-bottom: 1px solid rgba(154, 62, 35, 0.14);
+  padding: 22px 0;
+}
+
+.buildathon-accordion summary strong {
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--green);
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 680;
+  line-height: 1.08;
+}
+
+.buildathon-accordion summary strong::after,
+.buildathon-accordion[open] summary strong::after {
+  content: none;
+}
+
+.buildathon-accordion summary strong svg {
+  flex: 0 0 auto;
+  transition: transform 180ms ease;
+}
+
+.buildathon-accordion[open] summary strong svg {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 620px) {
+  .buildathon-podium__place,
+  .buildathon-podium__place--1,
+  .buildathon-podium__place--2,
+  .buildathon-podium__place--3 {
+    grid-template-columns: 1fr auto;
+    gap: 8px 12px;
+  }
+
+  .buildathon-podium__place span,
+  .buildathon-podium__place b {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .buildathon-podium__place strong {
+    grid-column: 1;
+  }
+
+  .buildathon-podium__place em {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    align-self: center;
+  }
+
+  .buildathon-accordion summary {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 0;
+  }
+
+  .buildathon-accordion summary > span {
+    display: none;
+  }
+
+  .buildathon-accordion summary strong {
+    justify-self: stretch;
+    justify-content: space-between;
+    font-size: clamp(1.3rem, 7vw, 1.8rem);
   }
 }
