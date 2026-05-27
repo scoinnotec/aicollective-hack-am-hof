@@ -12264,7 +12264,8 @@ textarea {
 }
 
 .context-card-links {
-  margin-bottom: 18px;
+  margin-top: 18px;
+  margin-bottom: 0;
 }
 
 .context-extra-details {
@@ -13778,14 +13779,15 @@ textarea {
 
   .context-extra-details {
     margin-top: auto;
-    margin-bottom: 0;
+    margin-bottom: 18px;
     padding-top: 20px;
     padding-bottom: 12px;
     border-top: 1px solid rgba(154, 62, 35, 0.12);
   }
 
   .context-card-links {
-    margin-top: 10px;
+    margin-top: 18px;
+    margin-bottom: 18px;
   }
 }
 

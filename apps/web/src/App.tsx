@@ -801,14 +801,6 @@ function ContextStory() {
             {block.paragraphs.slice(0, 2).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            {block.paragraphs.length > 2 ? (
-              <details className="context-extra-details">
-                <summary>Weitere Einordnung anzeigen</summary>
-                {block.paragraphs.slice(2).map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </details>
-            ) : null}
             {block.links ? (
               <div className="context-card-links">
                 {block.links.map((link) => (
@@ -822,6 +814,14 @@ function ContextStory() {
                   </a>
                 ))}
               </div>
+            ) : null}
+            {block.paragraphs.length > 2 ? (
+              <details className="context-extra-details">
+                <summary>Weitere Einordnung anzeigen</summary>
+                {block.paragraphs.slice(2).map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </details>
             ) : null}
           </article>
         ))}
