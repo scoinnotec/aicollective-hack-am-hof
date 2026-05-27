@@ -310,6 +310,19 @@ const contextVisuals = [
   },
 ];
 
+const ideaNoteVisuals = [
+  {
+    image: "pitch-images/erste-ideen-notizen-01.jpg",
+    title: "Erste Ideenzettel",
+    text: "Schulklasse, Info am Hof, Schatzjagd, Tradition und physische Hinweise tauchen schon in den ersten Rohnotizen auf.",
+  },
+  {
+    image: "pitch-images/erste-ideen-notizen-02.jpg",
+    title: "Vom Zettel zur Route",
+    text: "Aus verstreuten Stichworten werden später klare Bausteine: Rätsel, Story, Gruppenlogik, Hinweise und Museumswissen.",
+  },
+];
+
 const processVisuals = [
   {
     image: "pitch-images/contentmodell-guide-studio.png",
@@ -751,6 +764,34 @@ function ContextStory() {
             </figcaption>
           </figure>
         ))}
+      </div>
+
+      <div className="idea-notes-panel" aria-label="Erste handschriftliche Projektideen">
+        <div className="idea-notes-panel__copy">
+          <div className="section-kicker">Erste Ideen am Tisch</div>
+          <h3>Die Plattform beginnt nicht im Code, sondern mit Zetteln.</h3>
+          <p>
+            Diese Fotos zeigen den frühen Arbeitsstand: lose Begriffe, erste Richtungen und
+            mögliche Spielmechaniken. Genau daraus entsteht der nächste Schritt: sortieren,
+            bewerten, zu einer Route verdichten und erst danach bauen.
+          </p>
+          <ul>
+            <li>Schulklasse, Schatzjagd und Rätsel als naheliegender Pilot.</li>
+            <li>Physische Hinweise, digitale Hinweise und Story als gemeinsamer Ablauf.</li>
+            <li>Tradition, Geschichte und Gruppenlogik als Material für spätere Module.</li>
+          </ul>
+        </div>
+        <div className="idea-notes-panel__photos">
+          {ideaNoteVisuals.map((item) => (
+            <figure key={item.title}>
+              <img src={publicAsset(item.image)} alt="" loading="lazy" />
+              <figcaption>
+                <strong>{item.title}</strong>
+                <span>{item.text}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
 
       <div className="context-grid">
