@@ -947,31 +947,72 @@ main {
   gap: 8px;
 }
 
-.history-panel article {
+.history-panel article,
+.history-theme {
   padding: 14px;
   border-radius: 18px;
   background: #fbf7ef;
   border: 1px solid var(--line);
 }
 
-.history-panel article span {
+.history-panel article span,
+.history-theme span {
   display: block;
   color: var(--green-2);
   font-size: 0.76rem;
   font-weight: 850;
 }
 
-.history-panel h3 {
+.history-panel h3,
+.history-theme h3 {
   margin-top: 5px;
   font-size: 1rem;
 }
 
-.history-panel strong {
+.history-panel strong,
+.history-theme strong {
   display: block;
   margin-top: 9px;
   color: var(--ink);
   line-height: 1.35;
   font-size: 0.9rem;
+}
+
+.history-theme summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "period icon"
+    "title icon";
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.history-theme summary span {
+  grid-area: period;
+}
+
+.history-theme summary h3 {
+  grid-area: title;
+}
+
+.history-theme summary svg {
+  grid-area: icon;
+}
+
+.history-theme summary::-webkit-details-marker {
+  display: none;
+}
+
+.history-theme summary svg {
+  color: var(--terracotta);
+  transition: transform 180ms ease;
+}
+
+.history-theme[open] summary svg {
+  transform: rotate(90deg);
 }
 
 .avatar-grid {
@@ -13922,6 +13963,108 @@ textarea {
 }
 
 @media (max-width: 760px) {
+  .guide-studio .section-heading h2 {
+    font-size: clamp(2.45rem, 12vw, 4rem);
+    line-height: 0.98;
+  }
+
+  .guide-studio .section-heading > p {
+    font-size: 0.98rem;
+    line-height: 1.48;
+  }
+
+  .guide-process {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+  }
+
+  .guide-process li {
+    font-size: 0.86rem;
+  }
+
+  .guide-grid {
+    gap: 12px;
+  }
+
+  .collection-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    overflow: visible;
+    padding: 10px;
+  }
+
+  .collection-item {
+    min-width: 0;
+    min-height: 46px;
+    padding: 0 10px;
+    white-space: normal;
+  }
+
+  .collection-item span {
+    min-width: 0;
+    overflow-wrap: normal;
+    hyphens: auto;
+    line-height: 1.15;
+  }
+
+  .guide-editor,
+  .history-panel {
+    padding: 12px;
+  }
+
+  .guide-editor h3 {
+    font-size: clamp(1.75rem, 8.5vw, 2.25rem);
+  }
+
+  .example-row {
+    gap: 7px;
+  }
+
+  .example-row span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .upload-row label,
+  .upload-row button {
+    min-height: 48px;
+    border-radius: 8px;
+  }
+
+  .story-field textarea {
+    min-height: 116px;
+    border-radius: 8px;
+  }
+
+  .source-policy {
+    border-radius: 8px;
+  }
+
+  .source-status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-panel {
+    gap: 8px;
+  }
+
+  .history-panel__title {
+    font-size: 0.72rem;
+    line-height: 1.25;
+  }
+
+  .history-theme {
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .history-theme p,
+  .history-theme strong {
+    font-size: 0.9rem;
+  }
+
   .estimate-section .section-heading h2 {
     font-size: clamp(2.45rem, 12vw, 4.1rem);
     line-height: 0.98;

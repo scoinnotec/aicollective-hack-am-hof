@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FileAudio, FileText, FolderTree, Mic, UploadCloud } from "lucide-react";
+import { ChevronRight, FileAudio, FileText, FolderTree, Mic, UploadCloud } from "lucide-react";
 import { contentCollections, historicalThemes } from "../data/contentStudio";
 
 const guideStudioSteps = ["sammeln", "prüfen", "strukturieren", "freigeben", "nutzen"];
@@ -104,12 +104,15 @@ export function GuideStudio() {
             Historische Themen für Erlebnisse
           </div>
           {historicalThemes.map((theme) => (
-            <article key={theme.id}>
-              <span>{theme.period}</span>
-              <h3>{theme.title}</h3>
+            <details className="history-theme" key={theme.id}>
+              <summary>
+                <span>{theme.period}</span>
+                <h3>{theme.title}</h3>
+                <ChevronRight size={17} aria-hidden="true" />
+              </summary>
               <p>{theme.summary}</p>
               <strong>{theme.uxHook}</strong>
-            </article>
+            </details>
           ))}
         </div>
       </div>
