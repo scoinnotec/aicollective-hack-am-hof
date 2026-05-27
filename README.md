@@ -22,6 +22,9 @@ Das Repository knüpft an den AI-Hackathon im Museum Tiroler Bauernhöfe an und 
 
 ## Wichtige Dokumente
 
+- [Vibe-Coder Einstieg: von null bis zur eigenen Änderung](docs/wiki/Vibe-Coder-Einstieg.md)
+- [ELI5: So funktioniert das Projekt](docs/wiki/ELI5-So-funktioniert-das-Projekt.md)
+- [KI-Tools für dieses Projekt](docs/wiki/KI-Tools-fuer-dieses-Projekt.md)
 - [Pitch & Projektlogik](docs/PITCH.md)
 - [Projekt-Backlog](docs/BACKLOG.md)
 - [Roadmap und offene Aufgaben](docs/2026-05-25_Hack-am-Hof-Projekt-Backlog.md)
@@ -77,6 +80,38 @@ Der aktuelle Stand soll vor allem eine kleine, klare Pilotentscheidung ermöglic
 - Leaflet / React Leaflet
 - PWA-Grundstruktur
 - statische TypeScript-Daten
+
+## Einstieg für Nicht-Programmierer:innen und Vibe-Coder
+
+Wenn du noch nie mit GitHub gearbeitet hast, starte hier:
+
+1. [ELI5: So funktioniert das Projekt](docs/wiki/ELI5-So-funktioniert-das-Projekt.md) lesen.
+2. [Vibe-Coder Einstieg](docs/wiki/Vibe-Coder-Einstieg.md) Schritt für Schritt durchgehen.
+3. Projekt mit GitHub Desktop oder `git clone` auf den eigenen Computer holen.
+4. Im Projektordner `npm install` und danach `npm run dev` ausführen.
+5. Im Browser `http://127.0.0.1:5173/` öffnen.
+6. Mit Codex, Claude, Cursor, Windsurf, Copilot oder einem anderen KI-Tool kleine Änderungen machen.
+7. Vor dem Hochladen immer `npm run typecheck` und `npm run build` ausführen.
+8. Änderungen mit GitHub Desktop oder Git wieder zu GitHub hochladen.
+
+Die Wiki-Quellseiten liegen unter [docs/wiki](docs/wiki/). Sie sind so geschrieben, dass sie auch in das GitHub-Wiki kopiert oder in ein Wiki-Repository übernommen werden können.
+
+### Was Vibe-Coder zuerst verstehen sollten
+
+- GitHub ist der Online-Projektordner.
+- `README.md` ist die Startseite.
+- `apps/web/src/App.tsx` baut die Hauptseite zusammen.
+- `apps/web/src/data/platform.ts` enthält viele Inhalte und Daten.
+- `apps/web/src/styles.css` steuert das Aussehen.
+- `apps/web/public/pitch-images/` enthält die Bilder.
+- `npm run dev` startet die lokale Vorschau.
+- `npm run build` prüft, ob eine veröffentlichbare Version gebaut werden kann.
+
+Mehr dazu:
+
+- [Vibe-Coder Einstieg](docs/wiki/Vibe-Coder-Einstieg.md)
+- [KI-Tools für dieses Projekt](docs/wiki/KI-Tools-fuer-dieses-Projekt.md)
+- [ELI5-Erklärung](docs/wiki/ELI5-So-funktioniert-das-Projekt.md)
 
 ## Start
 

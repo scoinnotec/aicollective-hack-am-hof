@@ -1,0 +1,761 @@
+{
+  "communities": {
+    "0": [
+      "backlog_backlog",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_backlog_ziel",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_erste_empfohlene_tickets",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_001_beschlussvorschlag_f\u00fcr_pilot_formulieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_002_pilotumfang_in_der_seite_sichtbar_markieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_003_5_minuten_demo_script_schreiben",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_004_produktbegriffe_vereinheitlichen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_005_hero_auf_pilotentscheidung_nachsch\u00e4rfen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_006_klickdummy_auf_schulklassen_pilot_fokussieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_007_smartphone_prototyp_vom_klickdummy_abgrenzen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_008_kartenansicht_auf_pilotroute_verdichten",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_009_risikoabschnitt_f\u00fcr_vorstand_erg\u00e4nzen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_010_erfolgsmessung_f\u00fcr_pilot_definieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_011_guide_studio_arbeitsprozess_konkretisieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_012_pilotroute_fachlich_pr\u00fcfbar_machen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_013_datenmodell_f\u00fcr_pilot_skizzieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_014_statische_daten_fachlich_aufteilen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_015_bundle_gr\u00f6sse_und_code_splitting_pr\u00fcfen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_016_kritische_ui_flows_testen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_017_foto_feierpaket_als_partnerangebot_strukturieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_018_schmankerlroute_als_partnerangebot_strukturieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_019_rattenberg_busgruppenpaket_strukturieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_020_ideenpool_kuratieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_021_deployment_strategie_f\u00fcr_github_und_lokale_nutzung_festlegen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_022_statisches_build_f\u00fcr_github_pages_vorbereiten",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_023_laien_starter_f\u00fcr_windows_macos_linux_erstellen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_hah_024_optional_echte_desktop_app_pr\u00fcfen",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_md",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_priorit\u00e4ten",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_sprint_0_entscheidungssch\u00e4rfe",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_sprint_1_pitch_und_ui_fokussieren",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_sprint_2_vorstands_und_pilotf\u00e4higkeit",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_sprint_3_technisches_fundament",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_sprint_4_partnerpakete_und_ausbau",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_sprint_5_auslieferung_und_laienstart",
+      "docs_2026_05_25_hack_am_hof_projekt_backlog_statuswerte",
+      "docs_backlog_md",
+      "docs_backlog_p0_drei_stunden_prototyp",
+      "docs_backlog_p1_pitch_qualit\u00e4t",
+      "docs_backlog_p2_museums_pilot",
+      "docs_backlog_p3_plattform",
+      "iteration_i_review_hack_am_hof",
+      "projekt_backlog_hack_am_hof"
+    ],
+    "1": [
+      "bildprompts_bauernhaus_inspiration",
+      "bildprompts_chroniker_modus",
+      "bildprompts_contentmodell_und_guide_studio",
+      "bildprompts_familienmodus",
+      "bildprompts_feier_und_fotomodul",
+      "bildprompts_fpv_drohnenrennen",
+      "bildprompts_geschichtsmodus",
+      "bildprompts_interner_betrieb",
+      "bildprompts_ki_charaktere_und_souvenir",
+      "bildprompts_kraeuterpfad",
+      "bildprompts_larp_living_history",
+      "bildprompts_mittelalter_und_handwerksfest",
+      "bildprompts_motorrad_einkehr",
+      "bildprompts_oldtimer_sternfahrt",
+      "bildprompts_pensionistenmodus",
+      "bildprompts_rattenberg_busgruppe",
+      "bildprompts_schulklassenmission",
+      "bildprompts_trachtenmodenschau_am_hof",
+      "bildprompts_vr_ar_zeitreise",
+      "hack_am_hof_graph_corpus_readme_codeblock_1",
+      "hack_am_hof_graph_corpus_readme_codeblock_2",
+      "hack_am_hof_graph_corpus_readme_codeblock_4",
+      "hack_am_hof_graph_corpus_readme_codeblock_5",
+      "hack_am_hof_graph_corpus_readme_codeblock_6",
+      "hack_am_hof_graph_corpus_readme_fertige_demo_bauen",
+      "hack_am_hof_graph_corpus_readme_f\u00fcr_entwickler",
+      "hack_am_hof_graph_corpus_readme_lokal_starten_f\u00fcr_laien",
+      "hack_am_hof_graph_corpus_readme_online_\u00fcber_github_pages",
+      "hack_am_hof_graph_corpus_readme_prinzip",
+      "hack_am_hof_graph_corpus_readme_projektstruktur",
+      "hack_am_hof_graph_corpus_readme_stack",
+      "hack_am_hof_graph_corpus_readme_start",
+      "hack_am_hof_graph_corpus_readme_ziel",
+      "readme_hack_am_hof",
+      "readme_md"
+    ],
+    "2": [
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_begriffe_die_vereinheitlicht_werden_sollten",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_empfehlung_f\u00fcr_vorstandsbeschluss",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_empfohlene_produktarchitektur_in_sprache",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_entwicklerische_optimierungen",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_entwicklersicht",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_hack_am_hof_iteration_i_review_aus_mehreren_blickwinkeln",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_klar",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_kurzfazit",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_md",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_optimierung_f\u00fcr_pitch",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_p0_vor_der_n\u00e4chsten_pr\u00e4sentation",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_p1_vor_einem_echten_pilot",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_p2_vor_plattformausbau",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_pitch_sicht",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_priorisierte_optimierungsliste",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_projektleiter_sicht",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_projektstruktur_f\u00fcr_die_n\u00e4chste_phase",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_schlussbewertung",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_technische_risiken_und_unklarheiten",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_ui_ux_optimierung",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_ui_ux_sicht",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_unklar",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_ux_probleme",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_vereinheitlichung_begriffe_und_ebenen",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_vorstandssicht",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_was_beim_durchklicken_klar_wird",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_was_ein_vorstand_vor_freigabe_kl\u00e4ren_sollte",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_was_f\u00fcr_eine_freigabe_spricht",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_was_f\u00fcr_umsetzung_noch_unklar_ist",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_was_im_pitch_noch_st\u00f6rt",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_was_klar_ist",
+      "docs_2026_05_25_hack_am_hof_iteration_i_review_was_stark_ist"
+    ],
+    "3": [
+      "apps_web_src_app_tsx",
+      "src_app_boardpitchagenda",
+      "src_app_buildathonprototypesection",
+      "src_app_buildathonwinners",
+      "src_app_contextblocks",
+      "src_app_contextstory",
+      "src_app_decisionandroadmapsection",
+      "src_app_futureformatgroups",
+      "src_app_futurescopebyid",
+      "src_app_generatedmissionvisuals",
+      "src_app_missionvariantvisuals",
+      "src_app_moduleideaicon",
+      "src_app_moduleideamodal",
+      "src_app_moduleideas",
+      "src_app_modulepitchdetails",
+      "src_app_modulescopebyid",
+      "src_app_phoneprototype",
+      "src_app_pilotboundaries",
+      "src_app_pilotdecisionscope",
+      "src_app_pitchmodalshell",
+      "src_app_projectestimates",
+      "src_app_projectestimatesection",
+      "src_app_publicasset",
+      "src_app_routeroleshowcase",
+      "src_app_scopelabel",
+      "src_app_scopestylebylabel",
+      "src_app_technicalnotes"
+    ],
+    "4": [
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_arbeitsregel_f\u00fcr_jede_phase",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_definition_of_done",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_empfohlene_reihenfolge",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_erste_sinnvolle_arbeitseinheit",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_inhalt",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_kontrollierter_arbeitsmodus",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_md",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_nicht_enthalten",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_10_technisches_datenmodell_skizzieren",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_11_performance_und_technische_hygiene",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_12_partnerpakete_strukturieren",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_13_ideenpool_parken_und_kuratieren",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_1_pilotentscheidung_sch\u00e4rfen",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_2_5_minuten_pitchdramaturgie_bauen",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_3_seitenstruktur_in_drei_ebenen_ordnen",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_4_produktbegriffe_vereinheitlichen",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_5_klickdummy_fokussieren",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_6_karte_auf_pilotroute_verdichten",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_7_guide_studio_fundament_konkretisieren",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_8_risiken_und_vorstandsfragen_sichtbar_machen",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_paket_9_erfolgsmessung_f\u00fcr_pilot_definieren",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_priorit\u00e4tslogik",
+      "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_ziel_dieser_paketplanung",
+      "iteration_i_optimierungspakete_hack_am_hof"
+    ],
+    "5": [
+      "apps_web_public_pitch_images_bauernhaus_inspiration",
+      "apps_web_public_pitch_images_familienmodus",
+      "apps_web_public_pitch_images_schulklassenmission",
+      "bildprompts_3d_bogenparcours_jaeger_und_wilderergeschichte",
+      "bildprompts_md",
+      "hack_am_hof_graph_corpus_bildprompts_bildprompts_f\u00fcr_pitch_fotos",
+      "hack_am_hof_graph_corpus_bildprompts_chroniker_modus",
+      "hack_am_hof_graph_corpus_bildprompts_contentmodell_und_guide_studio",
+      "hack_am_hof_graph_corpus_bildprompts_feier_und_fotomodul",
+      "hack_am_hof_graph_corpus_bildprompts_fpv_drohnenrennen",
+      "hack_am_hof_graph_corpus_bildprompts_geschichtsmodus",
+      "hack_am_hof_graph_corpus_bildprompts_interner_betrieb",
+      "hack_am_hof_graph_corpus_bildprompts_ki_charaktere_und_souvenir",
+      "hack_am_hof_graph_corpus_bildprompts_kr\u00e4uterpfad",
+      "hack_am_hof_graph_corpus_bildprompts_larp_living_history",
+      "hack_am_hof_graph_corpus_bildprompts_mittelalter_und_handwerksfest",
+      "hack_am_hof_graph_corpus_bildprompts_motorrad_einkehr",
+      "hack_am_hof_graph_corpus_bildprompts_oldtimer_sternfahrt",
+      "hack_am_hof_graph_corpus_bildprompts_pensionistenmodus",
+      "hack_am_hof_graph_corpus_bildprompts_rattenberg_busgruppe",
+      "hack_am_hof_graph_corpus_bildprompts_tiroler_schmankerl_route",
+      "hack_am_hof_graph_corpus_bildprompts_trachtenmodenschau_am_hof",
+      "hack_am_hof_graph_corpus_bildprompts_vr_ar_zeitreise"
+    ],
+    "6": [
+      "buildathon_references_hack_am_hof",
+      "docs_buildathon_references_md",
+      "docs_buildathon_references_pitch_nutzung",
+      "docs_pitch_buildathlon_referenzen",
+      "docs_pitch_demo_ablauf",
+      "docs_pitch_konkretes_pitch_ziel",
+      "docs_pitch_l\u00f6sung",
+      "docs_pitch_md",
+      "docs_pitch_one_liner",
+      "docs_pitch_problem",
+      "docs_pitch_quellen_f\u00fcr_historische_richtung",
+      "docs_pitch_schlusssatz",
+      "docs_pitch_seiten_und_pitch_reihenfolge",
+      "docs_updatelog_2026_05_24",
+      "docs_updatelog_app_dummy_und_event_popups",
+      "docs_updatelog_initialer_aufbau",
+      "docs_updatelog_lesbarkeit_und_ux",
+      "docs_updatelog_md",
+      "docs_updatelog_prototyp",
+      "docs_updatelog_prozess_und_stil\u00fcberarbeitung",
+      "docs_updatelog_recherche_einfluss",
+      "docs_updatelog_verifikation",
+      "pitch_pitch"
+    ],
+    "7": [
+      "apps_web_src_data_platform_ts",
+      "components_pitchpanel_pitchpanel",
+      "data_platform_activepoints",
+      "data_platform_ambassadorlevers",
+      "data_platform_audience",
+      "data_platform_clickdummystation",
+      "data_platform_culinaryinspiration",
+      "data_platform_eventlearning",
+      "data_platform_expansionarea",
+      "data_platform_generatedmission",
+      "data_platform_historicphotostudio",
+      "data_platform_mappoints",
+      "data_platform_missionvariant",
+      "data_platform_moduleidea",
+      "data_platform_moduleideas",
+      "data_platform_pitchgoalcards",
+      "data_platform_pitchroadmap",
+      "data_platform_pitchsteps",
+      "data_platform_processstep",
+      "data_platform_proofpoints",
+      "data_platform_prototypescreen",
+      "data_platform_roadmapitem"
+    ],
+    "8": [
+      "components_appclickdummy_ageoptions",
+      "components_appclickdummy_appclickdummy",
+      "components_appclickdummy_appstage",
+      "components_appclickdummy_avatarobjectoptions",
+      "components_appclickdummy_avatarroles",
+      "components_appclickdummy_avatarscenes",
+      "components_appclickdummy_defaultroleprofile",
+      "components_appclickdummy_dummyscreen",
+      "components_appclickdummy_finalechoices",
+      "components_appclickdummy_groupnamesuggestions",
+      "components_appclickdummy_groupprofile",
+      "components_appclickdummy_joinpreviewnames",
+      "components_appclickdummy_minigame",
+      "components_appclickdummy_minigameformode",
+      "components_appclickdummy_publicasset",
+      "components_appclickdummy_rolehint",
+      "components_appclickdummy_roleprofile",
+      "data_platform_clickdummymission",
+      "data_platform_clickdummymode"
+    ],
+    "9": [
+      "apps_web_src_features_map_museummap_tsx",
+      "components_pointdrawer_pointdrawer",
+      "components_pointdrawer_pointdrawerprops",
+      "data_platform_mapbounds",
+      "data_platform_mappoint",
+      "data_platform_mappointtype",
+      "data_platform_pointtolatlng",
+      "data_platform_routepath",
+      "data_platform_typecolor",
+      "data_platform_typeicons",
+      "map_museummap_createmarker",
+      "map_museummap_fitimagebounds",
+      "map_museummap_mapvariant",
+      "map_museummap_museummap",
+      "map_museummap_museummapprops"
+    ],
+    "10": [
+      "graphify_detect_json",
+      "hack_am_hof_graphify_detect_files",
+      "hack_am_hof_graphify_detect_files_code",
+      "hack_am_hof_graphify_detect_files_document",
+      "hack_am_hof_graphify_detect_files_image",
+      "hack_am_hof_graphify_detect_files_paper",
+      "hack_am_hof_graphify_detect_files_video",
+      "hack_am_hof_graphify_detect_graphifyignore_patterns",
+      "hack_am_hof_graphify_detect_needs_graph",
+      "hack_am_hof_graphify_detect_scan_root",
+      "hack_am_hof_graphify_detect_skipped_sensitive",
+      "hack_am_hof_graphify_detect_total_files",
+      "hack_am_hof_graphify_detect_total_words",
+      "hack_am_hof_graphify_detect_warning"
+    ],
+    "11": [
+      "docs_architecture_ai_layer_sp\u00e4ter",
+      "docs_architecture_content_layer",
+      "docs_architecture_datenschutz_hinweis_f\u00fcr_mvp",
+      "docs_architecture_entscheidung",
+      "docs_architecture_experience_layer",
+      "docs_architecture_kernmodule",
+      "docs_architecture_map_layer",
+      "docs_architecture_md",
+      "docs_architecture_sp\u00e4tere_app_f\u00e4higkeit",
+      "docs_architecture_warum_webapp_zuerst"
+    ],
+    "12": [
+      "apps_web_package_json",
+      "web_package_dependencies",
+      "web_package_devdependencies",
+      "web_package_name",
+      "web_package_private",
+      "web_package_scripts",
+      "web_package_type",
+      "web_package_version"
+    ],
+    "13": [
+      "hack_am_hof_graph_corpus_package_description",
+      "hack_am_hof_graph_corpus_package_engines",
+      "hack_am_hof_graph_corpus_package_name",
+      "hack_am_hof_graph_corpus_package_private",
+      "hack_am_hof_graph_corpus_package_scripts",
+      "hack_am_hof_graph_corpus_package_version",
+      "hack_am_hof_graph_corpus_package_workspaces",
+      "package_json"
+    ],
+    "14": [
+      "src_app_futureformatcard",
+      "src_app_futureformatmodal",
+      "src_app_futureicon",
+      "src_app_futurenextstep",
+      "src_app_futurevisual",
+      "src_app_pointpitch",
+      "src_app_pointvisualclass"
+    ],
+    "15": [
+      "bildprompts_tiroler_schmankerl_route",
+      "docs_event_blueprint_md",
+      "docs_event_blueprint_pitch_format",
+      "docs_event_blueprint_quellen",
+      "docs_event_blueprint_warum_eine_schmankerl_route_so_stark_ziehen_kann",
+      "docs_event_blueprint_\u00fcbertragung_auf_das_h\u00f6femuseum",
+      "event_blueprint_tiroler_schmankerl_route"
+    ],
+    "16": [
+      "apps_web_src_components_avatarlab_tsx",
+      "components_avatarlab_avatarlab",
+      "components_avatarlab_avatarobjectoptions",
+      "components_avatarlab_avatarsceneoptions",
+      "components_avatarlab_publicasset",
+      "data_platform_missionrole"
+    ],
+    "17": [
+      "apps_web_src_components_modetabs_tsx",
+      "components_modetabs_modetabs",
+      "components_modetabs_modetabsprops",
+      "data_platform_audiencemode",
+      "data_platform_audiences"
+    ],
+    "18": [
+      "apps_web_src_data_contentstudio_ts",
+      "components_guidestudio_guidestudio",
+      "data_contentstudio_contentcollection",
+      "data_contentstudio_contentscope",
+      "data_contentstudio_historicaltheme"
+    ],
+    "19": [
+      "apps_web_src_lib_registerserviceworker_ts",
+      "apps_web_src_main_tsx",
+      "data_platform_audiencebyid",
+      "src_app_app"
+    ],
+    "20": [
+      "apps_web_tsconfig_json",
+      "web_tsconfig_compileroptions",
+      "web_tsconfig_include",
+      "web_tsconfig_references"
+    ],
+    "21": [
+      "apps_web_public_sw_js",
+      "public_sw_assets"
+    ],
+    "22": [
+      "start_demo_sh",
+      "users_oliverschmalzl_github_aicollective_hack_am_hof_start_demo_sh__entry"
+    ],
+    "23": [
+      "hack_am_hof_graph_corpus_package_scripts_dev"
+    ],
+    "24": [
+      "hack_am_hof_graph_corpus_package_scripts_build"
+    ],
+    "25": [
+      "hack_am_hof_graph_corpus_package_scripts_preview"
+    ],
+    "26": [
+      "hack_am_hof_graph_corpus_package_scripts_typecheck"
+    ],
+    "27": [
+      "hack_am_hof_graph_corpus_package_engines_node"
+    ],
+    "28": [
+      "web_package_scripts_dev"
+    ],
+    "29": [
+      "web_package_scripts_build"
+    ],
+    "30": [
+      "web_package_scripts_preview"
+    ],
+    "31": [
+      "web_package_scripts_typecheck"
+    ],
+    "32": [
+      "web_package_dependencies_vitejs_plugin_react"
+    ],
+    "33": [
+      "web_package_dependencies_leaflet"
+    ],
+    "34": [
+      "web_package_dependencies_lucide_react"
+    ],
+    "35": [
+      "web_package_dependencies_react"
+    ],
+    "36": [
+      "web_package_dependencies_react_dom"
+    ],
+    "37": [
+      "web_package_dependencies_react_leaflet"
+    ],
+    "38": [
+      "web_package_devdependencies_types_leaflet"
+    ],
+    "39": [
+      "web_package_devdependencies_types_node"
+    ],
+    "40": [
+      "web_package_devdependencies_types_react"
+    ],
+    "41": [
+      "web_package_devdependencies_typescript"
+    ],
+    "42": [
+      "web_package_devdependencies_vite"
+    ],
+    "43": [
+      "web_tsconfig_compileroptions_target"
+    ],
+    "44": [
+      "web_tsconfig_compileroptions_usedefineforclassfields"
+    ],
+    "45": [
+      "web_tsconfig_compileroptions_lib"
+    ],
+    "46": [
+      "web_tsconfig_compileroptions_allowjs"
+    ],
+    "47": [
+      "web_tsconfig_compileroptions_skiplibcheck"
+    ],
+    "48": [
+      "web_tsconfig_compileroptions_esmoduleinterop"
+    ],
+    "49": [
+      "web_tsconfig_compileroptions_allowsyntheticdefaultimports"
+    ],
+    "50": [
+      "web_tsconfig_compileroptions_strict"
+    ],
+    "51": [
+      "web_tsconfig_compileroptions_forceconsistentcasinginfilenames"
+    ],
+    "52": [
+      "web_tsconfig_compileroptions_module"
+    ],
+    "53": [
+      "web_tsconfig_compileroptions_moduleresolution"
+    ],
+    "54": [
+      "web_tsconfig_compileroptions_resolvejsonmodule"
+    ],
+    "55": [
+      "web_tsconfig_compileroptions_isolatedmodules"
+    ],
+    "56": [
+      "web_tsconfig_compileroptions_noemit"
+    ],
+    "57": [
+      "web_tsconfig_compileroptions_jsx"
+    ],
+    "58": [
+      "apps_web_vite_config_ts"
+    ],
+    "59": [
+      "apps_web_src_vite_env_d_ts"
+    ],
+    "60": [
+      "start_demo_ps1"
+    ],
+    "61": [
+      "apps_web_public_pitch_images_role_kraeutersammlerin"
+    ],
+    "62": [
+      "apps_web_public_pitch_images_abgesperrtes_flugfenster"
+    ],
+    "63": [
+      "apps_web_public_pitch_images_contentmodell_guide_studio"
+    ],
+    "64": [
+      "apps_web_public_pitch_images_rattenberg_busbruecke"
+    ],
+    "65": [
+      "apps_web_public_pitch_images_tirol_verstehen"
+    ],
+    "66": [
+      "apps_web_public_pitch_images_oldtimer_tag"
+    ],
+    "67": [
+      "apps_web_public_pitch_images_living_history_am_hof"
+    ],
+    "68": [
+      "apps_web_public_pitch_images_markt_und_handwerk"
+    ],
+    "69": [
+      "pitch_images_kraeuterpfad"
+    ],
+    "70": [
+      "pitch_images_role_sennerkind"
+    ],
+    "71": [
+      "pitch_images_role_wassermeister"
+    ],
+    "72": [
+      "pitch_images_interner_betrieb"
+    ],
+    "73": [
+      "pitch_images_feier_fotomodul"
+    ],
+    "74": [
+      "pitch_images_role_chronistin"
+    ],
+    "75": [
+      "pitch_images_werkstatt_am_hof"
+    ],
+    "76": [
+      "pitch_images_role_koehlerkind"
+    ],
+    "77": [
+      "pitch_images_saison_und_anreise_planen"
+    ],
+    "78": [
+      "pitch_images_trauung_taufe"
+    ],
+    "79": [
+      "pitch_images_role_tischlerlehrling"
+    ]
+  },
+  "cohesion": {
+    "0": 0.047619047619047616,
+    "1": 0.06050420168067227,
+    "2": 0.06653225806451613,
+    "3": 0.08262108262108261,
+    "4": 0.213768115942029,
+    "5": 0.08695652173913043,
+    "6": 0.08695652173913043,
+    "7": 0.09523809523809523,
+    "8": 0.10526315789473684,
+    "9": 0.1523809523809524,
+    "10": 0.14285714285714285,
+    "11": 0.2,
+    "12": 0.25,
+    "13": 0.25,
+    "14": 0.3333333333333333,
+    "15": 0.2857142857142857,
+    "16": 0.4,
+    "17": 0.4,
+    "18": 0.6,
+    "19": 0.5,
+    "20": 0.5,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0
+  },
+  "gods": [
+    {
+      "id": "readme_hack_am_hof",
+      "label": "Hack am Hof - Museumsplattform",
+      "degree": 29
+    },
+    {
+      "id": "hack_am_hof_graph_corpus_bildprompts_bildprompts_f\u00fcr_pitch_fotos",
+      "label": "Bildprompts f\u00fcr Pitch-Fotos",
+      "degree": 22
+    },
+    {
+      "id": "iteration_i_optimierungspakete_hack_am_hof",
+      "label": "Hack am Hof Iteration I - Priorisierte Optimierungspakete",
+      "degree": 22
+    },
+    {
+      "id": "components_appclickdummy_appclickdummy",
+      "label": "AppClickDummy()",
+      "degree": 20
+    },
+    {
+      "id": "pitch_pitch",
+      "label": "Pitch",
+      "degree": 15
+    },
+    {
+      "id": "projekt_backlog_hack_am_hof",
+      "label": "Hack am Hof - Projekt-Backlog",
+      "degree": 14
+    },
+    {
+      "id": "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_inhalt",
+      "label": "Inhalt",
+      "degree": 13
+    },
+    {
+      "id": "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_nicht_enthalten",
+      "label": "Nicht enthalten",
+      "degree": 13
+    },
+    {
+      "id": "docs_2026_05_25_hack_am_hof_iteration_i_optimierungspakete_definition_of_done",
+      "label": "Definition of Done",
+      "degree": 13
+    },
+    {
+      "id": "docs_2026_05_25_hack_am_hof_iteration_i_review_hack_am_hof_iteration_i_review_aus_mehreren_blickwinkeln",
+      "label": "Hack am Hof Iteration I - Review aus mehreren Blickwinkeln",
+      "degree": 11
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Hack am Hof - Museumsplattform",
+      "target": "Tiroler-Schmankerl-Route Bildprompt",
+      "source_files": [
+        "README.md",
+        "BILDPROMPTS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `Tiroler-Schmankerl-Route Bildprompt` unexpectedly reaches hub `Hack am Hof - Museumsplattform`"
+    },
+    {
+      "source": "Hack am Hof - Museumsplattform",
+      "target": "3D-Bogenparcours / J\u00e4ger- und Wilderergeschichte Bildprompt",
+      "source_files": [
+        "README.md",
+        "BILDPROMPTS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `3D-Bogenparcours / J\u00e4ger- und Wilderergeschichte Bildprompt` unexpectedly reaches hub `Hack am Hof - Museumsplattform`"
+    },
+    {
+      "source": "Hack am Hof - Museumsplattform",
+      "target": "Schulklassenmission Bildprompt",
+      "source_files": [
+        "README.md",
+        "BILDPROMPTS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `Schulklassenmission Bildprompt` unexpectedly reaches hub `Hack am Hof - Museumsplattform`"
+    },
+    {
+      "source": "Hack am Hof - Museumsplattform",
+      "target": "Feier- und Fotomodul Bildprompt",
+      "source_files": [
+        "README.md",
+        "BILDPROMPTS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `Feier- und Fotomodul Bildprompt` unexpectedly reaches hub `Hack am Hof - Museumsplattform`"
+    },
+    {
+      "source": "Event Blueprint: Tiroler-Schmankerl-Route",
+      "target": "Tiroler-Schmankerl-Route Bildprompt",
+      "source_files": [
+        "docs/EVENT_BLUEPRINT.md",
+        "BILDPROMPTS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `Tiroler-Schmankerl-Route Bildprompt` unexpectedly reaches hub `Event Blueprint: Tiroler-Schmankerl-Route`"
+    }
+  ],
+  "tokens": {
+    "input": 570615,
+    "output": 5368
+  }
+}

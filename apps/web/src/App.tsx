@@ -30,6 +30,7 @@ import {
   Map,
   MessageCircle,
   Mic2,
+  Pause,
   QrCode,
   Route,
   ScrollText,
@@ -43,6 +44,8 @@ import {
   Utensils,
   Users,
   Video,
+  SkipForward,
+  Volume2,
   WandSparkles,
   X,
 } from "lucide-react";
@@ -56,8 +59,6 @@ import {
   futureFormats,
   generatedMissionCatalog,
   mapPointTypeLabels,
-  missionVariants,
-  missionRoles,
   moduleIdeas,
   pitchGoalCards,
   pitchRoadmap,
@@ -75,10 +76,14 @@ import { AvatarLab } from "./components/AvatarLab";
 import { GuideStudio } from "./components/GuideStudio";
 import { AppClickDummy } from "./components/AppClickDummy";
 
+// Für Nicht-Programmierer:innen: Diese Funktion baut den richtigen Bildpfad.
+// So funktionieren Bilder lokal und später auch auf GitHub Pages.
 function publicAsset(path: string) {
   return `${import.meta.env.BASE_URL}${path}`;
 }
 
+// Textbausteine für den Abschnitt "Ausgangslage". Wer nur Inhalt ändern will,
+// kann hier Texte bearbeiten, ohne das Seitenlayout weiter unten zu verändern.
 const contextBlocks: Array<{
   id: string;
   title: string;
@@ -99,7 +104,7 @@ const contextBlocks: Array<{
     title: "2. Das Besucherproblem",
     paragraphs: [
       "Das Risiko liegt nicht darin, dass dem Museum Inhalte fehlen. Das Risiko liegt darin, dass viele dieser Inhalte für neue Zielgruppen nicht schnell genug verständlich, teilbar oder buchbar werden.",
-      "Wenn Besucherzahlen stagnieren oder sinken, reicht ein einzelnes neues Format selten aus. Schulklassen, Familien, Busgruppen, Hochzeitspaare, Pensionist:innen und Tourist:innen brauchen unterschiedliche Einstiege in denselben Ort.",
+      "Wenn Besucherzahlen stagnieren oder sinken, reicht ein einzelnes neues Format selten aus. Gruppen, Familien, Busgäste, Hochzeitspaare, Pensionist:innen und Tourist:innen brauchen unterschiedliche Einstiege in denselben Ort.",
       "Die wichtigste Hebelwirkung entsteht daher durch Wiederverwendung: Einmal gesammeltes Guide-Wissen soll Missionen, Routen, Audiopunkte, Fotomotive, Kulinarik, interne Aufgaben und spätere App-Screens speisen.",
     ],
   },
@@ -121,7 +126,7 @@ const contextBlocks: Array<{
     id: "prototypes",
     title: "4. Die zehn Prototypen",
     paragraphs: [
-      "Die zehn Buildathon-Prototypen zeigen verschiedene Richtungen: Strategie und Ideenbewertung, Zeitreise, Schulklassen-Mission, Eventlogik, Museumsführung, sichere Suche, Community, Hofjagd und historische Selfie-Erlebnisse.",
+      "Die zehn Buildathon-Prototypen zeigen verschiedene Richtungen: Strategie und Ideenbewertung, Zeitreise, Gruppen-Mission, Eventlogik, Museumsführung, sichere Suche, Community, Hofjagd und historische Selfie-Erlebnisse.",
       "Keiner dieser Prototypen muss eins zu eins übernommen werden. Der Wert liegt im Best-of: Missionen aus Spiel am Hof und Hofjäger, Storytelling aus musealive, Foto/Avatar aus Traditirol, Eventlogik aus Morandell Events und Datenvertrauen aus SafeQuery.",
       "Daraus entsteht ein stärkeres Zielbild: nicht zehn getrennte Apps, sondern eine Plattform, in der dieselbe Karte, dieselben Höfe und dieselbe Wissensbasis je nach Zielgruppe anders ausgespielt werden.",
     ],
@@ -154,7 +159,7 @@ const boardPitchAgenda = [
   {
     time: "20-35 min",
     title: "Angebote verstehen",
-    text: "Schulklassen, Feiern, Schmankerl, Gruppenreisen, Geschichte, Inspiration und Betrieb werden nicht als Einzelapps, sondern als Layer derselben Plattform erklärt.",
+    text: "Gruppen, Feiern, Schmankerl, Reisen, Geschichte, Inspiration und Betrieb werden nicht als Einzelapps, sondern als Layer derselben Plattform erklärt.",
   },
   {
     time: "35-45 min",
@@ -177,6 +182,21 @@ const buildathonWinners: Record<string, { rank: string; points: string }> = {
   T09: { rank: "1. Publikum", points: "48 pt" },
   T10: { rank: "2. Publikum", points: "38 pt" },
   T08: { rank: "3. Publikum", points: "23 pt" },
+};
+
+// Kurze Kategorien für die zehn Buildathon-Prototypen. Diese Labels machen
+// Podest und T01-T10-Liste für Leser:innen schneller erfassbar.
+const buildathonPillars: Record<string, string> = {
+  T01: "Ideen",
+  T02: "Story",
+  T03: "Schule",
+  T04: "Events",
+  T05: "Museum",
+  T06: "Workshop",
+  T07: "Daten",
+  T08: "Community",
+  T09: "Spiel",
+  T10: "Foto",
 };
 
 const projectEstimates = [
@@ -412,41 +432,6 @@ const technicalNotes = [
   },
 ];
 
-const routeRoleShowcase = [
-  {
-    roleId: "fire",
-    image: "pitch-images/role-baeckerkind.png",
-    station: "Stube / Backofen",
-    task: "Welche Arbeit braucht zuerst Wärme?",
-  },
-  {
-    roleId: "animals",
-    image: "pitch-images/role-stallhelfer.png",
-    station: "Stall / Weide",
-    task: "Warum waren Tiere Teil des ganzen Hofsystems?",
-  },
-  {
-    roleId: "storage",
-    image: "pitch-images/role-muellerkind.png",
-    station: "Speicher / Mühle",
-    task: "Welche Vorräte reichen durch den Winter?",
-  },
-  {
-    roleId: "repair",
-    image: "pitch-images/role-tischlerlehrling.png",
-    station: "Werkstatt / Schmiede",
-    task: "Welche Reparaturspur erzählt eine Geschichte?",
-  },
-];
-
-const missionVariantVisuals: Record<string, string> = {
-  "Ein Winter ohne Supermarkt": "pitch-images/schulklassenmission.png",
-  "Der verschwundene Mehlsack": "pitch-images/role-muellerkind.png",
-  "Wilderer, Jäger und der Wald": "pitch-images/waldspur-mit-boegen.png",
-  "Die Stube vor dem Fest": "pitch-images/kirchtag.png",
-  "Das Haus will repariert werden": "pitch-images/werkstatt-am-hof.png",
-};
-
 const generatedMissionVisuals: Record<string, string> = {
   "winter-system-school": "pitch-images/schulklassenmission.png",
   "flour-family": "pitch-images/role-muellerkind.png",
@@ -459,7 +444,15 @@ const generatedMissionVisuals: Record<string, string> = {
   "house-inspiration": "pitch-images/bauernhaus-inspiration.png",
 };
 
+const prototypeVisuals: Record<string, string> = {
+  mission: "pitch-images/schulklassenmission.png",
+  timeslip: "pitch-images/living-history-am-hof.png",
+  photo: "pitch-images/feier-fotomodul.png",
+  guide: "pitch-images/contentmodell-guide-studio.png",
+};
+
 function PhonePrototype() {
+  // Merkt sich, welcher Handy-Screen aktiv ist: Mission, Zeitreise, Foto oder Guide.
   const [activePrototypeId, setActivePrototypeId] = useState(prototypeScreens[0].id);
   const [missionAudience, setMissionAudience] = useState("Schulklasse");
   const [missionDuration, setMissionDuration] = useState("45-60 Minuten");
@@ -488,6 +481,7 @@ function PhonePrototype() {
         : activePrototype.id === "guide"
           ? Upload
           : Sparkles;
+  const activePrototypeImage = prototypeVisuals[activePrototype.id] ?? prototypeVisuals.mission;
 
   return (
     <section id="prototype" className="iphone-prototype-section">
@@ -497,7 +491,7 @@ function PhonePrototype() {
           <h2>Ein Smartphone öffnet passende Erlebnisse vor Ort.</h2>
         </div>
         <p>
-          Die Besucher:innen wählen, was zu ihnen passt: Schulmission, Zeitreise, Foto-Erinnerung
+          Die Besucher:innen wählen, was zu ihnen passt: Gruppenmission, Zeitreise, Foto-Erinnerung
           oder vertiefende Geschichten. Das Museum steuert die Inhalte.
         </p>
       </div>
@@ -507,17 +501,33 @@ function PhonePrototype() {
           <Smartphone size={28} />
           <h3>So könnte sich ein Besuch künftig anfühlen.</h3>
           <p>
-            Besucher:innen starten vor Ort, wählen eine passende Route, öffnen Stationen und nehmen
-            am Ende eine Erinnerung mit. Die Beispiele unten zeigen, wie unterschiedlich derselbe
-            Ort erzählt werden kann.
+            Nicht jede Nutzung ist eine Mission. Dasselbe Smartphone kann am Hof führen, erzählen,
+            fotografieren oder Wissen für Guides nutzbar machen.
           </p>
-          <div className="prototype-source-list">
-            <span>Best-of aus dem Buildathon</span>
-            <b>Spiel am Hof</b>
-            <b>Hofjäger</b>
-            <b>Traditirol</b>
-            <b>Zeitreise</b>
-            <b>Guide Studio</b>
+          <div className="prototype-mode-grid" aria-label="Erlebnisarten">
+            {prototypeScreens.map((screen) => {
+              const ModeIcon =
+                screen.id === "photo"
+                  ? Camera
+                  : screen.id === "timeslip"
+                    ? MessageCircle
+                    : screen.id === "guide"
+                      ? Upload
+                      : Sparkles;
+              return (
+                <button
+                  key={screen.id}
+                  className={activePrototype.id === screen.id ? "prototype-mode-card prototype-mode-card--active" : "prototype-mode-card"}
+                  type="button"
+                  aria-pressed={activePrototype.id === screen.id}
+                  onClick={() => setActivePrototypeId(screen.id)}
+                >
+                  <ModeIcon size={20} />
+                  <span>{screen.label}</span>
+                  <strong>{screen.title}</strong>
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -542,25 +552,50 @@ function PhonePrototype() {
               </div>
             </div>
 
-            <div className="phone-content">
-              <div className="phone-visual">
-                <img src={publicAsset("lageplan.webp")} alt="" />
-                <div className={`phone-pulse phone-pulse--${activePrototype.id}`} />
-                <div className="phone-visual-card">
-                  <PhoneIcon size={18} />
-                  <span>{activePrototype.label}</span>
+            <div key={activePrototype.id} className={`phone-content phone-content--${activePrototype.id}`}>
+              <article className="phone-experience-card">
+                <div className="phone-experience-visual">
+                  <img src={publicAsset(activePrototypeImage)} alt="" />
+                  <div className="phone-experience-badge">
+                    <PhoneIcon size={18} />
+                    <span>{activePrototype.label}</span>
+                  </div>
                 </div>
-              </div>
-
-              <article className="phone-story-card">
-                <span>{activePrototype.source}</span>
-                <h3>{activePrototype.title}</h3>
-                <p>{activePrototype.subtitle}</p>
-                <button type="button">
-                  {activePrototype.action}
-                  <ChevronRight size={16} />
-                </button>
+                <div className="phone-experience-copy">
+                  <span>{activePrototype.source}</span>
+                  <h3>{activePrototype.title}</h3>
+                  <p>{activePrototype.subtitle}</p>
+                  <button type="button">
+                    {activePrototype.action}
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
               </article>
+
+              {activePrototype.id === "mission" ? (
+                <article className="phone-audio-card" aria-label="Bergbauer-Hinweis zum Feuer">
+                  <div className="phone-audio-card__header">
+                    <span>
+                      <Volume2 size={17} />
+                      Alter Bergbauer
+                    </span>
+                    <strong>Bergbauer-Hinweis zum Feuer</strong>
+                  </div>
+                  <p>Ohne Glut verzögern sich Essen, Wärme und Arbeit. Prüft zuerst, was der Hof am Morgen wirklich braucht.</p>
+                  <div className="phone-audio-card__player" aria-hidden="true">
+                    <span>
+                      <Pause size={15} />
+                    </span>
+                    <div>
+                      <i />
+                    </div>
+                    <small>0:18</small>
+                    <span>
+                      <SkipForward size={16} />
+                    </span>
+                  </div>
+                </article>
+              ) : null}
 
               <div className="phone-chip-row">
                 {activePrototype.chips.map((chip) => (
@@ -596,22 +631,6 @@ function PhonePrototype() {
           </div>
         </div>
 
-        <div className="role-showcase-grid">
-          {routeRoleShowcase.map((item) => {
-            const role = missionRoles.find((entry) => entry.id === item.roleId) ?? missionRoles[0];
-            return (
-              <article key={item.roleId} className="role-showcase-card">
-                <img src={publicAsset(item.image)} alt="" />
-                <div>
-                  <span>{item.station}</span>
-                  <strong>{role.name}</strong>
-                  <p>{item.task}</p>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-
         <div className="route-system-strip">
           <article>
             <BookOpen size={19} />
@@ -628,24 +647,6 @@ function PhonePrototype() {
             <strong>Route</strong>
             <span>Dauer, Stationen, Wetter, Gruppe und Lernziel werden kombiniert.</span>
           </article>
-        </div>
-
-        <div
-          className="mission-variant-grid"
-          role="region"
-          aria-label="Missionsvarianten"
-          tabIndex={0}
-        >
-          {missionVariants.map((variant) => (
-            <article key={variant.title}>
-              <img src={publicAsset(missionVariantVisuals[variant.title] ?? "pitch-images/hack-am-hof-teilnehmerinnen.png")} alt="" />
-              <div>
-                <span>{variant.audience} · {variant.duration}</span>
-                <strong>{variant.title}</strong>
-                <p>{variant.description}</p>
-              </div>
-            </article>
-          ))}
         </div>
 
         <div className="mission-generator-demo">
@@ -716,7 +717,7 @@ function PhonePrototype() {
         <div className="replay-note">
           <Clock size={20} />
           <p>
-            Dadurch steigt der Wiederspiel- und Wiederbesuchswert: dieselbe Klasse, Familie oder
+            Dadurch steigt der Wiederspiel- und Wiederbesuchswert: dieselbe Gruppe, Familie oder
             Gruppe kann beim nächsten Besuch ein anderes Entdeckungserlebnis bekommen, ohne dass das
             Museum jedes Mal alles neu schreiben muss.
           </p>
@@ -849,130 +850,136 @@ function DecisionAndRoadmapSection() {
         </div>
       </div>
 
-      <div className="decision-section-break">
-        <div className="section-kicker">Pilot absichern</div>
-        <h3>Erfolg, Risiko und Ablauf werden vor dem Start getrennt geprüft.</h3>
-      </div>
+      <details className="decision-details">
+        <summary>
+          <span>Beschlussdetails</span>
+          <strong>Erfolg, Risiken, Ablauf und Ideenbewertung anzeigen</strong>
+        </summary>
 
-      <div className="pilot-proof-grid">
-        <article>
-          <div className="section-kicker">Erfolgskriterien</div>
-          <h3>Woran der Pilot gemessen wird.</h3>
-          <figure className="pilot-proof-visual">
-            <img src={publicAsset("pitch-images/hofspur-im-sommer.png")} alt="" loading="lazy" />
-            <figcaption>Testen mit echter Hofsituation statt abstrakter App-Idee.</figcaption>
-          </figure>
-          <div>
-            {pilotSuccessMetrics.map((metric) => (
-              <section key={metric.label}>
-                <span>{metric.label}</span>
-                <p>{metric.value}</p>
-              </section>
-            ))}
-          </div>
-        </article>
-        <article>
-          <div className="section-kicker">Risiken kontrollieren</div>
-          <h3>Was vor dem Start sauber begrenzt wird.</h3>
-          <figure className="pilot-proof-visual">
-            <img src={publicAsset("pitch-images/contentmodell-guide-studio.png")} alt="" loading="lazy" />
-            <figcaption>Wissen, Freigaben und Betrieb werden zuerst sortiert.</figcaption>
-          </figure>
-          <div>
-            {pilotRisks.map((risk) => (
-              <section key={risk.label}>
-                <span>{risk.label}</span>
-                <p>{risk.value}</p>
-              </section>
-            ))}
-          </div>
-        </article>
-      </div>
+        <div className="decision-section-break">
+          <div className="section-kicker">Pilot absichern</div>
+          <h3>Erfolg, Risiko und Ablauf werden vor dem Start getrennt geprüft.</h3>
+        </div>
 
-      <div className="decision-workflow">
-        <article className="decision-agenda">
-          <div className="section-kicker">60 Minuten Pitchlogik</div>
-          <h3>Vorstand sicher zur Entscheidung führen.</h3>
-          <figure className="decision-flow-visual">
-            <img src={publicAsset("pitch-images/tirol-verstehen.png")} alt="" loading="lazy" />
-            <figcaption>Erst Ort und Nutzen klären, dann den nächsten belastbaren Schritt entscheiden.</figcaption>
-          </figure>
-          <div>
-            {boardPitchAgenda.map((item) => (
-              <section key={item.time}>
-                <span>{item.time}</span>
-                <strong>{item.title}</strong>
-                <p>{item.text}</p>
-              </section>
-            ))}
-          </div>
-        </article>
+        <div className="pilot-proof-grid">
+          <article>
+            <div className="section-kicker">Erfolgskriterien</div>
+            <h3>Woran der Pilot gemessen wird.</h3>
+            <figure className="pilot-proof-visual">
+              <img src={publicAsset("pitch-images/hofspur-im-sommer.png")} alt="" loading="lazy" />
+              <figcaption>Testen mit echter Hofsituation statt abstrakter App-Idee.</figcaption>
+            </figure>
+            <div>
+              {pilotSuccessMetrics.map((metric) => (
+                <section key={metric.label}>
+                  <span>{metric.label}</span>
+                  <p>{metric.value}</p>
+                </section>
+              ))}
+            </div>
+          </article>
+          <article>
+            <div className="section-kicker">Risiken kontrollieren</div>
+            <h3>Was vor dem Start sauber begrenzt wird.</h3>
+            <figure className="pilot-proof-visual">
+              <img src={publicAsset("pitch-images/contentmodell-guide-studio.png")} alt="" loading="lazy" />
+              <figcaption>Wissen, Freigaben und Betrieb werden zuerst sortiert.</figcaption>
+            </figure>
+            <div>
+              {pilotRisks.map((risk) => (
+                <section key={risk.label}>
+                  <span>{risk.label}</span>
+                  <p>{risk.value}</p>
+                </section>
+              ))}
+            </div>
+          </article>
+        </div>
 
-        <article className="decision-roadmap">
-          <div className="section-kicker">Nächste Schritte</div>
-          <h3>Schnell zeigen. Kontrolliert ausbauen.</h3>
-          <figure className="decision-flow-visual">
-            <img src={publicAsset("pitch-images/werkstatt-am-hof.png")} alt="" loading="lazy" />
-            <figcaption>Aus einem kleinen Pilot wird nur dann mehr, wenn Ablauf und Betrieb tragen.</figcaption>
-          </figure>
-          <div>
-            {pitchRoadmap.map((item) => (
-              <section key={item.phase}>
-                <span>{item.phase}</span>
-                <strong>{item.title}</strong>
-                <p>{item.description}</p>
-              </section>
-            ))}
-          </div>
-        </article>
-      </div>
+        <div className="decision-workflow">
+          <article className="decision-agenda">
+            <div className="section-kicker">60 Minuten Pitchlogik</div>
+            <h3>Vorstand sicher zur Entscheidung führen.</h3>
+            <figure className="decision-flow-visual">
+              <img src={publicAsset("pitch-images/tirol-verstehen.png")} alt="" loading="lazy" />
+              <figcaption>Erst Ort und Nutzen klären, dann den nächsten belastbaren Schritt entscheiden.</figcaption>
+            </figure>
+            <div>
+              {boardPitchAgenda.map((item) => (
+                <section key={item.time}>
+                  <span>{item.time}</span>
+                  <strong>{item.title}</strong>
+                  <p>{item.text}</p>
+                </section>
+              ))}
+            </div>
+          </article>
 
-      <div className="decision-support">
-        <article className="decision-thesis-card decision-thesis-card--dark">
-          <BadgeEuro size={24} />
-          <h3>Kernthese</h3>
-          <p>
-            Dem Museum fehlt nicht einfach eine App, sondern ein flexibles digitales
-            Missionssystem, das bestehende Inhalte, Zielgruppen und Betriebsaufgaben verbindet.
-          </p>
-        </article>
-        <article className="decision-thesis-card">
-          <Globe2 size={24} />
-          <h3>Kontext & Credits</h3>
-          <p>
-            Die Ideen bauen auf dem Hack am Hof Buildathon auf. AI Collective, KINN und das Museum
-            liefern den Innovationskontext, das Museum entscheidet über Pilot und Inhalte.
-          </p>
-          <div className="credit-links">
-            <a href="https://aicollective.at" target="_blank" rel="noreferrer">
-              AI Collective <ExternalLink size={14} />
-            </a>
-            <a href="https://kinn.at" target="_blank" rel="noreferrer">
-              KINN <ExternalLink size={14} />
-            </a>
-            <a href="https://aicollective.at/hack-am-hof" target="_blank" rel="noreferrer">
-              Hack am Hof <ExternalLink size={14} />
-            </a>
-            <a href="https://aicollective.at/api/share?e=hack-am-hof" target="_blank" rel="noreferrer">
-              {buildathonReferences.length} Prototypen Übersicht <ExternalLink size={14} />
-            </a>
-            <a href="#buildathon-prototypes">
-              Prototypen auf dieser Seite <ChevronRight size={14} />
-            </a>
-          </div>
-        </article>
-        <article className="decision-thesis-card">
-          <CalendarDays size={24} />
-          <h3>Der nächste Schritt ist vorbereitet.</h3>
-          <p>
-            Für den Start reichen eine erste Route, ein Wissensworkshop und zwei bis drei
-            Besucherangebote. Später kann daraus eine App und eine Plattform für weitere Orte
-            entstehen.
-          </p>
-        </article>
-      </div>
+          <article className="decision-roadmap">
+            <div className="section-kicker">Nächste Schritte</div>
+            <h3>Schnell zeigen. Kontrolliert ausbauen.</h3>
+            <figure className="decision-flow-visual">
+              <img src={publicAsset("pitch-images/werkstatt-am-hof.png")} alt="" loading="lazy" />
+              <figcaption>Aus einem kleinen Pilot wird nur dann mehr, wenn Ablauf und Betrieb tragen.</figcaption>
+            </figure>
+            <div>
+              {pitchRoadmap.map((item) => (
+                <section key={item.phase}>
+                  <span>{item.phase}</span>
+                  <strong>{item.title}</strong>
+                  <p>{item.description}</p>
+                </section>
+              ))}
+            </div>
+          </article>
+        </div>
 
-      <div className="idea-decision-panel">
+        <div className="decision-support">
+          <article className="decision-thesis-card decision-thesis-card--dark">
+            <BadgeEuro size={24} />
+            <h3>Kernthese</h3>
+            <p>
+              Dem Museum fehlt nicht einfach eine App, sondern ein flexibles digitales
+              Missionssystem, das bestehende Inhalte, Zielgruppen und Betriebsaufgaben verbindet.
+            </p>
+          </article>
+          <article className="decision-thesis-card">
+            <Globe2 size={24} />
+            <h3>Kontext & Credits</h3>
+            <p>
+              Die Ideen bauen auf dem Hack am Hof Buildathon auf. AI Collective, KINN und das Museum
+              liefern den Innovationskontext, das Museum entscheidet über Pilot und Inhalte.
+            </p>
+            <div className="credit-links">
+              <a href="https://aicollective.at" target="_blank" rel="noreferrer">
+                AI Collective <ExternalLink size={14} />
+              </a>
+              <a href="https://kinn.at" target="_blank" rel="noreferrer">
+                KINN <ExternalLink size={14} />
+              </a>
+              <a href="https://aicollective.at/hack-am-hof" target="_blank" rel="noreferrer">
+                Hack am Hof <ExternalLink size={14} />
+              </a>
+              <a href="https://aicollective.at/api/share?e=hack-am-hof" target="_blank" rel="noreferrer">
+                {buildathonReferences.length} Prototypen Übersicht <ExternalLink size={14} />
+              </a>
+              <a href="#buildathon-prototypes">
+                Prototypen auf dieser Seite <ChevronRight size={14} />
+              </a>
+            </div>
+          </article>
+          <article className="decision-thesis-card">
+            <CalendarDays size={24} />
+            <h3>Der nächste Schritt ist vorbereitet.</h3>
+            <p>
+              Für den Start reichen eine erste Route, ein Wissensworkshop und zwei bis drei
+              Besucherangebote. Später kann daraus eine App und eine Plattform für weitere Orte
+              entstehen.
+            </p>
+          </article>
+        </div>
+
+        <div className="idea-decision-panel">
         <div className="idea-decision-panel__intro">
           <div>
             <div className="section-kicker">Ideenbewertung</div>
@@ -1026,51 +1033,52 @@ function DecisionAndRoadmapSection() {
         </div>
       </div>
 
-      <div className="pitch-track decision-track">
-        <div>
-          <div className="section-kicker">Einfach erklärbar</div>
-          <h3>Fünf Schritte, die ohne Technikverständnis nachvollziehbar sind.</h3>
+        <div className="pitch-track decision-track">
+          <div>
+            <div className="section-kicker">Einfach erklärbar</div>
+            <h3>Fünf Schritte, die ohne Technikverständnis nachvollziehbar sind.</h3>
+          </div>
+          <ol className="pitch-steps">
+            {pitchSteps.map((step, index) => (
+              <li key={step}>
+                <figure>
+                  <img src={publicAsset(pitchStepVisuals[index]?.image ?? "pitch-images/hofspur-im-sommer.png")} alt="" loading="lazy" />
+                  <figcaption>{pitchStepVisuals[index]?.label}</figcaption>
+                </figure>
+                <span>{index + 1}</span>
+                <p>{step}</p>
+              </li>
+            ))}
+          </ol>
         </div>
-        <ol className="pitch-steps">
-          {pitchSteps.map((step, index) => (
-            <li key={step}>
-              <figure>
-                <img src={publicAsset(pitchStepVisuals[index]?.image ?? "pitch-images/hofspur-im-sommer.png")} alt="" loading="lazy" />
-                <figcaption>{pitchStepVisuals[index]?.label}</figcaption>
-              </figure>
-              <span>{index + 1}</span>
-              <p>{step}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
 
-      <div className="ambassador-panel decision-ambassador">
-        <div>
-          <Globe2 size={26} />
-          <h3>Besucher werden zu Ambassadors.</h3>
-          <p>
-            Der Foto- und Avatar-Teil ist nicht nur Spielerei. Er erzeugt erinnerbare Bilder, die
-            Reisegruppen in ihren Ländern und Communities weitertragen.
-          </p>
-          <div className="ambassador-visual-strip" aria-label="Beispiele für Foto- und Besucherwirkung">
-            {ambassadorVisuals.map((visual) => (
-              <figure key={visual.label}>
-                <img src={publicAsset(visual.image)} alt="" loading="lazy" />
-                <figcaption>{visual.label}</figcaption>
-              </figure>
+        <div className="ambassador-panel decision-ambassador">
+          <div>
+            <Globe2 size={26} />
+            <h3>Besucher werden zu Ambassadors.</h3>
+            <p>
+              Der Foto- und Avatar-Teil ist nicht nur Spielerei. Er erzeugt erinnerbare Bilder, die
+              Reisegruppen in ihren Ländern und Communities weitertragen.
+            </p>
+            <div className="ambassador-visual-strip" aria-label="Beispiele für Foto- und Besucherwirkung">
+              {ambassadorVisuals.map((visual) => (
+                <figure key={visual.label}>
+                  <img src={publicAsset(visual.image)} alt="" loading="lazy" />
+                  <figcaption>{visual.label}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+          <div className="ambassador-grid">
+            {ambassadorLevers.map((lever) => (
+              <article key={lever.title}>
+                <span>{lever.title}</span>
+                <p>{lever.text}</p>
+              </article>
             ))}
           </div>
         </div>
-        <div className="ambassador-grid">
-          {ambassadorLevers.map((lever) => (
-            <article key={lever.title}>
-              <span>{lever.title}</span>
-              <p>{lever.text}</p>
-            </article>
-          ))}
-        </div>
-      </div>
+      </details>
     </section>
   );
 }
@@ -1078,18 +1086,21 @@ function DecisionAndRoadmapSection() {
 const futureFormatGroups = [
   {
     title: "Direkt mit der App kombinierbar",
+    label: "App-nah",
     text: "Karte, QR-Codes, Rollen, Audio, Foto und KI-Bilder schaffen hier sofort Mehrwert.",
-    ids: ["geocaching", "creator-walk", "xr-time-travel", "history-salon", "heritage-consulting"],
+    ids: ["geocaching", "creator-walk", "xr-time-travel"],
   },
   {
     title: "Tourismus, Gruppen und Partner",
+    label: "Partner",
     text: "Diese Formate brauchen vor allem Buchung, Anreise, Zeitfenster, Gastronomie und Partnerpakete.",
-    ids: ["data-check", "bus-groups", "motorcycle-stop", "oldtimer-rally", "tracht-show"],
+    ids: ["data-check", "bus-groups", "motorcycle-stop"],
   },
   {
     title: "Sonderformate fürs Höfemuseum",
+    label: "Später prüfen",
     text: "Stärkere Eventideen, die bewusst dosiert werden sollten und klare Regeln brauchen.",
-    ids: ["fpv", "larp", "medieval-fest", "archery-story", "craft-challenge"],
+    ids: ["larp", "archery-story", "craft-challenge"],
   },
 ];
 
@@ -1152,8 +1163,9 @@ function FutureFormatGroups({
         ...futureFormatGroups,
         {
           title: "Weitere Ideen",
-          text: "Zusätzliche Optionen, die später bewertet und priorisiert werden können.",
-          ids: fallbackFormats.map((format) => format.id),
+          label: "Parkplatz",
+          text: "Drei Beispiele aus dem Ideenspeicher. Der Rest bleibt bewusst nachrangig.",
+          ids: fallbackFormats.slice(0, 3).map((format) => format.id),
         },
       ]
     : futureFormatGroups;
@@ -1168,8 +1180,11 @@ function FutureFormatGroups({
         return (
           <details className="future-group" key={group.title} open={index < 2}>
             <summary className="future-group__heading">
-              <h3>{group.title}</h3>
-              <p>{group.text}</p>
+              <span>{group.label}</span>
+              <div>
+                <h3>{group.title}</h3>
+                <p>{group.text}</p>
+              </div>
             </summary>
             <div className="future-grid future-grid--interactive">
               {formats.map((format) => (
@@ -1303,6 +1318,15 @@ function ProjectEstimateSection() {
 }
 
 function BuildathonPrototypeSection() {
+  // Podest und Gesamtübersicht sind getrennt: oben die drei Publikumssieger,
+  // darunter alle zehn Teams in Tisch-Reihenfolge T01 bis T10.
+  const podiumReferences = ["T09", "T10", "T08"]
+    .map((id) => buildathonReferences.find((reference) => reference.id === id))
+    .filter((reference): reference is (typeof buildathonReferences)[number] => Boolean(reference));
+  const sortedReferences = [...buildathonReferences].sort(
+    (first, second) => Number(first.id.slice(1)) - Number(second.id.slice(1)),
+  );
+
   return (
     <section id="buildathon-prototypes" className="buildathon-section">
       <div className="section-heading">
@@ -1320,45 +1344,61 @@ function BuildathonPrototypeSection() {
         <figure>
           <img src={publicAsset("pitch-images/hack-am-hof-teilnehmerinnen.png")} alt="Stilisiertes Hack am Hof Gruppenmotiv ohne erkennbare Personen." />
         </figure>
-        <div>
-          <div className="section-kicker">Publikums-Ranking</div>
-          <h3>Die Siegerprojekte zeigen, welche Ideen besonders gezogen haben.</h3>
-          <ol>
-            <li>
-              <strong>Hofjäger</strong>
-              <span>Tisch 9 · 48 pt</span>
-            </li>
-            <li>
-              <strong>Traditirol</strong>
-              <span>Tisch 10 · 38 pt</span>
-            </li>
-            <li>
-              <strong>OUT.</strong>
-              <span>Tisch 8 · 23 pt</span>
-            </li>
-          </ol>
+        <div className="buildathon-ranking-card">
+          <div className="buildathon-ranking-card__head">
+            <div>
+              <div className="section-kicker">Publikums-Ranking</div>
+              <h3>Publikumssieger</h3>
+            </div>
+            <p>Die drei stärksten Signale: Spiel, Foto und Community.</p>
+          </div>
+          <div className="buildathon-podium" aria-label="Siegerpodest der drei Publikumsgewinner">
+            {podiumReferences.map((reference) => {
+              const winner = buildathonWinners[reference.id];
+              return (
+                <article key={reference.id} className={`buildathon-podium__place buildathon-podium__place--${winner.rank[0]}`}>
+                  <span>{winner.rank}</span>
+                  <strong>{reference.title}</strong>
+                  <em>{winner.points}</em>
+                  <b>{buildathonPillars[reference.id]}</b>
+                </article>
+              );
+            })}
+          </div>
+          <p>Diese Bausteine werden als Priorität für den gemeinsamen Museumspilot übernommen.</p>
         </div>
       </div>
 
-      <div className="buildathon-grid">
-        {buildathonReferences.map((reference) => {
+      <details className="buildathon-accordion" open>
+        <summary>
+          <span>Alle 10 Prototypen</span>
+          <strong>Nach Tisch T01-T10 sortiert</strong>
+        </summary>
+        <div className="buildathon-table" role="list">
+        {sortedReferences.map((reference) => {
           const winner = buildathonWinners[reference.id];
           return (
-            <article key={reference.id} className={winner ? "buildathon-card buildathon-card--winner" : "buildathon-card"}>
-              <div className="buildathon-card__topline">
+            <article key={reference.id} className={winner ? "buildathon-row buildathon-row--winner" : "buildathon-row"} role="listitem">
+              <div className="buildathon-row__id">
                 <span>{reference.id}</span>
-                {winner ? <strong>{winner.rank} · {winner.points}</strong> : null}
+                <b>{buildathonPillars[reference.id]}</b>
               </div>
-              <h3>{reference.title}</h3>
-              <p>{reference.summary}</p>
-              <strong>Eingeflossen: {reference.takeaway}</strong>
-              <a href={reference.source} target="_blank" rel="noreferrer">
-                Prototyp öffnen <ExternalLink size={14} />
-              </a>
+              <div className="buildathon-row__main">
+                <h3>{reference.title}</h3>
+                <p>{reference.summary}</p>
+              </div>
+              <strong>{reference.takeaway}</strong>
+              <div className="buildathon-row__meta">
+                {winner ? <em>{winner.rank} · {winner.points}</em> : <em>nicht platziert</em>}
+                <a href={reference.source} target="_blank" rel="noreferrer" aria-label={`${reference.title} öffnen`}>
+                  Öffnen <ExternalLink size={14} />
+                </a>
+              </div>
             </article>
           );
         })}
-      </div>
+        </div>
+      </details>
     </section>
   );
 }
@@ -1381,8 +1421,8 @@ function moduleIdeaIcon(id: string) {
 const moduleIdeaPhaseGroups = [
   {
     phase: "Pilot",
-    title: "Grundlage und erste Schulroute",
-    text: "Zuerst braucht es gesichertes Wissen und eine echte Hofrunde für Schulklassen.",
+    title: "Grundlage und erste Hofrunde",
+    text: "Zuerst braucht es gesichertes Wissen und eine echte Hofrunde für eine reale Besuchergruppe.",
     ideaIds: ["content", "school"],
   },
   {
@@ -1421,9 +1461,9 @@ const modulePitchDetails: Record<string, {
     imageUrl: publicAsset("pitch-images/schulklassenmission.png"),
     sceneTitle: "Mission am Hof",
     sceneSubtitle: "Kinder lösen Geschichte gemeinsam",
-    campaign: "Schulpaket für 5. bis 7. Schulstufe: QR-Start, Rollen, vier Stationen, Abschlussfrage und Lehrerblatt.",
+    campaign: "Pilotpaket für eine erste Besuchergruppe: QR-Start, Rollen, vier Stationen, Abschlussfrage und Begleitblatt.",
     museumBenefit: "Planbarer Bildungsbesuch, klare Lernziele, wiederverwendbare Route und ein einfacher Einstieg in Förder- oder Partnergespräche.",
-    rhythm: "Dauerhaft buchbar, zuerst als Pilot mit wenigen Klassen.",
+    rhythm: "Dauerhaft buchbar, zuerst als kontrollierter Pilot mit wenigen Testgruppen.",
     nextStep: "Eine Route auswählen, Stationstexte prüfen und mit echten Guides einmal durchspielen.",
     imagePrompt: "Photorealistic documentary image of an Austrian school class, ages 10-13, exploring a Tyrolean open-air farmhouse museum in Kramsach, children in small groups holding a paper Hofrunde and one smartphone, a museum guide pointing at a wooden farmhouse, warm daylight, authentic alpine rural setting, respectful educational mood, no readable text, no logos.",
   },
@@ -1561,20 +1601,12 @@ function ModuleIdeas() {
       <div className="section-heading">
         <div>
           <div className="section-kicker">Best of der Ideen</div>
-          <h2>Von der ersten Schulroute zur Museumsplattform.</h2>
+          <h2>Vom ersten Museumspilot zur Museumsplattform.</h2>
         </div>
         <p>
           Die Ideen werden nach Umsetzungsphasen sortiert. Erst kommt der Pilot,
           danach folgen buchbare Erweiterungen, Zielgruppenlayer und Plattformnutzen.
         </p>
-      </div>
-
-      <div className="scope-legend" aria-label="Umsetzungsstufen">
-        {(["Pilot jetzt", "Nächster Ausbau", "Spätere Plattform", "Ideenpool"] as ScopeLabel[]).map((label) => (
-          <span key={label} className={`scope-badge scope-badge--${scopeStyleByLabel[label]}`}>
-            {label}
-          </span>
-        ))}
       </div>
 
       <div className="idea-layout">
@@ -1847,13 +1879,13 @@ function pointPitch(point: MapPoint) {
   }
   if (point.type === "mission") {
     return {
-      title: "Mission für Schulklassen",
+      title: "Mission für Gruppen",
       campaign:
         "Die Station ist Teil einer Teamgeschichte. Kinder lösen nicht nur Fragen, sondern verstehen eine Entscheidung im Hofsystem.",
       museumBenefit:
-        "Lehrpersonen bekommen Ablauf, Rollen und Lernziel. Das Museum bekommt einen klaren Pilot, der einfach getestet werden kann.",
-      rhythm: "Dauerhaft als buchbares Schulangebot, mit variablen Missionen je Alter, Zeit und Gruppengröße.",
-      nextStep: "Aufgabe vor Ort mit einer Klasse testen und danach Sprache, Dauer und Rollen schärfen.",
+        "Begleitpersonen bekommen Ablauf, Rollen und Ziel. Das Museum bekommt einen klaren Pilot, der einfach getestet werden kann.",
+      rhythm: "Dauerhaft als buchbares Gruppenangebot, mit variablen Missionen je Alter, Zeit und Gruppengröße.",
+      nextStep: "Aufgabe vor Ort mit einer Testgruppe durchspielen und danach Sprache, Dauer und Rollen schärfen.",
     };
   }
   if (point.type === "herb") {
@@ -2138,6 +2170,8 @@ function PointPitchModal({ point, onClose }: { point: MapPoint; onClose: () => v
 }
 
 export function App() {
+  // Diese States steuern die interaktiven Demo-Bereiche: Zielgruppe, Kartenpunkt,
+  // Popups und Navigationsstatus. Für reine Textänderungen sind sie meist egal.
   const [mode, setMode] = useState<AudienceMode>("school");
   const [mapVariant, setMapVariant] = useState<MapVariant>("original");
   const [mapListView, setMapListView] = useState<"stations" | "hoefe">("stations");
@@ -2257,17 +2291,17 @@ export function App() {
               Museumswissen erlebbar machen.
             </h1>
             <h2 className="hero-thesis-lines">
-              <span>Schulroute testen.</span>
+              <span>Hofrunde testen.</span>
               <span>Guide-Wissen sichern.</span>
               <span>Danach Ausbau entscheiden.</span>
             </h2>
             <p>
               Heute geht es nicht um eine fertige Plattform, sondern um die Freigabe eines
-              begrenzten Schulklassen-Piloten mit 4 bis 5 Stationen.
+              begrenzten Museumspiloten mit 4 bis 5 Stationen.
             </p>
             <div className="hero-decision-card" aria-label="Beschlussvorschlag">
               <span>Beschlussvorschlag</span>
-              <strong>Freigabe für einen begrenzten Schulklassen-Pilot</strong>
+              <strong>Freigabe für einen begrenzten Museumspilot</strong>
               <p>
                 4 bis 5 Stationen, QR-/Code-Start, Rollen, Aufgaben, Guide-Wissen und Feedback.
                 Keine Entscheidung über den Vollausbau.
@@ -2286,11 +2320,11 @@ export function App() {
         </div>
       </section>
 
-      <DecisionAndRoadmapSection />
-
       <AppClickDummy />
 
       <PhonePrototype />
+
+      <DecisionAndRoadmapSection />
 
       <section id="demo" className="demo-section">
         <div className="section-heading">
@@ -2469,13 +2503,6 @@ export function App() {
               Diese Ideen sind kein Pflichtumfang für den Pilot. Sie zeigen, wie viele
               Besuchsanlässe aus demselben Ort entstehen können.
             </p>
-            <div className="scope-legend scope-legend--left" aria-label="Einordnung der Ausbauideen">
-              {(["Pilot jetzt", "Nächster Ausbau", "Spätere Plattform", "Ideenpool"] as ScopeLabel[]).map((label) => (
-                <span key={label} className={`scope-badge scope-badge--${scopeStyleByLabel[label]}`}>
-                  {label}
-                </span>
-              ))}
-            </div>
           </div>
           <FutureFormatGroups
             activeId={selectedFuture.id}

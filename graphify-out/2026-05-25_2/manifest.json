@@ -1,0 +1,152 @@
+{
+  "/private/tmp/hack-am-hof-graph-corpus/package.json": {
+    "mtime": 1779712591.217733,
+    "ast_hash": "5a3d6ba9627c5db1402517fadd22d061",
+    "semantic_hash": "5a3d6ba9627c5db1402517fadd22d061"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/package.json": {
+    "mtime": 1779712596.7667663,
+    "ast_hash": "25dba7480c6aa3ec6b9d0ce230dba383",
+    "semantic_hash": "25dba7480c6aa3ec6b9d0ce230dba383"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/tsconfig.json": {
+    "mtime": 1779712596.7676175,
+    "ast_hash": "ebbd616a26e3cf6bac6957ed0f97e8f5",
+    "semantic_hash": "ebbd616a26e3cf6bac6957ed0f97e8f5"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/vite.config.ts": {
+    "mtime": 1779712596.7685006,
+    "ast_hash": "73e33fe029bc5cd0b7627db6d139bd70",
+    "semantic_hash": "73e33fe029bc5cd0b7627db6d139bd70"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/App.tsx": {
+    "mtime": 1779712591.2118688,
+    "ast_hash": "2c36f9cbb4d6f8d49fb2f11502358d85",
+    "semantic_hash": "2c36f9cbb4d6f8d49fb2f11502358d85"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/main.tsx": {
+    "mtime": 1779712591.2124503,
+    "ast_hash": "d45d6c3ac203df7a76551b9da0b2900a",
+    "semantic_hash": "d45d6c3ac203df7a76551b9da0b2900a"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/vite-env.d.ts": {
+    "mtime": 1779712591.2198453,
+    "ast_hash": "9554a2367c1f8ab5eb314923189378eb",
+    "semantic_hash": "9554a2367c1f8ab5eb314923189378eb"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/features/map/MuseumMap.tsx": {
+    "mtime": 1779712591.2152839,
+    "ast_hash": "b8c5bee318879d24a123925f7e5174fd",
+    "semantic_hash": "b8c5bee318879d24a123925f7e5174fd"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/components/AvatarLab.tsx": {
+    "mtime": 1779712591.2162046,
+    "ast_hash": "a2664285d552ae4f7d6a50792a60d492",
+    "semantic_hash": "a2664285d552ae4f7d6a50792a60d492"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/components/PointDrawer.tsx": {
+    "mtime": 1779712591.2168458,
+    "ast_hash": "5a91d936531118ccb17cd1e3e673e3fc",
+    "semantic_hash": "5a91d936531118ccb17cd1e3e673e3fc"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/components/AppClickDummy.tsx": {
+    "mtime": 1779712591.2174873,
+    "ast_hash": "c3d5869f5acad0083adee77c79c33a70",
+    "semantic_hash": "c3d5869f5acad0083adee77c79c33a70"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/components/ModeTabs.tsx": {
+    "mtime": 1779712591.2180574,
+    "ast_hash": "89edd8dca7c289bf11ab38b44f170ad8",
+    "semantic_hash": "89edd8dca7c289bf11ab38b44f170ad8"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/components/GuideStudio.tsx": {
+    "mtime": 1779712591.2185907,
+    "ast_hash": "d73573888b94e7d16917a5e057fb3063",
+    "semantic_hash": "d73573888b94e7d16917a5e057fb3063"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/components/PitchPanel.tsx": {
+    "mtime": 1779712591.2190995,
+    "ast_hash": "919218e5c95c844e12f9cb26b32fec9e",
+    "semantic_hash": "919218e5c95c844e12f9cb26b32fec9e"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/lib/registerServiceWorker.ts": {
+    "mtime": 1779712591.2205045,
+    "ast_hash": "8aa9198ca601167ba5ec688248362f46",
+    "semantic_hash": "8aa9198ca601167ba5ec688248362f46"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/data/platform.ts": {
+    "mtime": 1779712591.22164,
+    "ast_hash": "143834c71047672591acd6047083b3dc",
+    "semantic_hash": "143834c71047672591acd6047083b3dc"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/src/data/contentStudio.ts": {
+    "mtime": 1779712591.2220595,
+    "ast_hash": "e2b75db592a71a22ca80c781ad814ef9",
+    "semantic_hash": "e2b75db592a71a22ca80c781ad814ef9"
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/BILDPROMPTS.md": {
+    "mtime": 1779712591.218337,
+    "ast_hash": "667a727155424fd92c62344ca1ee63a1",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/README.md": {
+    "mtime": 1779712591.2172887,
+    "ast_hash": "0b8a99a72a4f974a779062c70f3151c5",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/docs/ARCHITECTURE.md": {
+    "mtime": 1779712591.2011821,
+    "ast_hash": "4faafc825d373f171a0244dd81af7f73",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/docs/2026-05-25_Hack-am-Hof-Iteration-I-Review.md": {
+    "mtime": 1779712591.2018766,
+    "ast_hash": "beb34ea71c64cdf7cb050baa61bfcc87",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/docs/2026-05-25_Hack-am-Hof-Iteration-I-Optimierungspakete.md": {
+    "mtime": 1779712591.202561,
+    "ast_hash": "4dfab3759739003eb536cd42eb6cce1b",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/docs/PITCH.md": {
+    "mtime": 1779712591.2034576,
+    "ast_hash": "6780ee24251420e360463f3e37e6a64d",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/docs/2026-05-25_Hack-am-Hof-Projekt-Backlog.md": {
+    "mtime": 1779712591.2041926,
+    "ast_hash": "cca7d924bc895be8608c06975d1f8172",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/docs/UPDATELOG.md": {
+    "mtime": 1779712591.204909,
+    "ast_hash": "458b13925fca37bc2e142dc0fbcb2e82",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/docs/EVENT_BLUEPRINT.md": {
+    "mtime": 1779712591.2057612,
+    "ast_hash": "739593433601443ce18fb6516e84f755",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/docs/BACKLOG.md": {
+    "mtime": 1779712591.2066295,
+    "ast_hash": "8411f66de0963f518af05728bdceef1c",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/docs/BUILDATHON_REFERENCES.md": {
+    "mtime": 1779712591.2072906,
+    "ast_hash": "979c0c95a3a75dd87d3a67cd499c32a4",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/.github/workflows/deploy-pages.yml": {
+    "mtime": 1779712591.205189,
+    "ast_hash": "5eb468d8f054a06924af8fc5c62e3731",
+    "semantic_hash": ""
+  },
+  "/private/tmp/hack-am-hof-graph-corpus/apps/web/index.html": {
+    "mtime": 1779712596.769174,
+    "ast_hash": "1f53d1ee7eb5cbd5d4d2a21c0fbf3bc6",
+    "semantic_hash": ""
+  }
+}

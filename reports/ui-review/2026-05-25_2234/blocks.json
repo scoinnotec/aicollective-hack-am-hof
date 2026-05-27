@@ -1,0 +1,147 @@
+{
+  "generatedAt": "2026-05-25T20:38:30.000Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "blocks": [
+    {
+      "file": "01-hero.png",
+      "title": "Hero / Einstieg",
+      "top": 0,
+      "height": 986
+    },
+    {
+      "file": "02-decision-intro-media.png",
+      "title": "Entscheidungsintro + Bildbelege",
+      "top": 986,
+      "height": 1205
+    },
+    {
+      "file": "03-pilot-decision-box.png",
+      "title": "Pilot-Beschlussbox",
+      "top": 2185,
+      "height": 470
+    },
+    {
+      "file": "04-pilot-proof-grid.png",
+      "title": "Pilot-Erfolgskriterien",
+      "top": 2700,
+      "height": 1220
+    },
+    {
+      "file": "05-decision-workflow.png",
+      "title": "Vorstands-Workflow",
+      "top": 3976,
+      "height": 1391
+    },
+    {
+      "file": "06-core-thesis.png",
+      "title": "Kernthese",
+      "top": 5483,
+      "height": 433
+    },
+    {
+      "file": "07-idea-decision-panel.png",
+      "title": "Ideenbewertung",
+      "top": 6043,
+      "height": 842
+    },
+    {
+      "file": "08-pitch-track.png",
+      "title": "Pitch Track",
+      "top": 7013,
+      "height": 642
+    },
+    {
+      "file": "09-ambassador-panel.png",
+      "title": "Ambassador Panel",
+      "top": 7784,
+      "height": 517
+    },
+    {
+      "file": "10-clickdummy.png",
+      "title": "App Clickdummy",
+      "top": 8403,
+      "height": 1426
+    },
+    {
+      "file": "11-phone-prototype.png",
+      "title": "Phone Prototype",
+      "top": 9828,
+      "height": 1130
+    },
+    {
+      "file": "12-mission-generator.png",
+      "title": "Mission Generator",
+      "top": 10890,
+      "height": 1287
+    },
+    {
+      "file": "13-map-demo.png",
+      "title": "Karten-Demo",
+      "top": 12177,
+      "height": 1244
+    },
+    {
+      "file": "14-modules.png",
+      "title": "Module und Phasen",
+      "top": 13421,
+      "height": 1391
+    },
+    {
+      "file": "15-context-intro.png",
+      "title": "Kontextintro",
+      "top": 14812,
+      "height": 760
+    },
+    {
+      "file": "16-context-grid.png",
+      "title": "Kontextgrid",
+      "top": 15545,
+      "height": 1570
+    },
+    {
+      "file": "17-buildathon-overview.png",
+      "title": "Buildathon Uebersicht",
+      "top": 17115,
+      "height": 760
+    },
+    {
+      "file": "18-buildathon-grid.png",
+      "title": "Buildathon Grid",
+      "top": 17842,
+      "height": 1135
+    },
+    {
+      "file": "19-avatar-lab.png",
+      "title": "Avatar Lab",
+      "top": 19105,
+      "height": 965
+    },
+    {
+      "file": "20-process.png",
+      "title": "Prozess",
+      "top": 20070,
+      "height": 1145
+    },
+    {
+      "file": "21-guide-studio.png",
+      "title": "Guide Studio",
+      "top": 21215,
+      "height": 1633
+    },
+    {
+      "file": "22-extensions.png",
+      "title": "Erweiterungen",
+      "top": 22848,
+      "height": 1639
+    },
+    {
+      "file": "23-costs.png",
+      "title": "Kosten und Skalierung",
+      "top": 24487,
+      "height": 1714
+    }
+  ]
+}

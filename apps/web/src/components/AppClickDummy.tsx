@@ -10,15 +10,19 @@ import {
   ImagePlus,
   ListChecks,
   MapPin,
+  Pause,
   QrCode,
   RefreshCw,
+  SkipForward,
   Sparkles,
   Trophy,
+  Volume2,
   WandSparkles,
   XCircle,
 } from "lucide-react";
 import { clickDummyMissions, clickDummyModes } from "../data/platform";
 
+// Kleiner Helfer wie in App.tsx: baut robuste Pfade zu Bildern im public-Ordner.
 function publicAsset(path: string) {
   return `${import.meta.env.BASE_URL}${path}`;
 }
@@ -34,6 +38,15 @@ type MiniGame = {
 
 type DummyScreen = "start" | "roles" | "station" | "mini" | "photo" | "finale";
 type AppStage = "splash" | "login" | "setup" | "join" | "mission";
+type DemoScreenSpec = {
+  title: string;
+  text: string;
+};
+
+type ExplainerCard = {
+  title: string;
+  text: string;
+};
 
 type GroupProfile = {
   id: string;
@@ -58,6 +71,8 @@ type RoleProfile = {
 };
 
 const groupProfiles: GroupProfile[] = [
+  // Diese Profile simulieren, wer den Besuch startet: Schulklasse, Familie,
+  // Reisegruppe usw. Sie beeinflussen Texte, Gruppengröße und Missionsmodus.
   {
     id: "school-class",
     modeId: "school",
@@ -84,7 +99,7 @@ const groupProfiles: GroupProfile[] = [
   },
   {
     id: "travel-group",
-    modeId: "history",
+    modeId: "pensioners",
     label: "Reisegruppe / Pensionisten",
     creator: "Ich leite eine Reisegruppe",
     participants: "Gäste",
@@ -93,6 +108,18 @@ const groupProfiles: GroupProfile[] = [
     defaultAge: "60+ Jahre",
     defaultDuration: "45 Minuten",
     description: "Für Busgruppen, Pensionist:innen und Gäste, die ruhiger geführt werden möchten.",
+  },
+  {
+    id: "adult-history",
+    modeId: "history",
+    label: "Erwachsenenrunde",
+    creator: "Wir wollen vertiefen",
+    participants: "Erwachsene",
+    defaultName: "Tirol verstehen",
+    defaultCount: 14,
+    defaultAge: "Erwachsene",
+    defaultDuration: "55 Minuten",
+    description: "Für Kulturinteressierte mit mehr Tiefe, regionalen Bezügen und Quellenhinweisen.",
   },
   {
     id: "celebration",
@@ -120,6 +147,225 @@ const groupProfiles: GroupProfile[] = [
   },
 ];
 
+const demoScreensByMode: Record<string, DemoScreenSpec[]> = {
+  school: [
+    { title: "Startcode", text: "Lehrperson öffnet eine geschlossene Runde." },
+    { title: "Klassenprofil", text: "Alter, Dauer und Gruppengröße setzen Sprache und Tempo." },
+    { title: "Beitritt", text: "Schüler:innen treten per QR, Code oder NFC bei." },
+    { title: "Rollen ziehen", text: "Jedes Handy erhält eine andere Aufgabe." },
+    { title: "Private Hinweise", text: "Wissen wird erst durch Teilen vollständig." },
+    { title: "QR-Station", text: "Vor Ort öffnet sich nur die passende Aufgabe." },
+    { title: "Mini-Aufgabe", text: "Kurze Entscheidung statt langer Textwand." },
+    { title: "Guide-Hinweis", text: "Joker erklärt fachlich, ohne bloßzustellen." },
+    { title: "Finale", text: "Die Klasse löst gemeinsam die Abschlussfrage." },
+    { title: "Lehreransicht", text: "Feedback, Dauer und Lernziel bleiben auswertbar." },
+  ],
+  kids: [
+    { title: "Familienstart", text: "Kurze Route mit Pausen und einfachen Aufgaben." },
+    { title: "Alter mischen", text: "Kinder, Eltern und Großeltern bekommen passende Rollen." },
+    { title: "Sinnesaufgabe", text: "Suchen, hören, riechen, vergleichen." },
+    { title: "Pausenpunkt", text: "Die App schlägt ruhige Zwischenstopps vor." },
+    { title: "Abzeichen", text: "Gemeinsame Sammlung statt Einzelranking." },
+    { title: "Fotoidee", text: "Ein Erinnerungsbild bleibt optional." },
+    { title: "Leichte Sprache", text: "Aufgaben bleiben kurz und konkret." },
+    { title: "Schlechtwetter", text: "Die Route kann automatisch kürzer werden." },
+    { title: "Wiederbesuch", text: "Beim nächsten Mal öffnet eine andere Mini-Mission." },
+    { title: "Mitnahme", text: "Stempel, Holzmarke oder digitales Familienbild." },
+  ],
+  history: [
+    { title: "Themenwahl", text: "Erwachsene wählen Tiefe statt Spieltempo." },
+    { title: "Region", text: "Wald, Wasser, Rattenberg und Hofwirtschaft werden verbunden." },
+    { title: "Quellenstatus", text: "Jede Aussage zeigt, ob sie geprüft ist." },
+    { title: "Audio-Dossier", text: "Kurze Tonspur ersetzt lange Tafeln." },
+    { title: "Kartenbezug", text: "Orte werden in der Landschaft lesbar." },
+    { title: "Objektspur", text: "Werkzeug und Raum erzählen Wirtschaftsgeschichte." },
+    { title: "Vertiefung", text: "Optionaler Deep Dive für Vereine und Kulturreisende." },
+    { title: "Gespräch", text: "Fragen regen Austausch statt Quizstress an." },
+    { title: "Route merken", text: "Stationen werden später als Themenpfad speicherbar." },
+    { title: "Abschluss", text: "Aus Einzelwissen entsteht eine verständliche Tirol-Erzählung." },
+  ],
+  pensioners: [
+    { title: "Komfortstart", text: "Route mit kurzer Dauer und klarer Sitzlogik." },
+    { title: "Große Schrift", text: "Lesbarkeit und Kontrast stehen vor Spieloptik." },
+    { title: "Audio zuerst", text: "Kurze Hörstücke statt dichter Textblöcke." },
+    { title: "Sitzpunkt", text: "Jede Etappe hat eine ruhige Pause." },
+    { title: "Erinnerungsfrage", text: "Persönliche Erfahrungen werden wertvoll." },
+    { title: "Wenig Steigung", text: "Die Karte bevorzugt kurze, gut erklärbare Wege." },
+    { title: "Gruppenleitung", text: "Eine Person behält Dauer und Treffpunkt im Blick." },
+    { title: "Einkehr", text: "Gasthausfenster wird Teil der Route." },
+    { title: "Fotopunkt", text: "Gruppenbild optional, ohne Avatar-Zwang." },
+    { title: "Rückkehr", text: "Der Bus- oder Abholpunkt bleibt sichtbar." },
+  ],
+  celebration: [
+    { title: "Anlass", text: "Taufe, Trauung oder Feier bestimmen Route und Ton." },
+    { title: "Fotospot", text: "Licht, Wege und Hintergrund werden vorab gewählt." },
+    { title: "Zeitfenster", text: "Museumsbetrieb und Feierlogik bleiben getrennt." },
+    { title: "Gäste", text: "Kurze Infos erklären den Ort ohne Führungspflicht." },
+    { title: "Schlechtwetter", text: "Alternative Kulissen werden sichtbar." },
+    { title: "Erinnerung", text: "Digitalbild, Druck oder hochwertiges Produkt." },
+    { title: "Freigabe", text: "Fotos und Nutzung bleiben kontrollierbar." },
+    { title: "Ablauf", text: "Kasse, Wirtshaus und Fotopunkt greifen ineinander." },
+    { title: "Teilen", text: "Gäste werden zu Botschafter:innen." },
+    { title: "Buchung", text: "Aus dem Ablauf wird ein Paket." },
+  ],
+  inspiration: [
+    { title: "Materialblick", text: "Holz, Ofen, Beschlag und Funktion im Fokus." },
+    { title: "Raum lesen", text: "Stube und Küche werden als System erklärt." },
+    { title: "Handwerk", text: "Fachpartner und Kontakte werden sichtbar." },
+    { title: "Quelle", text: "Was ist historisch belegt, was Inspiration?" },
+    { title: "Detailkarte", text: "Fotos und Notizen bleiben am Objekt." },
+    { title: "Vergleich", text: "Mehrere Höfe zeigen Varianten." },
+    { title: "Beratung", text: "Anfragen werden gesammelt, nicht improvisiert." },
+    { title: "Priorität", text: "Gäste markieren relevante Details." },
+    { title: "Export", text: "Ideen können später als Dossier mitgenommen werden." },
+    { title: "Partnerpaket", text: "Museum, Handwerk und Tourismus gewinnen gemeinsam." },
+  ],
+};
+
+function demoScreensForMode(modeId: string) {
+  return demoScreensByMode[modeId] ?? demoScreensByMode.kids;
+}
+
+const defaultExplainerCards: ExplainerCard[] = [
+  {
+    title: "Rollen statt Einzelspieler",
+    text: "Jede Person bekommt einen privaten Hinweis. Erst durch Teilen entsteht die Lösung.",
+  },
+  {
+    title: "Score als Teamwappen",
+    text: "Die Gruppe sammelt gemeinsam Punkte und Titel. Keine Bloßstellung, kein Einzelranking.",
+  },
+  {
+    title: "Hofrunde & Saisonkarte",
+    text: "Digitale Missionen können mit Stempelpass, Holzmarken, Saisonabzeichen und Eventeinladungen verbunden werden.",
+  },
+  {
+    title: "Kurze Minispiele",
+    text: "30 bis 90 Sekunden: Vorräte sortieren, Butter machen, Spuren verbinden oder Feuer sichern.",
+  },
+  {
+    title: "Bewusst kein Actionspiel",
+    text: "Der Pilot bleibt ruhig und wissensorientiert. Ein aktiver Suchmodus wäre möglich, wenn das Museum genau dieses Ziel verfolgt.",
+  },
+  {
+    title: "Im Klickdummy simuliert",
+    text: "QR-Code, NFC und mehrere Geräte werden hier als Beitrittsliste gezeigt. Im Pilot wäre das ein echter Gruppenraum.",
+  },
+];
+
+const explainerCardsByMode: Record<string, ExplainerCard[]> = {
+  school: defaultExplainerCards,
+  kids: defaultExplainerCards,
+  history: [
+    {
+      title: "Tiefe statt Spieltempo",
+      text: "Erwachsene können Themenpfade wählen, bei denen Zusammenhang, Ort und Quellen wichtiger sind als Punkte.",
+    },
+    {
+      title: "Quellenstatus sichtbar",
+      text: "Jede Geschichte kann als geprüft, offen oder mündlich überliefert markiert werden.",
+    },
+    {
+      title: "Audio & Karte",
+      text: "Kurze Tonspuren und Ortsbezüge ersetzen lange Tafeln und machen die Landschaft lesbar.",
+    },
+    {
+      title: "Gesprächsanlass",
+      text: "Fragen führen zu Austausch in der Gruppe, ohne daraus ein Kinderquiz zu machen.",
+    },
+    {
+      title: "Dossier möglich",
+      text: "Aus einer Runde kann später ein thematischer Pfad für Vereine, Kulturreisende oder Einheimische werden.",
+    },
+    {
+      title: "Im Klickdummy simuliert",
+      text: "Themenwahl, Quellenhinweis und Audio-Logik sind schon als eigener Demoablauf angelegt.",
+    },
+  ],
+  pensioners: [
+    {
+      title: "Komfort statt Spieltempo",
+      text: "Große Schrift, kurze Wege, Sitzpunkte und klare Dauer stehen vor Minispielen.",
+    },
+    {
+      title: "Audio zuerst",
+      text: "Kurze Hörstücke entlasten, wenn Lesen, Licht oder Müdigkeit eine Rolle spielen.",
+    },
+    {
+      title: "Erinnerungsfragen",
+      text: "Die Runde öffnet Gespräche über Alltag, Räume und frühere Arbeitsweisen.",
+    },
+    {
+      title: "Einkehr mitdenken",
+      text: "Für Busgruppen wird der Museumsbesuch stärker, wenn Pause, Treffpunkt und Gastronomie zusammenpassen.",
+    },
+    {
+      title: "Foto optional",
+      text: "Ein Gruppenbild kann Teil des Angebots sein, bleibt aber getrennt freigegeben und ohne Avatar-Zwang.",
+    },
+    {
+      title: "Im Klickdummy simuliert",
+      text: "Komfortroute, Audio, Sitzpunkte und Rückkehr zum Bus sind als eigener Demoablauf angelegt.",
+    },
+  ],
+  celebration: [
+    {
+      title: "Anlass vor Spiel",
+      text: "Feiergruppen brauchen Ablauf, Fotopunkte und klare Zeitfenster, keine Schulmission.",
+    },
+    {
+      title: "Kulisse planen",
+      text: "Licht, Wetter, Wege und Innenräume können vorab als sichere Fotostopps sichtbar werden.",
+    },
+    {
+      title: "Betrieb schützen",
+      text: "Museum, Kasse, Wirtshaus und Gästeablauf bleiben getrennt, aber aufeinander abgestimmt.",
+    },
+    {
+      title: "Mitnahmeprodukt",
+      text: "Aus dem Besuch kann ein Bild, Druck, Holzlaser oder anderes Erinnerungsprodukt entstehen.",
+    },
+    {
+      title: "Freigaben klar",
+      text: "Foto, Veröffentlichung und Produktlogik werden getrennt entschieden.",
+    },
+    {
+      title: "Im Klickdummy simuliert",
+      text: "Anlass, Fotospot, Zeitfenster und Produktoptionen sind als eigener Demoablauf angelegt.",
+    },
+  ],
+  inspiration: [
+    {
+      title: "Material lesen",
+      text: "Bauherr:innen und Handwerk sehen Details zu Holz, Raum, Ofen, Beschlag und Funktion.",
+    },
+    {
+      title: "Quelle statt Behauptung",
+      text: "Der Dummy trennt belegtes Wissen, Inspiration und offene Fragen sichtbar.",
+    },
+    {
+      title: "Objektbezogene Notizen",
+      text: "Fotos, Hinweise und Detailkarten bleiben am konkreten Hofobjekt.",
+    },
+    {
+      title: "Partner einbinden",
+      text: "Museum, Handwerk und Tourismus können aus Interesse ein beratbares Paket machen.",
+    },
+    {
+      title: "Dossier exportieren",
+      text: "Aus markierten Details kann später eine strukturierte Ideensammlung entstehen.",
+    },
+    {
+      title: "Im Klickdummy simuliert",
+      text: "Materialblick, Quelle, Vergleich und Export sind als eigener Demoablauf angelegt.",
+    },
+  ],
+};
+
+function explainerCardsForMode(modeId: string) {
+  return explainerCardsByMode[modeId] ?? defaultExplainerCards;
+}
+
 const groupNameSuggestions = [
   "Hofspur 17",
   "Glut & Vorrat",
@@ -139,7 +385,18 @@ const ageOptions = [
   "60+ Jahre",
 ];
 
-const joinPreviewNames = ["Lena", "Emir", "Mia", "Jonas", "Nora", "Theo", "Sara", "Max"];
+const joinPreviewNamesByProfile: Record<string, string[]> = {
+  "school-class": ["Lena", "Emir", "Mia", "Jonas", "Nora", "Theo", "Sara", "Max"],
+  family: ["Anna", "Paul", "Oma Maria", "Opa Sepp", "Marlene", "Tobias", "Lilli", "Georg"],
+  "travel-group": ["Herr Gruber", "Frau Berger", "Herr Mair", "Frau Hofer", "Erika", "Josef", "Hilde", "Franz"],
+  "adult-history": ["Claudia", "Markus", "Eva", "Thomas", "Andrea", "Peter", "Sabine", "Martin"],
+  celebration: ["Maria", "Lukas", "Tante Hanni", "Onkel Franz", "Julia", "Simon", "Theresa", "Andreas"],
+  inspiration: ["Bauherrin Eva", "Tischler Paul", "Architektin Nora", "Hannes", "Clara", "Martin", "Lea", "Georg"],
+};
+
+function joinPreviewNamesForProfile(profileId: string) {
+  return joinPreviewNamesByProfile[profileId] ?? joinPreviewNamesByProfile["school-class"];
+}
 
 const defaultRoleProfile: RoleProfile = {
   id: "hofkind",
@@ -247,18 +504,58 @@ const roleProfiles: RoleProfile[] = [
     hint: "Was am Hof entsteht, wird gegessen, getauscht, verkauft oder verschenkt.",
     badge: "Markt",
   },
+  {
+    id: "history-adult",
+    label: "Quellenblick",
+    shortTask: "Verbindet Ort, Quelle und regionale Geschichte.",
+    image: publicAsset("pitch-images/tirol-verstehen.png"),
+    hint: "Für Erwachsene ist der Zusammenhang oft wichtiger als ein Spielrätsel.",
+    badge: "Quelle",
+  },
+  {
+    id: "memory",
+    label: "Erinnerungsfinder:in",
+    shortTask: "Achtet auf Räume, die persönliche Erinnerungen öffnen.",
+    image: publicAsset("pitch-images/pensionistenmodus.png"),
+    hint: "Eine gute Frage ist wichtiger als ein schneller Auftrag.",
+    badge: "Erinnerung",
+  },
+  {
+    id: "audio",
+    label: "Audiobegleiter:in",
+    shortTask: "Hört auf kurze Geschichten, Pausen und klare Ansagen.",
+    image: publicAsset("pitch-images/chroniker-modus.png"),
+    hint: "Audio hilft, wenn Lesen anstrengend wird oder die Gruppe sitzen möchte.",
+    badge: "Audio",
+  },
+  {
+    id: "comfort",
+    label: "Komfortwache",
+    shortTask: "Achtet auf Wege, Sitzpunkte, Dauer und Einkehr.",
+    image: publicAsset("pitch-images/rattenberg-busbruecke.png"),
+    hint: "Eine gute Route endet nicht irgendwo, sondern planbar bei Pause, Ausgang oder Bus.",
+    badge: "Komfort",
+  },
 ];
+
+function roleProfileById(id: string) {
+  return roleProfiles.find((profile) => profile.id === id) ?? defaultRoleProfile;
+}
 
 function roleProfileFor(role: string) {
   const lower = role.toLowerCase();
-  if (lower.includes("mühl") || lower.includes("vorrat") || lower.includes("trift")) return roleProfiles[0];
+  if (lower.includes("erinner")) return roleProfileById("memory");
+  if (lower.includes("audio")) return roleProfileById("audio");
+  if (lower.includes("sitz") || lower.includes("weg")) return roleProfileById("comfort");
+  if (lower.includes("trift") || lower.includes("waldkund") || lower.includes("chron") || lower.includes("quelle")) return roleProfileById("history-adult");
+  if (lower.includes("mühl") || lower.includes("vorrat")) return roleProfiles[0];
   if (lower.includes("tier") || lower.includes("stall")) return roleProfiles[1];
-  if (lower.includes("feuer") || lower.includes("holz") || lower.includes("waldkund")) return roleProfiles[2];
+  if (lower.includes("feuer") || lower.includes("holz")) return roleProfiles[2];
   if (lower.includes("küche") || lower.includes("rezept") || lower.includes("fest")) return roleProfiles[3];
   if (lower.includes("werkzeug") || lower.includes("handwerk")) return roleProfiles[4];
   if (lower.includes("wasser")) return roleProfiles[5];
   if (lower.includes("kräuter")) return roleProfiles[6];
-  if (lower.includes("chron") || lower.includes("quelle") || lower.includes("dokument") || lower.includes("erzähl")) return roleProfiles[7];
+  if (lower.includes("dokument") || lower.includes("erzähl")) return roleProfiles[7];
   if (lower.includes("material") || lower.includes("stube")) return roleProfiles[8];
   if (lower.includes("spur") || lower.includes("jäger")) return roleProfiles[9];
   if (lower.includes("kohle")) return roleProfiles[10];
@@ -312,6 +609,17 @@ function roleHint(role: string) {
 }
 
 function miniGameForMode(modeId: string): MiniGame {
+  if (modeId === "pensioners") {
+    return {
+      title: "Tempo prüfen",
+      instruction: "Was macht eine Runde für ältere Gäste angenehmer?",
+      choices: ["Sitzpause und kurzes Audio", "möglichst viele Stationen", "schnelle Suchaufgaben"],
+      correctChoice: "Sitzpause und kurzes Audio",
+      reward: "Komfortpunkt",
+      knowledge: "Bei ruhigen Gruppen zählt Verständlichkeit, Sitzrhythmus und gute Orientierung stärker als Spieltempo.",
+    };
+  }
+
   if (modeId === "history") {
     return {
       title: "Spuren verbinden",
@@ -367,6 +675,14 @@ function miniGameForMode(modeId: string): MiniGame {
 }
 
 function finaleChoices(modeId: string) {
+  if (modeId === "pensioners") {
+    return [
+      "Kurze Wege, Audio, Sitzpunkte und Einkehr verbinden",
+      "Möglichst viele Aufgaben ohne Pause lösen",
+      "Die Gruppe ohne klare Orientierung laufen lassen",
+    ];
+  }
+
   if (modeId === "celebration") {
     return [
       "Fotopunkt, Ablauf und Mitnahmeprodukt gemeinsam planen",
@@ -399,6 +715,8 @@ function finaleChoices(modeId: string) {
 }
 
 export function AppClickDummy() {
+  // Der Klickdummy ist eine Mini-App innerhalb der Pitch-Seite. Diese States merken
+  // sich, in welchem Schritt die Demo steht: Setup, Beitritt, Rolle, Station, Finale.
   const [modeId, setModeId] = useState(clickDummyModes[0].id);
   const [missionSeed, setMissionSeed] = useState(0);
   const [stationIndex, setStationIndex] = useState(0);
@@ -438,13 +756,56 @@ export function AppClickDummy() {
   const finaleOptions = finaleChoices(modeId);
   const activeRole = mission.roles[activeRoleIndex] ?? mission.roles[0];
   const missionRoleProfiles = mission.roles.map((role) => roleProfileFor(role));
+  const demoScreens = demoScreensForMode(modeId);
+  const explainerCards = explainerCardsForMode(modeId);
+  const audienceWord =
+    modeId === "school"
+      ? "Schüler:innen"
+      : modeId === "kids"
+        ? "Kinder"
+        : modeId === "pensioners"
+          ? "Gäste"
+          : "Teilnehmende";
+  const roleIntroCopy =
+    modeId === "school"
+      ? "Jedes Handy bekommt eine Rolle, einen Auftrag und einen privaten Hinweis."
+      : modeId === "kids"
+        ? "Jede Person bekommt eine einfache Aufgabe. Kinder und Erwachsene können gemeinsam lösen."
+        : modeId === "pensioners"
+          ? "Die Gruppe bekommt ruhige Aufgaben, Audio-Hinweise und klare Orientierungspunkte."
+          : "Jede Person bekommt einen Blickwinkel, eine Aufgabe und einen passenden Hinweis.";
   const activeRoleProfile = missionRoleProfiles[activeRoleIndex] ?? missionRoleProfiles[0] ?? defaultRoleProfile;
   const activeRoleHint = activeRoleProfile.hint || roleHint(activeRole);
   const answerIsCorrect = answer === station.correctChoice;
   const miniSolved = miniChoice === miniGame.correctChoice;
   const finalSolved = finalAnswer === finaleOptions[0];
   const safeGroupCount = Number.isFinite(groupCount) ? Math.max(1, Math.min(60, groupCount)) : setupProfile.defaultCount;
+  const joinPreviewNames = joinPreviewNamesForProfile(setupProfile.id);
   const visibleJoinedCount = Math.min(joinCount, joinPreviewNames.length);
+  const joinDeviceLabel =
+    setupProfile.modeId === "school"
+      ? "Nächstes Handy tritt bei"
+      : setupProfile.modeId === "pensioners"
+        ? "Nächster Gast tritt bei"
+        : setupProfile.modeId === "kids"
+          ? "Nächstes Familienmitglied tritt bei"
+          : "Nächste Person tritt bei";
+  const participantDeviceTitle =
+    setupProfile.modeId === "school"
+      ? `Auf den Handys der ${setupProfile.participants}`
+      : setupProfile.modeId === "pensioners"
+        ? "Für die Gäste der Reisegruppe"
+        : setupProfile.modeId === "kids"
+          ? "Für die Familie"
+          : `Für ${setupProfile.participants}`;
+  const roleAssignmentText =
+    setupProfile.modeId === "school"
+      ? roleAssignmentMode === "random"
+        ? "Jedes Handy zieht beim Start automatisch eine Rolle."
+        : "Die Spielleitung kann Rollen vor dem Start zuordnen."
+      : roleAssignmentMode === "random"
+        ? "Die Rollen werden beim Start automatisch verteilt."
+        : "Die Gruppenleitung kann Rollen vor dem Start zuordnen.";
   const selectedAvatarRole = avatarRoles.find((role) => role.id === avatarRoleId) ?? avatarRoles[0];
   const score = Math.max(
     40,
@@ -568,7 +929,7 @@ export function AppClickDummy() {
   }
 
   return (
-    <section id="app-dummy" className="app-dummy-section app-dummy-section--primary">
+    <section id="app-dummy" className={`app-dummy-section app-dummy-section--primary app-dummy-section--${modeId}`}>
       <div className="section-heading app-dummy-heading">
         <div>
           <div className="section-kicker">Die App zum Anklicken</div>
@@ -583,7 +944,7 @@ export function AppClickDummy() {
       </ol>
 
       <div className="app-dummy-layout">
-        <div className="dummy-phone" aria-label="Spielbarer App-Ausschnitt">
+        <div className={`dummy-phone dummy-phone--${modeId}`} aria-label="Spielbarer App-Ausschnitt">
           {appStage === "splash" ? (
             <div className="dummy-splash-screen">
               <div className="dummy-splash-visual" aria-hidden="true">
@@ -763,9 +1124,7 @@ export function AppClickDummy() {
                         </button>
                       </div>
                       <p>
-                        {roleAssignmentMode === "random"
-                          ? "Jedes Handy zieht beim Start automatisch eine Rolle."
-                          : "Die Spielleitung kann Rollen vor dem Start zuordnen."}
+                        {roleAssignmentText}
                       </p>
                     </div>
                     <button className="dummy-create-group" type="button" onClick={createGroup}>
@@ -800,7 +1159,7 @@ export function AppClickDummy() {
                   <span style={{ width: `${Math.min(100, (joinCount / safeGroupCount) * 100)}%` }} />
                 </div>
                 <button type="button" onClick={simulateJoin}>
-                  Nächstes Handy tritt bei
+                  {joinDeviceLabel}
                 </button>
               </div>
 
@@ -821,10 +1180,10 @@ export function AppClickDummy() {
               </div>
 
               <div className="dummy-child-preview">
-                <strong>Auf den Handys der {setupProfile.participants}</strong>
+                <strong>{participantDeviceTitle}</strong>
                 <p>
                   {roleAssignmentMode === "random"
-                    ? "Beim Start zieht jedes Handy eine Rolle. Danach erscheinen Hinweis und erste Station."
+                    ? "Beim Start werden Rolle, Hinweis und erste Station passend zur Gruppe vorbereitet."
                     : "Nach der Freigabe erscheint die zugeteilte Rolle mit Hinweis und erster Station."}
                 </p>
               </div>
@@ -853,7 +1212,7 @@ export function AppClickDummy() {
           <>
           <div className="dummy-phone__bar">
             <span>Hofrunde</span>
-            <span>{score} Punkte</span>
+            <span>{demoScreens.length} Demo-Screens</span>
           </div>
 
           <div className="dummy-phone__hero">
@@ -896,7 +1255,7 @@ export function AppClickDummy() {
               <div className="dummy-start-card">
                 <span>Nächster Schritt</span>
                 <h3>Wähle zuerst deine Rolle.</h3>
-                <p>Jedes Kind bekommt ein Bild, einen Auftrag und einen geheimen Hinweis.</p>
+                <p>{roleIntroCopy}</p>
                 <div className="dummy-start-actions">
                   <button type="button" onClick={() => setScreenId("roles")}>
                     Rolle ziehen
@@ -991,9 +1350,9 @@ export function AppClickDummy() {
             <>
               {screenId === "roles" && <section className="dummy-role-board" aria-label="Rollen und private Hinweise">
                 <div className="dummy-role-board__intro">
-                  <span>Rollen ziehen</span>
-                  <strong>Such dir eine Rolle aus.</strong>
-                  <p>Jedes Kind bekommt ein Bild, eine Aufgabe und einen geheimen Hinweis.</p>
+                  <span>{audienceWord}</span>
+                  <strong>{modeId === "pensioners" ? "Wählt einen ruhigen Blickwinkel." : "Such dir eine Rolle aus."}</strong>
+                  <p>{roleIntroCopy}</p>
                 </div>
                 <div className="dummy-role-picker">
                   {mission.roles.map((role, index) => {
@@ -1075,6 +1434,30 @@ export function AppClickDummy() {
                 </div>
 
                 <strong>{station.task}</strong>
+                {usedJoker ? (
+                  <aside className="dummy-guide-audio" aria-label="Guide-Hinweis">
+                    <div className="dummy-guide-audio__header">
+                      <span>
+                        <Volume2 size={17} />
+                        Alter Bergbauer
+                      </span>
+                      <strong>Bergbauer-Hinweis zu {station.title}</strong>
+                    </div>
+                    <p>{station.knowledge}</p>
+                    <div className="dummy-guide-audio__player" aria-hidden="true">
+                      <span>
+                        <Pause size={16} />
+                      </span>
+                      <div>
+                        <i />
+                      </div>
+                      <small>0:18</small>
+                      <span>
+                        <SkipForward size={17} />
+                      </span>
+                    </div>
+                  </aside>
+                ) : null}
                 <div className="dummy-choice-list">
                   {station.choices.map((choice) => {
                     const selected = answer === choice;
@@ -1264,38 +1647,29 @@ export function AppClickDummy() {
           <h3>{mode.description}</h3>
           <p>{mode.benefit}</p>
           <div className="dummy-explainer__grid">
-            <article>
-              <strong>Rollen statt Einzelspieler</strong>
-              <p>Jede Person bekommt einen privaten Hinweis. Erst durch Teilen entsteht die Lösung.</p>
-            </article>
-            <article>
-              <strong>Score als Teamwappen</strong>
-              <p>
-                Die Gruppe sammelt gemeinsam Punkte und Titel.
-                <br />
-                Keine Bloßstellung, kein Einzelranking.
-              </p>
-            </article>
-            <article>
-              <strong>Hofrunde & Saisonkarte</strong>
-              <p>Digitale Missionen können mit Stempelpass, Holzmarken, Saisonabzeichen und Eventeinladungen verbunden werden.</p>
-            </article>
-            <article>
-              <strong>Kurze Minispiele</strong>
-              <p>30 bis 90 Sekunden: Vorräte sortieren, Butter machen, Spuren verbinden oder Feuer sichern.</p>
-            </article>
-            <article>
-              <strong>Bewusst kein Actionspiel</strong>
-              <p>
-                Der Pilot bleibt ruhig und wissensorientiert.
-                <br />
-                Ein Pokémon-Go ähnlicher Modus wäre aber möglich, wenn das Museum genau dieses Ziel verfolgt.
-              </p>
-            </article>
-            <article>
-              <strong>Im Klickdummy simuliert</strong>
-              <p>QR-Code, NFC und mehrere Kinderhandys werden hier als Beitrittsliste gezeigt. Im Pilot wäre das ein echter Gruppenraum.</p>
-            </article>
+            {explainerCards.map((card) => (
+              <article key={card.title}>
+                <strong>{card.title}</strong>
+                <p>{card.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="dummy-demo-flow">
+            <div>
+              <span>Individualisierte Demo</span>
+              <strong>{demoScreens.length} Screens für {mode.label}</strong>
+            </div>
+            <ol>
+              {demoScreens.map((screen, index) => (
+                <li key={`${screen.title}-${index}`}>
+                  <span>{index + 1}</span>
+                  <div>
+                    <strong>{screen.title}</strong>
+                    <p>{screen.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </div>

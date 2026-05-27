@@ -13,6 +13,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+// Diese Datei ist die zentrale Inhaltsdatenbank des Prototyps.
+// Hier liegen keine Serverdaten, sondern einfache TypeScript-Listen:
+// Zielgruppen, Kartenpunkte, Missionen, Prototyp-Referenzen und Pitch-Texte.
+// Vibe-Coder können hier oft Texte oder Einträge ändern, ohne React-Layout zu verstehen.
+
 export type AudienceMode =
   | "school"
   | "wedding"
@@ -36,6 +41,7 @@ export type MapPointType =
   | "maintenance";
 
 export interface Audience {
+  // Eine Zielgruppe bzw. ein Modus der Karte, z. B. Schulklasse oder Pensionist:innen.
   id: AudienceMode;
   title: string;
   shortTitle: string;
@@ -46,6 +52,8 @@ export interface Audience {
 }
 
 export interface MapPoint {
+  // Ein Punkt auf dem Museumsplan. x und y sind Prozentwerte auf dem Lageplan:
+  // x=0 ist ganz links, x=100 ganz rechts, y=0 oben, y=100 unten.
   id: string;
   type: MapPointType;
   title: string;
@@ -116,6 +124,8 @@ export interface ClickDummyStation {
 }
 
 export interface ClickDummyMission {
+  // Eine klickbare Beispielmission für den AppClickDummy.
+  // roles bestimmt die Rollen, stations bestimmt die Aufgabenfolge.
   id: string;
   modeId: string;
   title: string;
@@ -168,6 +178,7 @@ export interface CulinaryInspiration {
 }
 
 export interface BuildathonReference {
+  // Ein externer Buildathon-Prototyp mit kurzer Einordnung für den Pitch.
   id: string;
   title: string;
   source: string;
@@ -763,6 +774,13 @@ export const clickDummyModes: ClickDummyMode[] = [
     benefit: "Erwachsene und Vereine bekommen Tiefe, ohne Kinderangebote zu verdrängen.",
   },
   {
+    id: "pensioners",
+    label: "Ruhige Route",
+    title: "Komfortroute für Pensionist:innen",
+    description: "Große Schrift, Audio, Sitzpunkte, kurze Wege und Erinnerungsfragen.",
+    benefit: "Busgruppen und ältere Gäste bekommen Orientierung, Tempo und Einkehr ohne Überforderung.",
+  },
+  {
     id: "celebration",
     label: "Feier",
     title: "Foto- und Feierroute",
@@ -904,6 +922,48 @@ export const clickDummyMissions: ClickDummyMission[] = [
       },
     ],
     finale: "Aus dem Museumsbesuch wird ein Tiroler Geschichtspfad für Erwachsene.",
+  },
+  {
+    id: "pensioner-memory",
+    modeId: "pensioners",
+    title: "Ruhige Hofrunde mit Erinnerungen",
+    audience: "Pensionist:innen, Busgruppen, Vereine",
+    duration: "45 Minuten",
+    hook: "Kurze Wege, Sitzpunkte und Audio verbinden Hofwissen mit eigenen Erinnerungen.",
+    roles: ["Erinnerungsfinder:in", "Audiobegleiter:in", "Weg- und Sitzpunktwache"],
+    stations: [
+      {
+        id: "pensioner-stube",
+        title: "Stube als Erinnerungsraum",
+        place: "Portner Hof",
+        task: "Welche Frage öffnet am ehesten ein persönliches Gespräch?",
+        choices: ["Woran erinnert Sie dieser Raum?", "Wie viele Balken sehen Sie?", "Welche Farbe ist die Wand?"],
+        correctChoice: "Woran erinnert Sie dieser Raum?",
+        reward: "Erinnerungspunkt",
+        knowledge: "Bei älteren Gruppen zählt nicht Tempo, sondern Wiedererkennen, Gespräch und guter Sitzrhythmus.",
+      },
+      {
+        id: "pensioner-audio",
+        title: "Audio statt Textwand",
+        place: "Ruhiger Blickpunkt",
+        task: "Was hilft bei einer kurzen Komfortführung am meisten?",
+        choices: ["Kurzes Audio und klare Pause", "Sehr langer Lesetext", "Viele schnelle Aufgaben"],
+        correctChoice: "Kurzes Audio und klare Pause",
+        reward: "Audiopunkt",
+        knowledge: "Audio entlastet, wenn Schrift, Licht oder Müdigkeit zum Thema werden.",
+      },
+      {
+        id: "pensioner-einkehr",
+        title: "Einkehr gut takten",
+        place: "Wirtshaus / Ausgang",
+        task: "Was macht die Runde für Reisegruppen planbar?",
+        choices: ["Dauer, Sitzpunkte und Einkehrfenster", "freie Suche ohne Ende", "möglichst viele Umwege"],
+        correctChoice: "Dauer, Sitzpunkte und Einkehrfenster",
+        reward: "Komfortzeichen",
+        knowledge: "Für Busgruppen wird der Museumsbesuch stärker, wenn Orientierung, Pausen und Gastronomie zusammenpassen.",
+      },
+    ],
+    finale: "Die Gruppe nimmt eine ruhige, erzählbare Hofrunde mit klarer Einkehr mit.",
   },
   {
     id: "celebration-photo",
@@ -1592,8 +1652,8 @@ export const pitchRoadmap: RoadmapItem[] = [
   },
   {
     phase: "II",
-    title: "Schulklassen-Pilot",
-    description: "Eine reale Route mit QR-Codes, Lehreransicht und Feedbackauswertung.",
+    title: "Museumspilot",
+    description: "Eine reale Route mit QR-Codes, Begleitansicht und Feedbackauswertung.",
   },
   {
     phase: "III",
