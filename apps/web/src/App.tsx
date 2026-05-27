@@ -1227,12 +1227,18 @@ function FutureFormatGroups({
           .filter((format): format is FutureFormat => Boolean(format));
 
         return (
-          <details className="future-group" key={group.title} open={index < 2}>
+          <details className="future-group" key={group.title}>
             <summary className="future-group__heading">
-              <span>{group.label}</span>
               <div>
                 <h3>{group.title}</h3>
                 <p>{group.text}</p>
+              </div>
+              <div className="future-group__meta">
+                <span>{group.label}</span>
+                <strong>
+                  Anzeigen
+                  <ChevronRight size={17} aria-hidden="true" />
+                </strong>
               </div>
             </summary>
             <div className="future-grid future-grid--interactive">
@@ -1287,9 +1293,9 @@ function ProjectEstimateSection() {
             {projectEstimates.map((item, index) => (
               <tr key={item.phase} className={index < 2 ? "is-pilot-cost" : undefined}>
                 <th scope="row">{item.phase}</th>
-                <td>{item.cost}</td>
-                <td>{item.effort}</td>
-                <td>{item.text}</td>
+                <td data-label="Kosten">{item.cost}</td>
+                <td data-label="Dauer">{item.effort}</td>
+                <td data-label="Entscheidungsrelevanz">{item.text}</td>
               </tr>
             ))}
           </tbody>
@@ -2237,6 +2243,7 @@ export function App() {
   const points = useMemo(() => activePoints(mode), [mode]);
   const featurePoints = useMemo(() => points.filter((point) => point.type !== "hof"), [points]);
   const hofPoints = useMemo(() => points.filter((point) => point.type === "hof"), [points]);
+  const visibleMapPoints = mapListView === "stations" ? featurePoints : hofPoints;
   const selectedFuture = useMemo(
     () => futureFormats.find((format) => format.id === selectedFutureId) ?? futureFormats[0],
     [selectedFutureId],
@@ -2455,7 +2462,7 @@ export function App() {
             <MuseumMap
               mode={mode}
               mapVariant={mapVariant}
-              points={points}
+              points={visibleMapPoints}
               selectedPointId={selectedPoint?.id ?? null}
               onSelectPoint={openPoint}
             />

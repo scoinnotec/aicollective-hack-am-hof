@@ -24,7 +24,7 @@ function escapeHtml(value: string) {
 
 function createMarker(point: MapPoint, selected: boolean) {
   const color = typeColor(point.type);
-  const size = point.type === "hof" ? 25 : 34;
+  const size = point.type === "hof" ? 20 : 30;
   const label = escapeHtml(point.title);
   return new DivIcon({
     className: "",

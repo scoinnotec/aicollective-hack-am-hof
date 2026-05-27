@@ -54,6 +54,7 @@ export interface Audience {
 export interface MapPoint {
   // Ein Punkt auf dem Museumsplan. x und y sind Prozentwerte auf dem Lageplan:
   // x=0 ist ganz links, x=100 ganz rechts, y=0 oben, y=100 unten.
+  // markerOffset verschiebt nur das sichtbare Icon, damit dichte Punkte lesbar bleiben.
   id: string;
   type: MapPointType;
   title: string;
@@ -61,6 +62,10 @@ export interface MapPoint {
   description: string;
   x: number;
   y: number;
+  markerOffset?: {
+    x: number;
+    y: number;
+  };
   audience: AudienceMode[];
   tags: string[];
   status?: "open" | "planned" | "done" | "verified";
@@ -1050,6 +1055,7 @@ export const mapPoints: MapPoint[] = [
     description: "Startpunkt der Schulklassenmission: Wärme, Essen und Gemeinschaft am Herd.",
     x: 47.2,
     y: 57.6,
+    markerOffset: { x: -3.4, y: -4.4 },
     audience: ["school"],
     tags: ["Feuer", "Alltag", "Lernziel"],
     status: "verified",
@@ -1062,6 +1068,7 @@ export const mapPoints: MapPoint[] = [
     description: "Tiere als Arbeitskraft, Wärmequelle und Grundlage für Nahrung und Felder.",
     x: 45.8,
     y: 33.8,
+    markerOffset: { x: -2.8, y: -3.6 },
     audience: ["school"],
     tags: ["Tiere", "Winter", "Zusammenarbeit"],
     status: "verified",
@@ -1074,6 +1081,7 @@ export const mapPoints: MapPoint[] = [
     description: "Werkzeuge sichern Arbeit. Die Gruppe erkennt, warum Reparaturen lebenswichtig waren.",
     x: 46.1,
     y: 53.4,
+    markerOffset: { x: 2.8, y: 2.7 },
     audience: ["school"],
     tags: ["Werkzeug", "Handwerk", "Spur"],
     status: "verified",
@@ -1086,6 +1094,7 @@ export const mapPoints: MapPoint[] = [
     description: "Finale Erkenntnis: Vorrat war Planung, nicht Glück.",
     x: 16.6,
     y: 56.1,
+    markerOffset: { x: 2.3, y: -3.0 },
     audience: ["school"],
     tags: ["Vorrat", "Winter", "Finale"],
     status: "verified",
@@ -1238,6 +1247,7 @@ export const mapPoints: MapPoint[] = [
     description: "Hofwissen zu Besitz, Abgaben, Hofstruktur und sozialem Kontext.",
     x: 89.9,
     y: 31.9,
+    markerOffset: { x: 1.6, y: -2.2 },
     audience: allAudienceModes,
     tags: ["Hof", "Herrschaft", "Abgaben"],
     status: "planned",
@@ -1252,6 +1262,7 @@ export const mapPoints: MapPoint[] = [
     description: "Vergleichspunkt für Bauweise, Herkunft und unterschiedliche Lebenslagen.",
     x: 84.8,
     y: 36.8,
+    markerOffset: { x: -1.8, y: 2.2 },
     audience: allAudienceModes,
     tags: ["Hof", "Vergleich", "Quelle"],
     status: "planned",
@@ -2017,8 +2028,10 @@ export const mapBounds: [[number, number], [number, number]] = [
   [1000, 1600],
 ];
 
-export function pointToLatLng(point: Pick<MapPoint, "x" | "y">): [number, number] {
-  return [1000 - (point.y / 100) * 1000, (point.x / 100) * 1600];
+export function pointToLatLng(point: Pick<MapPoint, "x" | "y" | "markerOffset">): [number, number] {
+  const markerX = point.x + (point.markerOffset?.x ?? 0);
+  const markerY = point.y + (point.markerOffset?.y ?? 0);
+  return [1000 - (markerY / 100) * 1000, (markerX / 100) * 1600];
 }
 
 export function activePoints(mode: AudienceMode) {
