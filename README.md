@@ -6,12 +6,46 @@ Das Repository knüpft an den AI-Hackathon im Museum Tiroler Bauernhöfe an und 
 
 ![Stilisiertes Hack am Hof Gruppenmotiv](apps/web/public/pitch-images/hack-am-hof-teilnehmerinnen.png)
 
-## Direktlinks
+## Wo einsteigen?
+
+Je nachdem, warum du hier bist, ist ein anderer Einstieg sinnvoll:
+
+- **Nur ansehen:** Öffne die [Webdemo auf GitHub Pages](https://scoinnotec.github.io/aicollective-hack-am-hof/).
+- **Ohne Programmiererfahrung mitarbeiten:** Starte mit [ELI5: So funktioniert das Projekt](docs/wiki/ELI5-So-funktioniert-das-Projekt.md) und danach mit dem [Vibe-Coder Einstieg](docs/wiki/Vibe-Coder-Einstieg.md).
+- **Mit KI-Tools weiterbauen:** Lies [KI-Tools für dieses Projekt](docs/wiki/KI-Tools-fuer-dieses-Projekt.md), bevor du Codex, Claude, Cursor, Windsurf oder Copilot verwendest.
+- **Pitch oder Entscheidung vorbereiten:** Beginne mit [Pitch & Projektlogik](docs/PITCH.md), danach mit [Roadmap und offene Aufgaben](docs/2026-05-25_Hack-am-Hof-Projekt-Backlog.md).
+- **Technisch einsteigen:** Lies [Architektur](docs/ARCHITECTURE.md) und starte anschließend lokal mit `npm install` und `npm run dev`.
+
+## Links nach Zweck
+
+### Demo und Projektorte
 
 - [Webdemo auf GitHub Pages](https://scoinnotec.github.io/aicollective-hack-am-hof/)
 - [Projekt-Wiki](https://github.com/scoinnotec/aicollective-hack-am-hof/wiki)
+- [GitHub-Webprojekt](https://github.com/scoinnotec/aicollective-hack-am-hof)
+- [GitHub-Wiki](https://github.com/scoinnotec/aicollective-hack-am-hof/wiki)
 
-## Kontext
+### Einstieg für Nicht-Programmierer:innen
+
+- [ELI5: So funktioniert das Projekt](docs/wiki/ELI5-So-funktioniert-das-Projekt.md)
+- [Vibe-Coder Einstieg: von null bis zur eigenen Änderung](docs/wiki/Vibe-Coder-Einstieg.md)
+- [KI-Tools für dieses Projekt](docs/wiki/KI-Tools-fuer-dieses-Projekt.md)
+
+### Projektsteuerung und Inhalte
+
+- [Pitch & Projektlogik](docs/PITCH.md)
+- [Projekt-Backlog](docs/BACKLOG.md)
+- [Roadmap und offene Aufgaben](docs/2026-05-25_Hack-am-Hof-Projekt-Backlog.md)
+- [Event-Blueprint](docs/EVENT_BLUEPRINT.md)
+- [Buildathon-Referenzen](docs/BUILDATHON_REFERENCES.md)
+- [Update-Log](docs/UPDATELOG.md)
+- [Bildprompts](BILDPROMPTS.md)
+
+### Technik
+
+- [Architektur](docs/ARCHITECTURE.md)
+
+### Kontext und externe Quellen
 
 - [AI Collective](https://aicollective.at)
 - [Hack am Hof](https://aicollective.at/hack-am-hof)
@@ -19,22 +53,6 @@ Das Repository knüpft an den AI-Hackathon im Museum Tiroler Bauernhöfe an und 
 - [Museum Tiroler Bauernhöfe bei Wikipedia](https://de.wikipedia.org/wiki/Museum_Tiroler_Bauernhöfe)
 - [Museum Tiroler Bauernhöfe im Alpbachtal](https://www.alpbachtal.at/de/entdecke-das-alpbachtal/kultur-und-brauchtum/kulturelle-perlen-der-region/museum-tiroler-bauernhoefe)
 - [Museum Tiroler Bauernhöfe bei Tripadvisor](https://www.tripadvisor.at/Attraction_Review-g811449-d3605911-Reviews-Museum_of_Tyrolean_Farmsteads-Kramsach_Tirol_Austrian_Alps.html)
-
-## Wichtige Dokumente
-
-- [Vibe-Coder Einstieg: von null bis zur eigenen Änderung](docs/wiki/Vibe-Coder-Einstieg.md)
-- [ELI5: So funktioniert das Projekt](docs/wiki/ELI5-So-funktioniert-das-Projekt.md)
-- [KI-Tools für dieses Projekt](docs/wiki/KI-Tools-fuer-dieses-Projekt.md)
-- [Pitch & Projektlogik](docs/PITCH.md)
-- [Projekt-Backlog](docs/BACKLOG.md)
-- [Roadmap und offene Aufgaben](docs/2026-05-25_Hack-am-Hof-Projekt-Backlog.md)
-- [Architektur](docs/ARCHITECTURE.md)
-- [Event-Blueprint](docs/EVENT_BLUEPRINT.md)
-- [Buildathon-Referenzen](docs/BUILDATHON_REFERENCES.md)
-- [Update-Log](docs/UPDATELOG.md)
-- [Bildprompts](BILDPROMPTS.md)
-- [GitHub-Webprojekt](https://github.com/scoinnotec/aicollective-hack-am-hof)
-- [GitHub-Wiki](https://github.com/scoinnotec/aicollective-hack-am-hof/wiki)
 
 ## Was man sieht
 
