@@ -11367,6 +11367,8 @@ textarea {
 
 @media (max-width: 520px) {
   .pitch-progress-nav > div:last-child {
+    flex-wrap: wrap;
+    overflow-x: visible;
     padding-inline: 8px;
   }
 
