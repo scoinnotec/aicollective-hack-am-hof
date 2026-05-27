@@ -252,10 +252,10 @@ const pilotBoundaries = [
 
 const pitchNavItems = [
   { id: "top", label: "Ziel" },
+  { id: "context", label: "Kontext" },
   { id: "decision", label: "Beschluss" },
   { id: "app-dummy", label: "Demo" },
-  { id: "prototype", label: "Mission" },
-  { id: "demo", label: "Karte" },
+  { id: "buildathon-prototypes", label: "Ideen" },
   { id: "studio", label: "Wissen" },
   { id: "costs", label: "Kosten" },
 ];
@@ -644,23 +644,37 @@ function PhonePrototype() {
           </div>
         </div>
 
-        <div className="route-system-strip">
-          <article>
-            <BookOpen size={19} />
-            <strong>Wissen</strong>
-            <span>Objekte, Gebäude, Geschichten, Quellen und Freigaben.</span>
-          </article>
-          <article>
-            <Users size={19} />
-            <strong>Rollen</strong>
-            <span>Jede Person bekommt eine Aufgabe und einen Blickwinkel.</span>
-          </article>
-          <article>
-            <Route size={19} />
-            <strong>Route</strong>
-            <span>Dauer, Stationen, Wetter, Gruppe und Lernziel werden kombiniert.</span>
-          </article>
-        </div>
+        <details className="route-support-details">
+          <summary>
+            <span>Wie der Generator arbeitet</span>
+            <strong>Systemlogik anzeigen</strong>
+          </summary>
+          <div className="route-system-strip">
+            <article>
+              <BookOpen size={19} />
+              <strong>Wissen</strong>
+              <span>Objekte, Gebäude, Geschichten, Quellen und Freigaben.</span>
+            </article>
+            <article>
+              <Users size={19} />
+              <strong>Rollen</strong>
+              <span>Jede Person bekommt eine Aufgabe und einen Blickwinkel.</span>
+            </article>
+            <article>
+              <Route size={19} />
+              <strong>Route</strong>
+              <span>Dauer, Stationen, Wetter, Gruppe und Lernziel werden kombiniert.</span>
+            </article>
+          </div>
+          <div className="replay-note">
+            <Clock size={20} />
+            <p>
+              Dadurch steigt der Wiederspiel- und Wiederbesuchswert: dieselbe Gruppe, Familie oder
+              Gruppe kann beim nächsten Besuch ein anderes Entdeckungserlebnis bekommen, ohne dass das
+              Museum jedes Mal alles neu schreiben muss.
+            </p>
+          </div>
+        </details>
 
         <div className="mission-generator-demo">
           <div className="mission-generator-controls">
@@ -719,21 +733,12 @@ function PhonePrototype() {
                 <strong>Lernziel</strong>
                 <p>{generatedMission.knowledge}</p>
               </div>
-              <div className="generated-mission-learning">
-                <strong>Abschlussfrage</strong>
+              <details className="generated-mission-learning generated-mission-detail">
+                <summary>Abschlussfrage anzeigen</summary>
                 <p>{generatedMission.finale}</p>
-              </div>
+              </details>
             </div>
           </article>
-        </div>
-
-        <div className="replay-note">
-          <Clock size={20} />
-          <p>
-            Dadurch steigt der Wiederspiel- und Wiederbesuchswert: dieselbe Gruppe, Familie oder
-            Gruppe kann beim nächsten Besuch ein anderes Entdeckungserlebnis bekommen, ohne dass das
-            Museum jedes Mal alles neu schreiben muss.
-          </p>
         </div>
       </div>
     </section>
@@ -798,9 +803,17 @@ function ContextStory() {
         {contextBlocks.map((block) => (
           <article key={block.id}>
             <h3>{block.title}</h3>
-            {block.paragraphs.map((paragraph) => (
+            {block.paragraphs.slice(0, 2).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            {block.paragraphs.length > 2 ? (
+              <details className="context-extra-details">
+                <summary>Weitere Einordnung anzeigen</summary>
+                {block.paragraphs.slice(2).map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </details>
+            ) : null}
             {block.links ? (
               <div className="context-card-links">
                 {block.links.map((link) => (
@@ -1410,10 +1423,10 @@ function BuildathonPrototypeSection() {
         </div>
       </div>
 
-      <details className="buildathon-accordion" open>
+      <details className="buildathon-accordion">
         <summary>
           <span>Alle 10 Prototypen</span>
-          <strong>Nach Tisch T01-T10 sortiert</strong>
+          <strong>Nach Tisch T01-T10 sortiert anzeigen</strong>
         </summary>
         <div className="buildathon-table" role="list">
         {sortedReferences.map((reference) => {
@@ -2319,10 +2332,10 @@ export function App() {
         <div className="hero-shell">
           <div className="hero-copy">
             <nav className="top-nav" aria-label="Hauptnavigation">
+              <a href="#context">Kontext</a>
               <a href="#decision">Beschluss</a>
               <a href="#app-dummy">Prototyp</a>
               <a href="#studio">Wissen</a>
-              <a href="#demo">Karte</a>
               <a href="#costs">Aufwand</a>
             </nav>
             <div className="hero-context">Entscheidungsseite</div>
@@ -2361,11 +2374,15 @@ export function App() {
         </div>
       </section>
 
+      <ContextStory />
+
+      <DecisionAndRoadmapSection />
+
       <AppClickDummy />
 
       <PhonePrototype />
 
-      <DecisionAndRoadmapSection />
+      <BuildathonPrototypeSection />
 
       <section id="demo" className="demo-section">
         <div className="section-heading">
@@ -2466,10 +2483,6 @@ export function App() {
 
       <ModuleIdeas />
 
-      <ContextStory />
-
-      <BuildathonPrototypeSection />
-
       <AvatarLab />
 
       <section id="process" className="process-section">
@@ -2496,29 +2509,36 @@ export function App() {
           ))}
         </div>
 
-        <div className="process-board">
-          {processSteps.map((step) => (
-            <article key={step.number}>
-              <span>{step.number}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-              <strong>{step.need}</strong>
-            </article>
-          ))}
-        </div>
+        <details className="process-details">
+          <summary>
+            <span>Wissensprozess</span>
+            <strong>Schritte und Material anzeigen</strong>
+          </summary>
 
-        <div className="knowledge-callout">
-          <div>
-            <ScrollText size={24} />
-            <h3>Schon digitalisiert</h3>
-            <p>Webseite, Audio-App, Rallye, Fotos, Dokumente, Veranstaltungen.</p>
+          <div className="process-board">
+            {processSteps.map((step) => (
+              <article key={step.number}>
+                <span>{step.number}</span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+                <strong>{step.need}</strong>
+              </article>
+            ))}
           </div>
-          <div>
-            <Mic2 size={24} />
-            <h3>Noch nicht digitalisiert</h3>
-            <p>Guide-Erzählungen, Vereinswissen, Anekdoten, Objektgeschichten.</p>
+
+          <div className="knowledge-callout">
+            <div>
+              <ScrollText size={24} />
+              <h3>Schon digitalisiert</h3>
+              <p>Webseite, Audio-App, Rallye, Fotos, Dokumente, Veranstaltungen.</p>
+            </div>
+            <div>
+              <Mic2 size={24} />
+              <h3>Noch nicht digitalisiert</h3>
+              <p>Guide-Erzählungen, Vereinswissen, Anekdoten, Objektgeschichten.</p>
+            </div>
           </div>
-        </div>
+        </details>
       </section>
 
       <GuideStudio />
